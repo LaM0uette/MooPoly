@@ -89,6 +89,8 @@ ExportedObj/
 Resources*
 *.apk
 *.dwlt
+*.aab
+*.app
 *.unitypackage
 crashlytics-build.properties
 
@@ -120,3 +122,8 @@ crashlytics-build.properties
 [Aa]ssets/Smitesoft*/
 [Aa]ssets/Feel/
 [Aa]ssets/RapidIcon/
+/[Rr]ecordings/
+/[Aa]ssets/Plugins/Editor/JetBrains*
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
