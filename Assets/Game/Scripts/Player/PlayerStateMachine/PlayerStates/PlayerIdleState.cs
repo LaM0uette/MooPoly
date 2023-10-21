@@ -14,15 +14,21 @@
 
         public override void Enter()
         {
-            PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.IdleState, .2f);
+            PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.IdleStateHash, .2f);
         }
 
         public override void Tick(float deltaTime)
         {
         }
+
+        public override void TickLate(float deltaTime)
+        {
+        }
         
         public override void CheckState()
         {
+            if (PlayerStateMachine.IsMoving())
+                PlayerStateMachine.SwitchState(new PlayerMoveState(PlayerStateMachine));
         }
 
         public override void Exit()

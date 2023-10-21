@@ -14,8 +14,12 @@ namespace Game.Scripts.Player.PlayerStateMachine
     {
         #region AnimationHash
         
-        public static readonly int IdleState = Animator.StringToHash("IdleSubState.Idle");
-        public static readonly int MoveState = Animator.StringToHash("MoveBlendTree");
+        // States
+        public static readonly int IdleStateHash = Animator.StringToHash("IdleSubState.Idle");
+        public static readonly int MoveStateHash = Animator.StringToHash("MoveBlendTree");
+            
+        // Variables
+        public static readonly int SpeedHash = Animator.StringToHash("Speed");
         
         #endregion
         
@@ -28,9 +32,14 @@ namespace Game.Scripts.Player.PlayerStateMachine
         
         // Properties
         public bool IsTransitioning { get; private set; }
+        public Vector3 Velocity { get; set; }
         
         [Title("Move")]
         public float MoveSpeed = 4f;
+        public float RotationMoveSpeed = 10f;
+        
+        [Header("Parameters")]
+        public float Gravity = -16f;
 
         private void Awake()
         {
@@ -64,6 +73,13 @@ namespace Game.Scripts.Player.PlayerStateMachine
             yield return new WaitForSeconds(delay);
             IsTransitioning = false;
         }
+
+        #endregion
+        
+        #region Checks
+
+        public bool IsMoving() => !Inputs.MoveValue.Equals(Vector2.zero);
+        public bool IsGrounded() => Controller.isGrounded;
 
         #endregion
     }
