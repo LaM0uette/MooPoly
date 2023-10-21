@@ -34,10 +34,12 @@ namespace Game.Scripts.Camera.Confiner
             Gizmos.matrix = transform.localToWorldMatrix;
             Gizmos.DrawWireCube(boxCollider.center, boxCollider.size);
             
+            Gizmos.color = Color.red; 
+            var newPosition = boxCollider.center;
+            newPosition.z += _maxMagnification / 2;
             var newSize = boxCollider.size;
             newSize.x += _maxMagnification;
-            Gizmos.color = Color.red; 
-            Gizmos.DrawWireCube(boxCollider.center, newSize);
+            Gizmos.DrawWireCube(newPosition, newSize);
         }
 
         #endregion
