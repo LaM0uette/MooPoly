@@ -14,7 +14,7 @@
 
         public override void Enter()
         {
-            PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.MoveStateHash);
+            PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.MoveStateHash, 0);
         }
 
         public override void Tick(float deltaTime)
@@ -24,7 +24,8 @@
             Move(PlayerStateMachine.MoveSpeed);
             
             var moveSpeed = PlayerStateMachine.IsMoving() ? 1 : 0;
-            AnimatorSetFloat(PlayerStateMachine.SpeedHash, moveSpeed, 0.1f);
+            var dampTime = AnimatorGetFloat(PlayerStateMachine.SpeedHash) > 0.01f ? 0.1f : 0;
+            AnimatorSetFloat(PlayerStateMachine.SpeedHash, moveSpeed, dampTime);
         }
 
         public override void TickLate(float deltaTime)
