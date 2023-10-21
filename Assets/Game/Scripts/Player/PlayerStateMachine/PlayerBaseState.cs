@@ -1,5 +1,6 @@
 using Cinemachine;
 using Game.Scripts.BaseStateMachine;
+using Game.Scripts.Player.PlayerStateMachine.PlayerStates;
 using UnityEngine;
 
 namespace Game.Scripts.Player.PlayerStateMachine
@@ -50,6 +51,14 @@ namespace Game.Scripts.Player.PlayerStateMachine
         {
             return PlayerStateMachine.Animator.GetFloat(id);
         }
+        
+        protected bool HasAnimationReachedStage(float value, int layerIndex = 0)
+        {
+            var state = PlayerStateMachine.Animator.GetCurrentAnimatorStateInfo(layerIndex);
+            var normalizedTime = Mathf.Repeat(state.normalizedTime,1f);
+
+            return normalizedTime > value;
+        }
 
         #endregion
 
@@ -76,6 +85,8 @@ namespace Game.Scripts.Player.PlayerStateMachine
 
             PlayerStateMachine.Controller.Move(movement * (targetSpeed * Time.deltaTime) + new Vector3(0, PlayerStateMachine.Velocity.y * Time.deltaTime, 0));
         }
+        
+        protected void Jump() => PlayerStateMachine.SwitchState(new PlayerJumpState(PlayerStateMachine));
 
         protected void CameraZoom()
         {

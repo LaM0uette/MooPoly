@@ -20,6 +20,7 @@ namespace Game.Scripts.Player.PlayerStateMachine
         // States
         public static readonly int IdleStateHash = Animator.StringToHash("IdleSubState.Idle");
         public static readonly int MoveStateHash = Animator.StringToHash("MoveBlendTree");
+        public static readonly int JumpHash = Animator.StringToHash("Jump");
             
         // Variables
         public static readonly int SpeedHash = Animator.StringToHash("Speed");
@@ -42,6 +43,7 @@ namespace Game.Scripts.Player.PlayerStateMachine
         [Space, Title("Move")]
         public float MoveSpeed = 5f;
         public float RotationMoveSpeed = 10f;
+        public float JumpForce = 6f;
         
         [Space, Title("Cinemachine")]
         public float MinZoom = 12f;

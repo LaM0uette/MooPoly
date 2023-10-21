@@ -10,11 +10,27 @@
 
         #endregion
 
+        #region Subscribe/Unsubscribe Events
+
+        private void SubscribeEvents()
+        {
+            PlayerStateMachine.Inputs.JumpEvent += Jump;
+        }
+        
+        private void UnsubscribeEvents()
+        {
+            PlayerStateMachine.Inputs.JumpEvent -= Jump;
+        }
+
+        #endregion
+        
         #region Events
 
         public override void Enter()
         {
-            PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.MoveStateHash, 0);
+            SubscribeEvents();
+            
+            PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.MoveStateHash);
         }
 
         public override void Tick(float deltaTime)
@@ -43,6 +59,7 @@
 
         public override void Exit()
         {
+            UnsubscribeEvents();
             ResetVelocity();
         }
 

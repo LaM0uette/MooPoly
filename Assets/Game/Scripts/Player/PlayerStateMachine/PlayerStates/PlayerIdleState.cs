@@ -9,11 +9,27 @@
         }
 
         #endregion
+        
+        #region Subscribe/Unsubscribe Events
+
+        private void SubscribeEvents()
+        {
+            PlayerStateMachine.Inputs.JumpEvent += Jump;
+        }
+        
+        private void UnsubscribeEvents()
+        {
+            PlayerStateMachine.Inputs.JumpEvent -= Jump;
+        }
+
+        #endregion
 
         #region Events
 
         public override void Enter()
         {
+            SubscribeEvents();
+            
             PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.IdleStateHash, .2f);
         }
 
@@ -34,6 +50,7 @@
 
         public override void Exit()
         {
+            UnsubscribeEvents();
         }
 
         #endregion
