@@ -47,6 +47,11 @@ namespace Game.Scripts.Player.PlayerStateMachine
             PlayerStateMachine.Animator.SetFloat(id, value, dampTime, Time.deltaTime);
         }
         
+        protected void AnimatorSetInt(int id, int value)
+        {
+            PlayerStateMachine.Animator.SetInteger(id, value);
+        }
+        
         protected float AnimatorGetFloat(int id)
         {
             return PlayerStateMachine.Animator.GetFloat(id);

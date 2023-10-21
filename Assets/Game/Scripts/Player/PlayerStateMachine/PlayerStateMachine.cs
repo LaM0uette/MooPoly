@@ -24,6 +24,7 @@ namespace Game.Scripts.Player.PlayerStateMachine
             
         // Variables
         public static readonly int SpeedHash = Animator.StringToHash("Speed");
+        public static readonly int IdleBlendHash = Animator.StringToHash("IdleBlend");
         
         #endregion
         

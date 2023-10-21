@@ -1,8 +1,12 @@
-﻿namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
+﻿using UnityEngine;
+
+namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
 {
     public class PlayerIdleState : PlayerBaseState
     {
         #region Statements
+        
+        private float _inactivityTime;
 
         public PlayerIdleState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
         {
@@ -35,6 +39,13 @@
 
         public override void Tick(float deltaTime)
         {
+            if (!HasAnimationReachedStage(.95f)) 
+            {
+                _inactivityTime += deltaTime;
+                return;
+            }
+
+            TransitionToRandomIdleAnimation();
         }
 
         public override void TickLate(float deltaTime)
@@ -51,6 +62,25 @@
         public override void Exit()
         {
             UnsubscribeEvents();
+            _inactivityTime = 0;
+        }
+
+        #endregion
+
+        #region Functions
+
+        private void TransitionToRandomIdleAnimation()
+        {
+            if (_inactivityTime > 12.0f)
+            {
+                var randomAnimation = Random.Range(1, 6);
+                AnimatorSetInt(PlayerStateMachine.IdleBlendHash, randomAnimation);
+                _inactivityTime = 0;
+            }
+            else
+            {
+                AnimatorSetInt(PlayerStateMachine.IdleBlendHash, 0);
+            }
         }
 
         #endregion
