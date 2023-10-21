@@ -21,14 +21,15 @@
         {
             ApplyGravity();
             
-            var moveSpeed = PlayerStateMachine.IsMoving() ? 1 : 0;
-            
             Move(PlayerStateMachine.MoveSpeed);
+            
+            var moveSpeed = PlayerStateMachine.IsMoving() ? 1 : 0;
             AnimatorSetFloat(PlayerStateMachine.SpeedHash, moveSpeed, 0.1f);
         }
 
         public override void TickLate(float deltaTime)
         {
+            CameraZoom();
         }
 
         public override void CheckState()

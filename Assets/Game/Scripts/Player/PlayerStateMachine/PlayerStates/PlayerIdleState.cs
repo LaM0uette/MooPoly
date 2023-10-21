@@ -23,6 +23,7 @@
 
         public override void TickLate(float deltaTime)
         {
+            CameraZoom();
         }
         
         public override void CheckState()

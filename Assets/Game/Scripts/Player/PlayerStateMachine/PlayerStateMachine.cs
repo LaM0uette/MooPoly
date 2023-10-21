@@ -1,7 +1,10 @@
 using System.Collections;
+using Cinemachine;
 using Game.Scripts.BaseStateMachine;
+using Game.Scripts.Camera.Confiner;
 using Game.Scripts.Player.PlayerInputs;
 using Game.Scripts.Player.PlayerStateMachine.PlayerStates;
+using Game.Scripts.StaticUtilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -29,16 +32,23 @@ namespace Game.Scripts.Player.PlayerStateMachine
         public Animator Animator { get; private set; }
         public PlayerInputsReader Inputs { get; private set; }
         public CharacterController Controller { get; private set; }
+        public CinemachineVirtualCamera CinemachineVirtualCamera { get; private set; }
+        public Confiner Confiner { get; private set; }
         
         // Properties
         public bool IsTransitioning { get; private set; }
         public Vector3 Velocity { get; set; }
         
-        [Title("Move")]
-        public float MoveSpeed = 4f;
+        [Space, Title("Move")]
+        public float MoveSpeed = 5f;
         public float RotationMoveSpeed = 10f;
         
-        [Header("Parameters")]
+        [Space, Title("Cinemachine")]
+        public float MinZoom = 12f;
+        public float MaxZoom = 25f;
+        public float ZoomForce = 10f;
+        
+        [Space, Title("Parameters")]
         public float Gravity = -16f;
 
         private void Awake()
@@ -46,6 +56,12 @@ namespace Game.Scripts.Player.PlayerStateMachine
             Animator = GetComponent<Animator>();
             Inputs = GetComponent<PlayerInputsReader>();
             Controller = GetComponent<CharacterController>();
+            
+            var topDownCamera = GameObject.FindGameObjectWithTag(TagRef.TopDownCamera);
+            CinemachineVirtualCamera = topDownCamera.GetComponent<CinemachineVirtualCamera>();
+            
+            var confiner = GameObject.FindGameObjectWithTag(TagRef.Confiner);
+            Confiner = confiner.GetComponent<Confiner>();
         }
 
         private void Start()
