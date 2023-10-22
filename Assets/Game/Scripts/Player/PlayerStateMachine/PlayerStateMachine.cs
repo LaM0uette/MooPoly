@@ -105,5 +105,14 @@ namespace Game.Scripts.Player.PlayerStateMachine
         public bool IsGrounded() => Controller.isGrounded;
 
         #endregion
+        
+        #region Functions
+        
+        public void Dead()
+        {
+            SwitchState(new PlayerDiedState(this));
+        }
+        
+        #endregion
     }
 }

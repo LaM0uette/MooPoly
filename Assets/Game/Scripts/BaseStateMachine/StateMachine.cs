@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Scripts.BaseStateMachine
@@ -22,6 +23,11 @@ namespace Game.Scripts.BaseStateMachine
         private void LateUpdate()
         {
             _currentState.TickLate(Time.deltaTime);
+        }
+
+        private void FixedUpdate()
+        {
+            _currentState.TickFixed(Time.deltaTime);
         }
     }
 }

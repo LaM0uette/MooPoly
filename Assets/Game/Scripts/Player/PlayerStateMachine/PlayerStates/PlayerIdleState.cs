@@ -41,6 +41,8 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
 
         public override void Tick(float deltaTime)
         {
+            ApplyGravity();
+            
             if (!HasAnimationReachedStage(.95f)) 
             {
                 _inactivityTime += deltaTime;

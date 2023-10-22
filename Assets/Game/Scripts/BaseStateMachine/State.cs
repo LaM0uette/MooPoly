@@ -7,6 +7,7 @@ namespace Game.Scripts.BaseStateMachine
         public abstract void Exit();
         
         public virtual void TickLate(float deltaTime) {}
+        public virtual void TickFixed(float deltaTime) {}
         public virtual void CheckState() {}
     }
 }
