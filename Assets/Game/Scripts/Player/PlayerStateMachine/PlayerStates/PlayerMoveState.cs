@@ -15,11 +15,13 @@
         private void SubscribeEvents()
         {
             PlayerStateMachine.Inputs.JumpEvent += Jump;
+            PlayerStateMachine.Inputs.LevelMapEvent += LevelMap;
         }
         
         private void UnsubscribeEvents()
         {
             PlayerStateMachine.Inputs.JumpEvent -= Jump;
+            PlayerStateMachine.Inputs.LevelMapEvent -= LevelMap;
         }
 
         #endregion

@@ -34,7 +34,8 @@ namespace Game.Scripts.Player.PlayerStateMachine
         public Animator Animator { get; private set; }
         public PlayerInputsReader Inputs { get; private set; }
         public CharacterController Controller { get; private set; }
-        public CinemachineVirtualCamera CinemachineVirtualCamera { get; private set; }
+        public CinemachineVirtualCamera TopDownCamera { get; private set; }
+        public CinemachineVirtualCamera MapCamera { get; private set; }
         public Confiner Confiner { get; private set; }
         
         // Properties
@@ -61,7 +62,10 @@ namespace Game.Scripts.Player.PlayerStateMachine
             Controller = GetComponent<CharacterController>();
             
             var topDownCamera = GameObject.FindGameObjectWithTag(TagRef.TopDownCamera);
-            CinemachineVirtualCamera = topDownCamera.GetComponent<CinemachineVirtualCamera>();
+            TopDownCamera = topDownCamera.GetComponent<CinemachineVirtualCamera>();
+            
+            var mapCamera = GameObject.FindGameObjectWithTag(TagRef.MapCamera);
+            MapCamera = mapCamera.GetComponent<CinemachineVirtualCamera>();
             
             var confiner = GameObject.FindGameObjectWithTag(TagRef.Confiner);
             Confiner = confiner.GetComponent<Confiner>();
