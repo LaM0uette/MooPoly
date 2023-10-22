@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c509dbaa7b6f416409e3195321a2187e, type: 3}
+  m_Name: TerrainWorldPalette
+  m_EditorClassIdentifier: 
+  PaletteLayers:
+  - {fileID: 8574412962073106934, guid: e8a19b753c680d24c98f0aee4c3f6f1a, type: 2}
+  - {fileID: 8574412962073106934, guid: a4096c8c32844ed45af053cf72153b97, type: 2}
+  - {fileID: 8574412962073106934, guid: 293e4d77527fe5f41a5ec2cb08e3a8d6, type: 2}
+  - {fileID: 8574412962073106934, guid: 5e7393ebc899b4f45a1a76ae56f5babb, type: 2}
+  - {fileID: 8574412962073106934, guid: fda3942d375f20d4ab1bce4b8da63de5, type: 2}
+  - {fileID: 8574412962073106934, guid: 224d63e1442241943b8cafe00b71bdbd, type: 2}
+  - {fileID: 8574412962073106934, guid: 9768922d5984e4a46a999d54d01f3148, type: 2}
+  - {fileID: 8574412962073106934, guid: 18206772b2c5a7a4b9682aa8188d3de0, type: 2}
+  - {fileID: 8574412962073106934, guid: 5436bd6230e55694dbbacf3addd4a3c1, type: 2}
+  - {fileID: 8574412962073106934, guid: 32a354f803d8a9e4ebb454d0eb07b361, type: 2}
+  - {fileID: 8574412962073106934, guid: 4fbd55aa18f1ab64e95ea00dff1a03e3, type: 2}
+  - {fileID: 8574412962073106934, guid: 8861a1c84e87a8f438805da2898b15df, type: 2}
