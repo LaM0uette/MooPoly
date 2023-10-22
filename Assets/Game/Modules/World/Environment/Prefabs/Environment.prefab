@@ -10231,8 +10231,8 @@ Transform:
   m_GameObject: {fileID: 6368806904906233186}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.819805, y: 7.4811807, z: -27.984863}
-  m_LocalScale: {x: 48.991756, y: 48.991756, z: 48.991756}
+  m_LocalPosition: {x: 11.133198, y: 35.399857, z: -25.51149}
+  m_LocalScale: {x: 224.49443, y: 224.49443, z: 224.49443}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2648230318701421877}
@@ -10283,7 +10283,7 @@ MonoBehaviour:
   sunlightColor: {r: 1.907639, g: 1.8067976, b: 1.5287825, a: 1}
   starColor: {r: 0.033731908, g: 0.033731908, b: 0.033731908, a: 0}
   ambientLightHorizonColor: {r: 0.7425389, g: 0.8842083, b: 0.9641644, a: 1}
-  ambientLightZenithColor: {r: 0.08019201, g: 0.17498651, b: 0.37485078, a: 1}
+  ambientLightZenithColor: {r: 0.080192015, g: 0.17498648, b: 0.37485078, a: 1}
   ambientLightMultiplier: 1
   galaxyIntensity: 0
   fogColor1: {r: 0, g: 0, b: 0, a: 0.007843138}
@@ -10411,7 +10411,7 @@ MonoBehaviour:
   transitioningAtmosphere: 0
   transitioningWeather: 0
   transitioningTime: 0
-  overrideAtmosphere: {fileID: 5294578941810868767}
+  overrideAtmosphere: {fileID: 487630996009770531}
   overrideWeather: {fileID: 0}
   overrideTime: {fileID: 0}
   overrideDate: {fileID: 0}
@@ -10425,8 +10425,8 @@ MonoBehaviour:
   - {fileID: 1637228427000375458}
   - {fileID: 506489361648841962}
   - {fileID: 7324437879810819298}
-  - {fileID: 5294578941810868767}
   - {fileID: 3242620297669031341}
+  - {fileID: 487630996009770531}
 --- !u!1 &8579617387433150356
 GameObject:
   m_ObjectHideFlags: 0
@@ -15287,8 +15287,8 @@ GameObject:
   - component: {fileID: 2908133466737385009}
   - component: {fileID: 506489361648841962}
   - component: {fileID: 7324437879810819298}
-  - component: {fileID: 5294578941810868767}
   - component: {fileID: 3242620297669031341}
+  - component: {fileID: 487630996009770531}
   m_Layer: 0
   m_Name: Modules
   m_TagString: Untagged
@@ -15569,7 +15569,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherSphere: {fileID: 1734801820797215189}
---- !u!114 &5294578941810868767
+--- !u!114 &3242620297669031341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668454884789588387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931741ff3d7c72646a627a2efb025680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherSphere: {fileID: 1734801820797215189}
+  volumetricCloudProfile: {fileID: 11400000, guid: af8570cd92dc38a4fb6f28796631d855,
+    type: 2}
+  cloudChunkPrefab: {fileID: 8377891541840844724, guid: 14274e75fd089eb4d8a6f636d963d186,
+    type: 3}
+  coverageIntensityOffset: 0
+  cloudCoverage: 0.36089998
+  bendToHorizonMultiplier: 0.1
+  offset: {x: 0, y: 0, z: 0}
+  matrixHolder: {fileID: 0}
+  useColliders: 1
+  useShadows: 0
+  cullInsideTriggers: 0
+  framesBetweenRenders: 10
+--- !u!114 &487630996009770531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15693,32 +15719,6 @@ MonoBehaviour:
   testColorBlock: {fileID: 0}
   biomes: []
   weight: 1
---- !u!114 &3242620297669031341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8668454884789588387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931741ff3d7c72646a627a2efb025680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weatherSphere: {fileID: 1734801820797215189}
-  volumetricCloudProfile: {fileID: 11400000, guid: af8570cd92dc38a4fb6f28796631d855,
-    type: 2}
-  cloudChunkPrefab: {fileID: 8377891541840844724, guid: 14274e75fd089eb4d8a6f636d963d186,
-    type: 3}
-  coverageIntensityOffset: 0
-  cloudCoverage: 0.36089998
-  bendToHorizonMultiplier: 0.1
-  offset: {x: 0, y: 0, z: 0}
-  matrixHolder: {fileID: 0}
-  useColliders: 1
-  useShadows: 0
-  cullInsideTriggers: 0
-  framesBetweenRenders: 10
 --- !u!1 &9134481416887706437
 GameObject:
   m_ObjectHideFlags: 0
