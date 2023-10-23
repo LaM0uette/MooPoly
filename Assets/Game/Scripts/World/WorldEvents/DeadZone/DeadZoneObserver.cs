@@ -1,4 +1,3 @@
-using System;
 using Game.Scripts.Observers;
 using Game.Scripts.Player.PlayerStateMachine;
 using UnityEngine;
