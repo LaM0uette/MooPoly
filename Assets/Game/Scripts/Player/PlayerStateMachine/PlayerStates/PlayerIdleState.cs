@@ -19,12 +19,14 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
         private void SubscribeEvents()
         {
             PlayerStateMachine.Inputs.JumpEvent += Jump;
+            PlayerStateMachine.Inputs.InteractEvent += Interact;
             PlayerStateMachine.Inputs.LevelMapEvent += LevelMap;
         }
         
         private void UnsubscribeEvents()
         {
             PlayerStateMachine.Inputs.JumpEvent -= Jump;
+            PlayerStateMachine.Inputs.InteractEvent -= Interact;
             PlayerStateMachine.Inputs.LevelMapEvent -= LevelMap;
         }
 

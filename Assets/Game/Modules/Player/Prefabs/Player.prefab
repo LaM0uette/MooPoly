@@ -847,7 +847,9 @@ GameObject:
   - component: {fileID: 5913831161534233563}
   - component: {fileID: 8722298203856179655}
   - component: {fileID: 3639422101563120246}
+  - component: {fileID: 1495217926426560135}
   - component: {fileID: 5254689552562595517}
+  - component: {fileID: 8274819867985450967}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -964,6 +966,33 @@ CharacterController:
   m_SkinWidth: 0.025
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.95, z: 0}
+--- !u!54 &1495217926426560135
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3940028900901769546}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &5254689552562595517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,6 +1012,18 @@ MonoBehaviour:
   MaxZoom: 35
   ZoomForce: 20
   Gravity: -16
+--- !u!114 &8274819867985450967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3940028900901769546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5fbc6199192ad4f887dea09c14d633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4312576981090735726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5016063178936114487}
   - component: {fileID: 6835870134222283902}
+  - component: {fileID: 2628501687751464490}
   m_Layer: 0
   m_Name: Observers
   m_TagString: Untagged
@@ -1320,6 +1362,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _observer: {fileID: 11400000, guid: a629a2ffd5c30004c83e3806afe36095, type: 2}
+--- !u!114 &2628501687751464490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348497264084746673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e893e33554b07fe4db674cb3a2d901a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _observer: {fileID: 11400000, guid: 5eb13da954e9f15408a1a4814fee4d89, type: 2}
 --- !u!1 &6534678613563153815
 GameObject:
   m_ObjectHideFlags: 0

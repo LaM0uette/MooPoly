@@ -2,6 +2,7 @@ using System.Collections;
 using Cinemachine;
 using Game.Scripts.BaseStateMachine;
 using Game.Scripts.Camera.Confiner;
+using Game.Scripts.Player.Controller;
 using Game.Scripts.Player.PlayerInputs;
 using Game.Scripts.Player.PlayerStateMachine.PlayerStates;
 using Game.Scripts.StaticUtilities;

@@ -12,6 +12,7 @@ namespace Game.Scripts.Player.PlayerInputs
         public float ZoomValue { get; private set; }
 
         public Action JumpEvent { get; set; }
+        public Action InteractEvent { get; set; }
         public Action LevelMapEvent { get; set; }
         
         #endregion
@@ -22,6 +23,7 @@ namespace Game.Scripts.Player.PlayerInputs
         public void OnZoom(InputValue value) => ZoomValue = value.Get<float>();
 
         public void OnJump() => JumpEvent?.Invoke();
+        public void OnInteract() => InteractEvent?.Invoke();
         public void OnLevelMap() => LevelMapEvent?.Invoke();
         
         #endregion
