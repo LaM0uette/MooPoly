@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2875516714908198686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5372994, y: 0, z: 0, w: 0.84339166}
+  m_LocalRotation: {x: 0.5735765, y: 0, z: 0, w: 0.819152}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5386,8 +5386,8 @@ Transform:
   m_GameObject: {fileID: 6887410514465422015}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000037252899, y: -0, z: -0.0000000074505797, w: 1}
-  m_LocalPosition: {x: -111.66545, y: 53.08589, z: -31.02391}
-  m_LocalScale: {x: 326.51004, y: 326.51004, z: 326.51004}
+  m_LocalPosition: {x: -1.6521978, y: 19.734177, z: -22.436996}
+  m_LocalScale: {x: 155.99054, y: 155.99054, z: 155.99054}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 155809508421089268}
@@ -5417,9 +5417,9 @@ MonoBehaviour:
   climateProfile: {fileID: 11400000, guid: e1a4bf0206b48d4428e0e961e057af39, type: 2}
   localTemperatureFilter: 0
   localPrecipitationFilter: 0
-  currentTemperature: 1.3061893
-  currentTemperatureCelsius: -17.052116
-  currentPrecipitation: 49.41029
+  currentTemperature: 1.3241118
+  currentTemperatureCelsius: -17.04216
+  currentPrecipitation: 49.265995
   currentWeather: {fileID: 11400000, guid: ae94c1a397a01e442a11e8b23ebb1cef, type: 2}
   weatherChangeCheck: {fileID: 0}
   weightedWeatherProfiles:
@@ -5437,7 +5437,7 @@ MonoBehaviour:
   highAltitudeCloudColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
   sunlightColor: {r: 1.9686275, g: 1.9294118, b: 1.6470588, a: 1}
   starColor: {r: 0, g: 0, b: 0, a: 0}
-  ambientLightHorizonColor: {r: 0.6784314, g: 0.9019608, b: 1, a: 1}
+  ambientLightHorizonColor: {r: 0.6784314, g: 0.90196073, b: 1, a: 1}
   ambientLightZenithColor: {r: 0.08627451, g: 0.18239687, b: 0.39607844, a: 1}
   ambientLightMultiplier: 1
   galaxyIntensity: 0
@@ -5501,13 +5501,13 @@ MonoBehaviour:
   filterColor: {r: 1, g: 1, b: 1, a: 0}
   sunFilter: {r: 1, g: 1, b: 1, a: 0}
   cloudFilter: {r: 1, g: 1, b: 1, a: 0}
-  dayPercentage: 0.43055555
-  yearPercentage: 0.008969908
+  dayPercentage: 0.44444445
+  yearPercentage: 0.009259259
   lockToCamera: 0
   freezeUpdateInEditMode: 0
   disableSunAtNight: 1
   atmosphereProfile: {fileID: 11400000, guid: 8cc0487e978305c49a20079f78f36ba0, type: 2}
-  perennialProfile: {fileID: 11400000, guid: 8ce0d8458b4495b4593c1e03027a0ce5, type: 2}
+  perennialProfile: {fileID: 11400000, guid: ccc860aba72091a4f890c7216ca2a727, type: 2}
   sunLight: {fileID: 8658530332878072506}
   sunTransform: {fileID: 5033644255257558547}
   cloudMesh: {fileID: 3343845982601041156}
@@ -5516,7 +5516,7 @@ MonoBehaviour:
   cozyCamera: {fileID: 0}
   cozyMaterials: {fileID: 4280888622329805709}
   VFX: {fileID: 5570093957817631958}
-  window: 3
+  window: 1
   icon1: {fileID: 2800000, guid: 75645812b98cbf94b9dd8d2f9401cf16, type: 3}
   icon2: {fileID: 2800000, guid: c669197bbed6f144b9740e40895f04e0, type: 3}
   icon3: {fileID: 2800000, guid: e51b7563b2e461141a757c1b77ca0217, type: 3}
@@ -5529,7 +5529,7 @@ MonoBehaviour:
   curveWindow: 1
   tickLengthWindow: 1
   currentWeatherWindow: 0
-  forecastWindow: 0
+  forecastWindow: 1
   climateWindow: 0
   win1: 0
   win2: 0
@@ -5537,16 +5537,16 @@ MonoBehaviour:
   win4: 1
   events:
     timeToCheckFor: 0.5416667
-    currentTick: 155
+    currentTick: 160
     currentHour: 10
     useEvents: 1
   cozyTriggerTag: FX Block Zone
   cozyTriggers: []
   calendar:
-    currentTicks: 155
+    currentTicks: 160
     meridiemTime:
       hours: 10
-      minutes: 20
+      minutes: 40
     currentDay: 0
     currentYear: 0
   ecosystems:
@@ -5972,8 +5972,8 @@ MonoBehaviour:
   blockSettings: 1
   blockProfile: {fileID: 11400000, guid: ba6c6452267a9ed43b72bb637fe8452b, type: 2}
   blocks:
-  - startKey: 0.22222222
-    endKey: 0.25
+  - startKey: 0.25
+    endKey: 0.29166666
     colorBlocks:
     - {fileID: 11400000, guid: 12b5415490f9220428cfa66e020d6273, type: 2}
     - {fileID: 11400000, guid: 07bf1f887e1d5474ba22d7690ecc98fb, type: 2}
@@ -5981,7 +5981,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e4ae77d43a5971f4f8c7d9523e178382, type: 2}
     seed: 0
     selectedBlock: {fileID: 11400000, guid: e4ae77d43a5971f4f8c7d9523e178382, type: 2}
-  - startKey: 0.2777778
+  - startKey: 0.375
     endKey: 0.41666666
     colorBlocks:
     - {fileID: 11400000, guid: 77263c8b19042814a8908c7d37ec936c, type: 2}
@@ -6005,7 +6005,7 @@ MonoBehaviour:
     endKey: 0.875
     colorBlocks:
     - {fileID: 11400000, guid: 98f1b3df4bcd8d34a9cea285fb0da7f8, type: 2}
-    seed: 92410073
+    seed: 904724439
     selectedBlock: {fileID: 11400000, guid: 98f1b3df4bcd8d34a9cea285fb0da7f8, type: 2}
   - startKey: 0.875
     endKey: 0.9166667
@@ -6018,9 +6018,9 @@ MonoBehaviour:
     seed: 0
     selectedBlock: {fileID: 11400000, guid: c3de239532f59e04596bee83efaf8bbd, type: 2}
   keys:
-  - 0.22222222
   - 0.25
-  - 0.2777778
+  - 0.29166666
+  - 0.375
   - 0.41666666
   - 0.6666667
   - 0.75
