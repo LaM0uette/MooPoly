@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2875516714908198686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.683678, y: 0, z: 0, w: 0.7297839}
+  m_LocalRotation: {x: 0.5372994, y: 0, z: 0, w: 0.84339166}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -127,7 +127,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1.39772, g: 1.1928186, b: 0.936692, a: 0}
+  m_Color: {r: 1.9686275, g: 1.9294118, b: 1.6470588, a: 0}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -626,7 +626,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0, b: 0, a: 1}
+      maxColor: {r: 0, g: 0, b: 0, a: 0}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5386,8 +5386,8 @@ Transform:
   m_GameObject: {fileID: 6887410514465422015}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000037252899, y: -0, z: -0.0000000074505797, w: 1}
-  m_LocalPosition: {x: -39.61432, y: 6.387871, z: 28.78466}
-  m_LocalScale: {x: 240.44342, y: 240.44342, z: 240.44342}
+  m_LocalPosition: {x: -111.66545, y: 53.08589, z: -31.02391}
+  m_LocalScale: {x: 326.51004, y: 326.51004, z: 326.51004}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 155809508421089268}
@@ -5417,9 +5417,9 @@ MonoBehaviour:
   climateProfile: {fileID: 11400000, guid: e1a4bf0206b48d4428e0e961e057af39, type: 2}
   localTemperatureFilter: 0
   localPrecipitationFilter: 0
-  currentTemperature: 72.14584
-  currentTemperatureCelsius: 22.303246
-  currentPrecipitation: 71.91307
+  currentTemperature: 1.3061893
+  currentTemperatureCelsius: -17.052116
+  currentPrecipitation: 49.41029
   currentWeather: {fileID: 11400000, guid: ae94c1a397a01e442a11e8b23ebb1cef, type: 2}
   weatherChangeCheck: {fileID: 0}
   weightedWeatherProfiles:
@@ -5430,52 +5430,52 @@ MonoBehaviour:
   usePhysicalSunHeight: 0
   sunDirection: 53
   sunPitch: 14.9
-  skyZenithColor: {r: 0.253649, g: 0.561008, b: 0.7169812, a: 0}
-  skyHorizonColor: {r: 0.4524226, g: 0.6942585, b: 0.8169812, a: 1}
-  cloudColor: {r: 1, g: 1, b: 1, a: 0}
-  cloudHighlightColor: {r: 1.49772, g: 1.278159, b: 1.0037078, a: 1}
-  highAltitudeCloudColor: {r: 1.1, g: 0.88, b: 0.88, a: 1}
-  sunlightColor: {r: 1.39772, g: 1.1928186, b: 0.936692, a: 0}
-  starColor: {r: 0, g: 0, b: 0, a: 1}
-  ambientLightHorizonColor: {r: 0.4524226, g: 0.6942585, b: 0.8169812, a: 1}
-  ambientLightZenithColor: {r: 0.253649, g: 0.561008, b: 0.7169812, a: 0}
+  skyZenithColor: {r: 0.08627451, g: 0.18239687, b: 0.39607844, a: 1}
+  skyHorizonColor: {r: 0.38431373, g: 0.5537686, b: 0.8627451, a: 1}
+  cloudColor: {r: 0.75083315, g: 0.82712317, b: 0.85646546, a: 1}
+  cloudHighlightColor: {r: 4.2262487, g: 4.2262487, b: 4.2262487, a: 1}
+  highAltitudeCloudColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
+  sunlightColor: {r: 1.9686275, g: 1.9294118, b: 1.6470588, a: 1}
+  starColor: {r: 0, g: 0, b: 0, a: 0}
+  ambientLightHorizonColor: {r: 0.6784314, g: 0.9019608, b: 1, a: 1}
+  ambientLightZenithColor: {r: 0.08627451, g: 0.18239687, b: 0.39607844, a: 1}
   ambientLightMultiplier: 1
   galaxyIntensity: 0
-  fogColor1: {r: 0, g: 0, b: 0, a: 0}
-  fogColor2: {r: 0, g: 0.1101449, b: 0.19999999, a: 0.1}
-  fogColor3: {r: 0, g: 0.27536225, b: 0.5, a: 0.45}
-  fogColor4: {r: 0, g: 0.38550714, b: 0.7, a: 0.75}
-  fogColor5: {r: 0.025943393, g: 0.6174527, b: 1.1, a: 1}
-  fogFlareColor: {r: 1.39772, g: 1.0685768, b: 0.65714806, a: 1}
-  gradientExponent: 0.5
-  atmosphereVariationMin: 1
-  atmosphereVariationMax: 0.5
-  atmosphereBias: 0.936
+  fogColor1: {r: 0, g: 0, b: 0, a: 0.007843138}
+  fogColor2: {r: 0, g: 0.024457073, b: 0.2, a: 0.13725491}
+  fogColor3: {r: 0.011764706, g: 0.07511917, b: 0.25490198, a: 0.5019608}
+  fogColor4: {r: 0.011764695, g: 0.114411294, b: 0.3882353, a: 0.75686276}
+  fogColor5: {r: 0.14202078, g: 1.1341684, b: 1.5846533, a: 1}
+  fogFlareColor: {r: 0.7574371, g: 1.0180261, b: 1.7645787, a: 1}
+  gradientExponent: 0.638
+  atmosphereVariationMin: 0.13
+  atmosphereVariationMax: 0.64
+  atmosphereBias: 0.065
   sunSize: 1
-  sunColor: {r: 1.49772, g: 1.278159, b: 1.0037078, a: 1}
-  sunFalloff: 25
-  sunFlareColor: {r: 1.29772, g: 1.1074783, b: 0.8696763, a: 1}
-  moonFalloff: 25
-  moonlightColor: {r: 0, g: 0, b: 0, a: 0}
-  moonFlareColor: {r: 0, g: 0, b: 0, a: 0}
+  sunColor: {r: 10.432951, g: 10.432951, b: 10.432951, a: 1}
+  sunFalloff: 28.3
+  sunFlareColor: {r: 0.5176471, g: 0.6509804, b: 0.68235296, a: 1}
+  moonFalloff: 26.9
+  moonlightColor: {r: 0, g: 0, b: 0, a: 1}
+  moonFlareColor: {r: 0.023529412, g: 0.07450981, b: 0.06666667, a: 1}
   galaxy1Color: {r: 0, g: 0.5019608, b: 1, a: 1}
   galaxy2Color: {r: 0.11764706, g: 0.45490196, b: 0.078431375, a: 1}
   galaxy3Color: {r: 0.16470589, g: 0.078431375, b: 0.45490196, a: 1}
-  lightScatteringColor: {r: 0, g: 0, b: 0, a: 1}
+  lightScatteringColor: {r: 0, g: 0, b: 0, a: 0}
   rainbowPosition: 16.8
   rainbowWidth: 24.3
   fogStart1: 2
   fogStart2: 5
   fogStart3: 10
   fogStart4: 30
-  fogHeight: 0.88
-  fogDensityMultiplier: 0.8
+  fogHeight: 0.701
+  fogDensityMultiplier: 1.3
   fogLightFlareIntensity: 1
-  fogLightFlareFalloff: 4
-  fogLightFlareSquish: 1
-  cloudMoonColor: {r: 0, g: 0, b: 0, a: 0}
-  cloudSunHighlightFalloff: 15
-  cloudMoonHighlightFalloff: 30
+  fogLightFlareFalloff: 13.6
+  fogLightFlareSquish: 5.89
+  cloudMoonColor: {r: 0, g: 0, b: 0, a: 1}
+  cloudSunHighlightFalloff: 14.9
+  cloudMoonHighlightFalloff: 29.2
   cloudWindSpeed: 0.75
   clippingThreshold: 0.5
   cloudMainScale: 12
@@ -5485,7 +5485,7 @@ MonoBehaviour:
   cirroMoveSpeed: 0.5
   cirrusMoveSpeed: 0.5
   chemtrailsMoveSpeed: 0.5
-  cloudTextureColor: {r: 1, g: 1, b: 1, a: 1}
+  cloudTextureColor: {r: 0.6675392, g: 0.6675392, b: 0.6675392, a: 1}
   cloudCohesion: 0.85
   spherize: 1
   shadowDistance: 0.03
@@ -5501,8 +5501,8 @@ MonoBehaviour:
   filterColor: {r: 1, g: 1, b: 1, a: 0}
   sunFilter: {r: 1, g: 1, b: 1, a: 0}
   cloudFilter: {r: 1, g: 1, b: 1, a: 0}
-  dayPercentage: 0.4722222
-  yearPercentage: 0.30150464
+  dayPercentage: 0.43055555
+  yearPercentage: 0.008969908
   lockToCamera: 0
   freezeUpdateInEditMode: 0
   disableSunAtNight: 1
@@ -5537,17 +5537,17 @@ MonoBehaviour:
   win4: 1
   events:
     timeToCheckFor: 0.5416667
-    currentTick: 170
-    currentHour: 11
+    currentTick: 155
+    currentHour: 10
     useEvents: 1
   cozyTriggerTag: FX Block Zone
   cozyTriggers: []
   calendar:
-    currentTicks: 170
+    currentTicks: 155
     meridiemTime:
-      hours: 11
+      hours: 10
       minutes: 20
-    currentDay: 14
+    currentDay: 0
     currentYear: 0
   ecosystems:
   - {fileID: 7608874416423791865}
@@ -5561,8 +5561,8 @@ MonoBehaviour:
   atmosphereControl: 0
   timeControl: 0
   skyStyle: 0
-  cloudStyle: 2
-  fogStyle: 0
+  cloudStyle: 7
+  fogStyle: 1
   transitioningAtmosphere: 0
   transitioningWeather: 0
   transitioningTime: 0
@@ -5921,51 +5921,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherSphere: {fileID: 7608874416423791865}
-  skyZenithColor: {r: 0.253649, g: 0.561008, b: 0.7169812, a: 0}
-  skyHorizonColor: {r: 0.4524226, g: 0.6942585, b: 0.8169812, a: 1}
-  cloudColor: {r: 1, g: 1, b: 1, a: 0}
-  cloudHighlightColor: {r: 1.49772, g: 1.278159, b: 1.0037078, a: 1}
-  highAltitudeCloudColor: {r: 1.1, g: 0.88, b: 0.88, a: 1}
-  sunlightColor: {r: 1.39772, g: 1.1928186, b: 0.936692, a: 0}
-  starColor: {r: 0, g: 0, b: 0, a: 1}
-  ambientLightHorizonColor: {r: 0.4524226, g: 0.6942585, b: 0.8169812, a: 1}
-  ambientLightZenithColor: {r: 0.253649, g: 0.561008, b: 0.7169812, a: 0}
+  skyZenithColor: {r: 0.08627451, g: 0.18239687, b: 0.39607844, a: 1}
+  skyHorizonColor: {r: 0.38431373, g: 0.5537686, b: 0.8627451, a: 1}
+  cloudColor: {r: 0.75083315, g: 0.82712317, b: 0.85646546, a: 1}
+  cloudHighlightColor: {r: 4.2262487, g: 4.2262487, b: 4.2262487, a: 1}
+  highAltitudeCloudColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
+  sunlightColor: {r: 1.9686275, g: 1.9294118, b: 1.6470588, a: 1}
+  starColor: {r: 0, g: 0, b: 0, a: 0}
+  ambientLightHorizonColor: {r: 0.6784314, g: 0.9019608, b: 1, a: 1}
+  ambientLightZenithColor: {r: 0.4261303, g: 0.6387468, b: 0.6792453, a: 1}
   galaxyIntensity: 0
-  fogColor1: {r: 0, g: 0, b: 0, a: 0}
-  fogColor2: {r: 0, g: 0.1101449, b: 0.19999999, a: 0.1}
-  fogColor3: {r: 0, g: 0.27536225, b: 0.5, a: 0.45}
-  fogColor4: {r: 0, g: 0.38550714, b: 0.7, a: 0.75}
-  fogColor5: {r: 0.025943393, g: 0.6174527, b: 1.1, a: 1}
-  fogFlareColor: {r: 1.39772, g: 1.0685768, b: 0.65714806, a: 1}
-  gradientExponent: 0.5
+  fogColor1: {r: 0, g: 0, b: 0, a: 0.007843138}
+  fogColor2: {r: 0, g: 0.024457073, b: 0.2, a: 0.13725491}
+  fogColor3: {r: 0.011764706, g: 0.07511917, b: 0.25490198, a: 0.5019608}
+  fogColor4: {r: 0.011764695, g: 0.114411294, b: 0.3882353, a: 0.75686276}
+  fogColor5: {r: 0.14202078, g: 1.1341684, b: 1.5846533, a: 1}
+  fogFlareColor: {r: 0.7574371, g: 1.0180261, b: 1.7645787, a: 1}
+  gradientExponent: 0.638
   ambientLightMultiplier: 1
-  atmosphereVariationMin: 1
-  atmosphereVariationMax: 0.5
-  atmosphereBias: 0.936
+  atmosphereVariationMin: 0.13
+  atmosphereVariationMax: 0.64
+  atmosphereBias: 0.065
   sunSize: 1
-  sunColor: {r: 1.49772, g: 1.278159, b: 1.0037078, a: 1}
-  sunFalloff: 25
-  sunFlareColor: {r: 1.29772, g: 1.1074783, b: 0.8696763, a: 1}
-  moonFalloff: 25
-  moonlightColor: {r: 0, g: 0, b: 0, a: 0}
-  moonFlareColor: {r: 0, g: 0, b: 0, a: 0}
+  sunColor: {r: 10.432951, g: 10.432951, b: 10.432951, a: 1}
+  sunFalloff: 28.3
+  sunFlareColor: {r: 0.5176471, g: 0.6509804, b: 0.68235296, a: 1}
+  moonFalloff: 26.9
+  moonlightColor: {r: 0, g: 0, b: 0, a: 1}
+  moonFlareColor: {r: 0.023529412, g: 0.07450981, b: 0.06666667, a: 1}
   galaxy1Color: {r: 0, g: 0.5019608, b: 1, a: 1}
   galaxy2Color: {r: 0.11764706, g: 0.45490196, b: 0.078431375, a: 1}
   galaxy3Color: {r: 0.16470589, g: 0.078431375, b: 0.45490196, a: 1}
-  lightScatteringColor: {r: 0, g: 0, b: 0, a: 1}
+  lightScatteringColor: {r: 0, g: 0, b: 0, a: 0}
   fogStart1: 2
   fogStart2: 5
   fogStart3: 10
   fogStart4: 30
-  fogHeight: 0.88
-  fogDensityMultiplier: 0.8
+  fogHeight: 0.701
+  fogDensityMultiplier: 1.3
   fogLightFlareIntensity: 1
-  fogLightFlareFalloff: 4
-  fogLightFlareSquish: 1
-  cloudMoonColor: {r: 0, g: 0, b: 0, a: 0}
-  cloudTextureColor: {r: 1, g: 1, b: 1, a: 1}
-  cloudSunHighlightFalloff: 15
-  cloudMoonHighlightFalloff: 30
+  fogLightFlareFalloff: 13.6
+  fogLightFlareSquish: 5.89
+  cloudMoonColor: {r: 0, g: 0, b: 0, a: 1}
+  cloudTextureColor: {r: 0.6675392, g: 0.6675392, b: 0.6675392, a: 1}
+  cloudSunHighlightFalloff: 14.9
+  cloudMoonHighlightFalloff: 29.2
   rainbowIntensity: 0
   selection: 1
   developmentToolkit: 1
@@ -5980,7 +5980,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: eb7880dc3f7d0c144ab842248a07144d, type: 2}
     - {fileID: 11400000, guid: e4ae77d43a5971f4f8c7d9523e178382, type: 2}
     seed: 0
-    selectedBlock: {fileID: 11400000, guid: 07bf1f887e1d5474ba22d7690ecc98fb, type: 2}
+    selectedBlock: {fileID: 11400000, guid: e4ae77d43a5971f4f8c7d9523e178382, type: 2}
   - startKey: 0.2777778
     endKey: 0.41666666
     colorBlocks:
@@ -5990,7 +5990,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7384dfb9505d7ed43a12c9db745a749b, type: 2}
     - {fileID: 11400000, guid: 4ee222725f52f6c4193dc4fd7a72de8b, type: 2}
     seed: 0
-    selectedBlock: {fileID: 11400000, guid: 799ee33e54604e2408c359156fec2a32, type: 2}
+    selectedBlock: {fileID: 11400000, guid: 4ee222725f52f6c4193dc4fd7a72de8b, type: 2}
   - startKey: 0.6666667
     endKey: 0.75
     colorBlocks:
@@ -6005,7 +6005,7 @@ MonoBehaviour:
     endKey: 0.875
     colorBlocks:
     - {fileID: 11400000, guid: 98f1b3df4bcd8d34a9cea285fb0da7f8, type: 2}
-    seed: 1593023625
+    seed: 92410073
     selectedBlock: {fileID: 11400000, guid: 98f1b3df4bcd8d34a9cea285fb0da7f8, type: 2}
   - startKey: 0.875
     endKey: 0.9166667
@@ -6016,7 +6016,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c67f9f4e76d86b845b19399f8b1aab92, type: 2}
     - {fileID: 11400000, guid: 4c29bc889069ce74fbd9fd1877f63366, type: 2}
     seed: 0
-    selectedBlock: {fileID: 11400000, guid: 4c29bc889069ce74fbd9fd1877f63366, type: 2}
+    selectedBlock: {fileID: 11400000, guid: c3de239532f59e04596bee83efaf8bbd, type: 2}
   keys:
   - 0.22222222
   - 0.25
@@ -6028,7 +6028,7 @@ MonoBehaviour:
   - 0.875
   - 0.875
   - 0.9166667
-  currentBlock: {fileID: 11400000, guid: 799ee33e54604e2408c359156fec2a32, type: 2}
+  currentBlock: {fileID: 11400000, guid: 4ee222725f52f6c4193dc4fd7a72de8b, type: 2}
   testColorBlock: {fileID: 0}
   biomes: []
   weight: 1
@@ -6256,7 +6256,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0}
+      maxColor: {r: 0.75083315, g: 0.82712317, b: 0.85646546, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10061,7 +10061,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0}
+      maxColor: {r: 0.75083315, g: 0.82712317, b: 0.85646546, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11137,7 +11137,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0, b: 0, a: 1}
+      maxColor: {r: 0, g: 0, b: 0, a: 0}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
