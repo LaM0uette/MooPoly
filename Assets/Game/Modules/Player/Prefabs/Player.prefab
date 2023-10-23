@@ -979,7 +979,7 @@ MonoBehaviour:
   RotationMoveSpeed: 10
   JumpForce: 6
   MinZoom: 12
-  MaxZoom: 25
+  MaxZoom: 35
   ZoomForce: 20
   Gravity: -16
 --- !u!1 &4312576981090735726

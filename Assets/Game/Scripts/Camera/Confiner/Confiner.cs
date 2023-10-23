@@ -36,7 +36,7 @@ namespace Game.Scripts.Camera.Confiner
             
             Gizmos.color = Color.red; 
             var newPosition = boxCollider.center;
-            newPosition.z += (float)_maxMagnification / 2;
+            newPosition.z += (float)_maxMagnification / 2.5f;
             var newSize = boxCollider.size;
             newSize.x += _maxMagnification;
             Gizmos.DrawWireCube(newPosition, newSize);
