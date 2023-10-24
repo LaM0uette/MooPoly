@@ -8,17 +8,17 @@ namespace Game.Scripts.Ui.World.Button.Level
     {
         #region Statements
 
-        [SerializeField] private Observer _observer;
+        public bool IsUnlocked;
+        
+        [SerializeField] private ObserverEvent _observer;
         
         [SerializeField] private Material _unlockMaterial;
         [SerializeField] private Material _lockMaterial;
         [SerializeField] private MeshRenderer _meshRenderer;
         
-        [SerializeField] private bool _isUnlocked;
-
         private void Start()
         {
-            _meshRenderer.material = _isUnlocked ? _unlockMaterial : _lockMaterial;
+            _meshRenderer.material = IsUnlocked ? _unlockMaterial : _lockMaterial;
         }
 
         #endregion
@@ -27,15 +27,12 @@ namespace Game.Scripts.Ui.World.Button.Level
 
         public void Interact()
         {
-            if (!_isUnlocked) return;
+            if (!IsUnlocked) return;
             
-            _observer.Notify();
+            _observer.Notify(this);
         }
         
-        public Transform GetTransform()
-        {
-            return gameObject.transform;
-        }
+        public Transform GetTransform() => gameObject.transform;
 
         #endregion
     }
