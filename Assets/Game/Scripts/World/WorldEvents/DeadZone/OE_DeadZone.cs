@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Game.Scripts.World.WorldEvents.DeadZone
 {
-    public class DeadZoneObserver : MonoBehaviour, IObserver
+    public class OE_DeadZone : Observer
     {
         #region Statements
 
-        [SerializeField] private Observer _observer;
+        [SerializeField] private ObserverEvent _observer;
         
         private PlayerStateMachine _playerStateMachine;
 
@@ -31,7 +31,7 @@ namespace Game.Scripts.World.WorldEvents.DeadZone
             _observer.Unregister(this);
         }
 
-        public void OnNotify()
+        public override void OnNotify()
         {
             _playerStateMachine.Dead();
         }

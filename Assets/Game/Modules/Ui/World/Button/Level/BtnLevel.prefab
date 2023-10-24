@@ -103,11 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02e3955886a0c04b83f99205bac4431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _observer: {fileID: 11400000, guid: 5eb13da954e9f15408a1a4814fee4d89, type: 2}
+  IsUnlocked: 0
+  _observer: {fileID: 11400000, guid: f2c422fb7a8c53f458837038ef7acb59, type: 2}
   _unlockMaterial: {fileID: 2100000, guid: 23f343bede491c64ba5c4f108075a9c0, type: 2}
   _lockMaterial: {fileID: 2100000, guid: 51718a10ed04d78488ef170b323b0c59, type: 2}
   _meshRenderer: {fileID: 5711959131590437899}
-  _isUnlocked: 0
 --- !u!1 &8129403553014176597
 GameObject:
   m_ObjectHideFlags: 0

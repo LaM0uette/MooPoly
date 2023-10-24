@@ -1,13 +1,13 @@
 using Game.Scripts.Observers;
 using UnityEngine;
 
-namespace Game.Scripts.Interactable
+namespace Game.Scripts.Ui.World.Button.Level
 {
-    public class InteractObserver : MonoBehaviour, IObserver
+    public class OE_ButtonLevel : Observer
     {
         #region Statements
 
-        [SerializeField] private Observer _observer;
+        [SerializeField] private ObserverEvent _observer;
 
         #endregion
 
@@ -23,9 +23,11 @@ namespace Game.Scripts.Interactable
             _observer.Unregister(this);
         }
 
-        public void OnNotify()
+        public override void OnNotify<T>(T data)
         {
-            Debug.Log("Interact");
+            if (data is not ButtonLevel buttonLevel) return;
+            
+            Debug.Log("OnNotify: " + buttonLevel.IsUnlocked);
         }
 
         #endregion

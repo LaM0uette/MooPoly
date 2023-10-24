@@ -61,7 +61,12 @@ PrefabInstance:
     - target: {fileID: 5531856878608324195, guid: fef0c3151dd8aef45a8d6b22d73627de,
         type: 3}
       propertyPath: m_Name
-      value: BtnLevel_01 Variant
+      value: BtnLevel_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166983026276573110, guid: fef0c3151dd8aef45a8d6b22d73627de,
+        type: 3}
+      propertyPath: IsUnlocked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

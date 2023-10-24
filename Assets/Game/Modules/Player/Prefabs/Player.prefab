@@ -1325,8 +1325,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5016063178936114487}
-  - component: {fileID: 6835870134222283902}
-  - component: {fileID: 2628501687751464490}
+  - component: {fileID: 7595878039047242310}
+  - component: {fileID: 7044941153883021813}
   m_Layer: 0
   m_Name: Observers
   m_TagString: Untagged
@@ -1349,7 +1349,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5668704310085923179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6835870134222283902
+--- !u!114 &7595878039047242310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1358,11 +1358,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6348497264084746673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d6a01970d4e14f803bb81233912e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 04462fddf80e6a842ab323982a0f9228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _observer: {fileID: 11400000, guid: a629a2ffd5c30004c83e3806afe36095, type: 2}
---- !u!114 &2628501687751464490
+  _observer: {fileID: 11400000, guid: 81d09ec9c8c87a14ebc9fe63bfe1f3f9, type: 2}
+--- !u!114 &7044941153883021813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1371,10 +1371,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6348497264084746673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e893e33554b07fe4db674cb3a2d901a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ed898f14cd3efe4fa4d6555faddcbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _observer: {fileID: 11400000, guid: 5eb13da954e9f15408a1a4814fee4d89, type: 2}
+  _observer: {fileID: 11400000, guid: f2c422fb7a8c53f458837038ef7acb59, type: 2}
 --- !u!1 &6534678613563153815
 GameObject:
   m_ObjectHideFlags: 0
