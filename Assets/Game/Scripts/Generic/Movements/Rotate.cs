@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Game.Modules.Generic.Movements
+namespace Game.Scripts.Generic.Movements
 {
     public class Rotate : MonoBehaviour
     {
@@ -16,6 +16,19 @@ namespace Game.Modules.Generic.Movements
 
         [SerializeField, EnumToggleButtons] private Axis _axis;
         [SerializeField] private float _speed = 1f;
+        
+        private Vector3 _axisVector;
+
+        private void Awake()
+        {
+            _axisVector = _axis switch
+            {
+                Axis.X => Vector3.right,
+                Axis.Y => Vector3.up,
+                Axis.Z => Vector3.forward,
+                _ => Vector3.zero
+            };
+        }
 
         #endregion
 
@@ -23,15 +36,7 @@ namespace Game.Modules.Generic.Movements
 
         private void Update()
         {
-            var axis = _axis switch
-            {
-                Axis.X => Vector3.right,
-                Axis.Y => Vector3.up,
-                Axis.Z => Vector3.forward,
-                _ => Vector3.zero
-            };
-
-            transform.Rotate(axis, _speed * Time.deltaTime);
+            transform.Rotate(_axisVector, _speed * Time.deltaTime);
         }
 
         #endregion
