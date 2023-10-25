@@ -1,3 +1,4 @@
+using Game.Scripts.Generic.PlayerPref;
 using Game.Scripts.Observers;
 using Game.Scripts.Player.Controller;
 using Game.Scripts.Scenes;
@@ -30,6 +31,9 @@ namespace Game.Scripts.Ui.World.Button.Level
         {
             if (data is not SceneData sceneData) return;
 
+            if (sceneData.name != "Menu")
+                PlayerPrefsSave.SetPlayerPositionMenu(transform.position + Vector3.up * 2f);
+            
             PlayerController.RemoveCurrentInteract();
             ScenesManager.LoadScene(sceneData);
         }

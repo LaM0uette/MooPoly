@@ -1,3 +1,4 @@
 {
-	"name": "Managers"
+	"name": "Managers",
+	"references":[ "GUID:c6fb4a75d5209cb47926f91923c9c03a" ]
 }

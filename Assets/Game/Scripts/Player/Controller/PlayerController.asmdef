@@ -1,4 +1,4 @@
 {
 	"name": "PlayerController",
-	"references":[ "GUID:eaed3e60b499d0d419eb4870fb5a534a" ]
+	"references":[ "GUID:eaed3e60b499d0d419eb4870fb5a534a", "GUID:4a2792f6e6f5e2a47a94bfad01faf292" ]
 }
