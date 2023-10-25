@@ -1,4 +1,6 @@
 using Game.Scripts.Observers;
+using Game.Scripts.Scenes;
+using Game.Scripts.ScriptableObjects.SceneData;
 using UnityEngine;
 
 namespace Game.Scripts.Ui.World.Button.Level
@@ -25,9 +27,9 @@ namespace Game.Scripts.Ui.World.Button.Level
 
         public override void OnNotify<T>(T data)
         {
-            if (data is not ButtonLevel buttonLevel) return;
+            if (data is not SceneData sceneData) return;
             
-            Debug.Log("OnNotify: " + buttonLevel.IsUnlocked);
+            ScenesManager.LoadScene(sceneData);
         }
 
         #endregion

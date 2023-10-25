@@ -1,5 +1,7 @@
 using Game.Scripts.Interactable;
 using Game.Scripts.Observers;
+using Game.Scripts.ScriptableObjects.SceneData;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Scripts.Ui.World.Button.Level
@@ -8,10 +10,14 @@ namespace Game.Scripts.Ui.World.Button.Level
     {
         #region Statements
 
+        [Title("Settings")]
         public bool IsUnlocked;
         
-        [SerializeField] private ObserverEvent _observer;
+        [Space, Title("Observer"), SerializeField] private ObserverEvent _observer;
         
+        [Space, Title("SceneData"), SerializeField] private SceneData _sceneData;
+        
+        [Space, Title("Materials")]
         [SerializeField] private Material _unlockMaterial;
         [SerializeField] private Material _lockMaterial;
         [SerializeField] private MeshRenderer _meshRenderer;
@@ -29,7 +35,7 @@ namespace Game.Scripts.Ui.World.Button.Level
         {
             if (!IsUnlocked) return;
             
-            _observer.Notify(this);
+            _observer.Notify(_sceneData);
         }
         
         public Transform GetTransform() => gameObject.transform;
