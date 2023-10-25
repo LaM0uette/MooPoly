@@ -27,6 +27,13 @@ namespace Game.Scripts.Generic.PlayerPref
             var position = new Vector3(float.Parse(positionSplit[0]), float.Parse(positionSplit[1]), float.Parse(positionSplit[2]));
             return position;
         }
+        
+        public static void DeletePlayerPositionMenu()
+        {
+            if (!PlayerPrefs.HasKey(PlayerPositionMenuHash)) return;
+            
+            PlayerPrefs.DeleteKey(PlayerPositionMenuHash);
+        }
 
         #endregion
     }
