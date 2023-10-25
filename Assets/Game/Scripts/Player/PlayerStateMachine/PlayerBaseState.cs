@@ -72,6 +72,11 @@ namespace Game.Scripts.Player.PlayerStateMachine
 
         #region PlayerMovements
 
+        protected void Move()
+        {
+            PlayerStateMachine.Controller.Move(new Vector3(0, PlayerStateMachine.Velocity.y * Time.deltaTime, 0));
+        }
+
         protected void Move(float targetSpeed)
         {
             var moveValue = PlayerStateMachine.Inputs.MoveValue;

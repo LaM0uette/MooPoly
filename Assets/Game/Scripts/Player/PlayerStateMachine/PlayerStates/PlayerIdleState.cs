@@ -44,6 +44,7 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
         public override void Tick(float deltaTime)
         {
             ApplyGravity();
+            Move();
             
             if (!HasAnimationReachedStage(.95f)) 
             {
