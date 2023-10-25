@@ -38,6 +38,12 @@ namespace Game.Scripts.Player.Controller
         #endregion
 
         #region Functions
+        
+        public static void RemoveCurrentInteract()
+        {
+            Interacts.Remove(CurrentInteract);
+            CurrentInteract = null;
+        }
 
         private void SetCurrentInteract()
         {
