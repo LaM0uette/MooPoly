@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Generic.PlayerPref
 {
-    public class PlayerPrefsSave : MonoBehaviour
+    public static class PlayerPrefsSave
     {
         #region Statements
 

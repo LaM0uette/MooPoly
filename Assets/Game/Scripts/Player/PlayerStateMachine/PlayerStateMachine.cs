@@ -109,9 +109,14 @@ namespace Game.Scripts.Player.PlayerStateMachine
         
         #region Functions
         
-        public void Dead()
+        public void Teleport()
         {
-            SwitchState(new PlayerDiedState(this));
+            SwitchState(new PlayerTeleportState(this));
+        }
+        
+        public void Teleport(Vector3 position)
+        {
+            SwitchState(new PlayerTeleportState(this, position));
         }
         
         #endregion

@@ -1238,14 +1238,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: 1
-  renderingStrategy: 0
+  renderingStrategy: 1
   renderingMode: 1
   outlineLayerMask: -1
   primaryBufferSizeMode: 0
   primaryRendererScale: 0.75
-  primarySizeReference: 800
+  primarySizeReference: 1500
   blurShift: 0
-  dilateShift: 1
+  dilateShift: 2
   dilateIterations: 1
   dilateQuality: 1
   blurIterations: 0

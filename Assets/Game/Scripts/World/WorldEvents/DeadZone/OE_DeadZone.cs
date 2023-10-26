@@ -33,7 +33,7 @@ namespace Game.Scripts.World.WorldEvents.DeadZone
 
         public override void OnNotify()
         {
-            _playerStateMachine.Dead();
+            _playerStateMachine.Teleport();
         }
 
         #endregion

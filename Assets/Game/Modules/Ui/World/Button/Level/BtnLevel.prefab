@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsUnlocked: 0
   _observer: {fileID: 11400000, guid: f2c422fb7a8c53f458837038ef7acb59, type: 2}
+  _sceneData: {fileID: 0}
   _unlockMaterial: {fileID: 2100000, guid: 23f343bede491c64ba5c4f108075a9c0, type: 2}
   _lockMaterial: {fileID: 2100000, guid: 51718a10ed04d78488ef170b323b0c59, type: 2}
   _meshRenderer: {fileID: 5711959131590437899}
@@ -567,7 +568,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1872421176702670, guid: e6a1631e01b84b04eae757e1612d0a8b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2682555178144976163}
+    - targetCorrespondingSourceObject: {fileID: 1872421176702670, guid: e6a1631e01b84b04eae757e1612d0a8b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8760284140448663949}
   m_SourcePrefab: {fileID: 100100000, guid: e6a1631e01b84b04eae757e1612d0a8b, type: 3}
 --- !u!4 &5694278148518562017 stripped
 Transform:
@@ -575,6 +584,87 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5699071670334003157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5697490619876466971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1872421176702670, guid: e6a1631e01b84b04eae757e1612d0a8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5699071670334003157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2682555178144976163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697490619876466971}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  complexMaskingMode: 1
+  drawingMode: 1
+  outlineLayer: 0
+  outlineTargets:
+  - IsVisible: 1
+    CutoutMask: 8
+    edgeDilateAmount: 5
+    frontEdgeDilateAmount: 5
+    backEdgeDilateAmount: 5
+    renderer: {fileID: 5711959131590437899}
+    SubmeshIndex: 0
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.5
+    CullMode: 2
+    cutoutTextureName: 
+    DilateRenderingMode: 0
+    cutoutTextureIndex: 0
+  renderStyle: 2
+  outlineParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  backParameters:
+    enabled: 0
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  frontParameters:
+    enabled: 1
+    color: {r: 0.027723404, g: 0.8396226, b: 0.31772926, a: 1}
+    dilateShift: 1
+    blurShift: 0
+    fillPass:
+      shader: {fileID: 4800000, guid: 213090e563021044c92d1c27258b93f0, type: 3}
+      serializedProperties:
+      - PropertyName: _PublicColor
+        Property:
+          ColorValue: {r: 0.027723404, g: 0.8396226, b: 0.31772926, a: 0.16470589}
+          FloatValue: 0
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 0
+--- !u!114 &8760284140448663949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697490619876466971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &5711959131590437899 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 23608628212612062, guid: e6a1631e01b84b04eae757e1612d0a8b,

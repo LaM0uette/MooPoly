@@ -1,3 +1,4 @@
 {
-	"name": "Handler"
+	"name": "Handler",
+	"references":[ "GUID:e17c13f910ef4034fbdaefc0063eacbe", "GUID:74a829038994dd54b8fa97930faf26b8", "GUID:c6fb4a75d5209cb47926f91923c9c03a" ]
 }
