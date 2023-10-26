@@ -36,6 +36,8 @@ namespace Game.Scripts.Player.Controller
 
         private void OnTriggerStay(Collider other)
         {
+            if (!other.TryGetComponent<IInteract>(out _)) return;
+            
             SetCurrentInteract();
         }
 
