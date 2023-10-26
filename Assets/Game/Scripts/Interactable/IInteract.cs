@@ -6,7 +6,7 @@ namespace Game.Scripts.Interactable
     {
         public void Interact();
         public void ShowOutline(bool value);
-        
+        public void ShowUi();
         public Transform GetTransform();
     }
 }

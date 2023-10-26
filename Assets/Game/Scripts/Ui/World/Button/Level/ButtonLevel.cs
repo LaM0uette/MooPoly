@@ -27,7 +27,6 @@ namespace Game.Scripts.Ui.World.Button.Level
         
         private void Start()
         {
-            //_outlinable = GetComponent<Outlinable>();
             _meshRenderer.material = IsUnlocked ? _unlockMaterial : _lockMaterial;
         }
 
@@ -47,6 +46,10 @@ namespace Game.Scripts.Ui.World.Button.Level
             if (!IsUnlocked) return;
             
             _outlinable.enabled = value;
+        }
+
+        public void ShowUi()
+        {
         }
         
         public Transform GetTransform() => gameObject.transform;
