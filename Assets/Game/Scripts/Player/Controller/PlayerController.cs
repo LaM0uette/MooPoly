@@ -29,6 +29,8 @@ namespace Game.Scripts.Player.Controller
             if (!other.TryGetComponent<IInteract>(out var interact)) return;
             Interacts.Remove(interact);
             
+            interact.ShowOutline(false);
+            
             SetCurrentInteract();
         }
 
@@ -51,11 +53,13 @@ namespace Game.Scripts.Player.Controller
         {
             if (Interacts.Count <= 0)
             {
+                CurrentInteract.ShowOutline(false);
                 CurrentInteract = null;
                 return;
             }
             
             CurrentInteract = GetClosestInteract();
+            CurrentInteract.ShowOutline(true);
         }
 
         private IInteract GetClosestInteract()

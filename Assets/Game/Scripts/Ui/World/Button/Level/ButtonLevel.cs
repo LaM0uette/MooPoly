@@ -1,3 +1,4 @@
+using EPOOutline;
 using Game.Scripts.Interactable;
 using Game.Scripts.Observers;
 using Game.Scripts.ScriptableObjects.SceneData;
@@ -22,8 +23,11 @@ namespace Game.Scripts.Ui.World.Button.Level
         [SerializeField] private Material _lockMaterial;
         [SerializeField] private MeshRenderer _meshRenderer;
         
+        [SerializeField] private Outlinable _outlinable;
+        
         private void Start()
         {
+            //_outlinable = GetComponent<Outlinable>();
             _meshRenderer.material = IsUnlocked ? _unlockMaterial : _lockMaterial;
         }
 
@@ -36,6 +40,13 @@ namespace Game.Scripts.Ui.World.Button.Level
             if (!IsUnlocked) return;
             
             _observer.Notify(_sceneData);
+        }
+
+        public void ShowOutline(bool value)
+        {
+            if (!IsUnlocked) return;
+            
+            _outlinable.enabled = value;
         }
         
         public Transform GetTransform() => gameObject.transform;

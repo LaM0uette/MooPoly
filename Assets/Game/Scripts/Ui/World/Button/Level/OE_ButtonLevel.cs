@@ -32,7 +32,7 @@ namespace Game.Scripts.Ui.World.Button.Level
             if (data is not SceneData sceneData) return;
 
             if (sceneData.name != "Menu")
-                PlayerPrefsSave.SetPlayerPositionMenu(transform.position + Vector3.up * 2f);
+                PlayerPrefsSave.SetPlayerPositionMenu(transform.position + Vector3.up);
             
             PlayerController.RemoveCurrentInteract();
             ScenesManager.LoadScene(sceneData);
