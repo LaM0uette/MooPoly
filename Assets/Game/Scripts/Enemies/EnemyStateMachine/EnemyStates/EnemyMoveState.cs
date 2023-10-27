@@ -21,7 +21,13 @@ namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
 
         public override void Tick(float deltaTime)
         {
-            if (EnemyStateMachine.EnemyPath is null) return;
+            if (EnemyStateMachine.EnemyPath is null)
+            {
+                AnimatorSetFloat(EnemyStateMachine.SpeedHash, 0);
+                return;
+            }
+            
+            AnimatorSetFloat(EnemyStateMachine.SpeedHash, 1);
             
             if (EnemyStateMachine.PercentageOfCurve >= 1)
             {
@@ -31,7 +37,6 @@ namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
             }
             
             Move(EnemyStateMachine.EnemyData.MoveSpeed);
-            AnimatorSetFloat(EnemyStateMachine.SpeedHash, 1);
         }
         
         public override void CheckState()

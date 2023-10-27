@@ -2,8 +2,8 @@ using System.Collections;
 using Game.Scripts.BaseStateMachine;
 using Game.Scripts.Enemies.EnemyStateMachine.EnemyStates;
 using Game.Scripts.ScriptableObjects.EnemyData;
+using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Splines;
 
 namespace Game.Scripts.Enemies.EnemyStateMachine
@@ -24,15 +24,18 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         #endregion
         
         #region Statements
-
-        // TEMP: Temporary
-        [FormerlySerializedAs("WalkPath")] public SplineContainer EnemyPath;
-        public float PercentageOfCurve;
-        public float TotalSplineLength;
         
+        // Components
         public Animator Animator { get; private set; }
+        
+        // States
         public bool IsTransitioning { get; private set; }
 
+        // Splines
+        [CanBeNull] public SplineContainer EnemyPath { get; private set; }
+        public float PercentageOfCurve { get; set; }
+        public float TotalSplineLength { get; private set; }
+        
         public EnemyData EnemyData;
 
         private void Awake()
@@ -43,8 +46,8 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         private void Start()
         {
             PercentageOfCurve = 0;
-            TotalSplineLength = EnemyPath.CalculateLength();
-            
+            if (EnemyPath is not null) TotalSplineLength = EnemyPath.CalculateLength();
+
             SwitchState(new EnemyMoveState(this));
         }
 
