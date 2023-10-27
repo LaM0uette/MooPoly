@@ -9,5 +9,9 @@ namespace Game.Scripts.StaticUtilities
         public const string TopDownCamera = "TopDownCamera";
         public const string MapCamera = "MapCamera";
         public const string Confiner = "Confiner";
+        
+        // Parents
+        public const string TurretsParent = "TurretsParent";
+        public const string EnemiesParent = "EnemiesParent";
     }
 }

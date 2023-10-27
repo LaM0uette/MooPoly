@@ -7,6 +7,8 @@ TagManager:
   - TopDownCamera
   - MapCamera
   - Confiner
+  - TurretsParent
+  - EnemiesParent
   layers:
   - Default
   - TransparentFX

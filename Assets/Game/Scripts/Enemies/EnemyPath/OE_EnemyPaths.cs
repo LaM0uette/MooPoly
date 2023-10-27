@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using Game.Scripts.Levels;
 using Game.Scripts.Observers;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -10,8 +10,7 @@ namespace Game.Scripts.Enemies.EnemyPath
         #region Statements
 
         [SerializeField] private ObserverEvent _observer;
-
-        public List<SplineContainer> EnemyPaths;
+        [SerializeField] private LevelManager _levelManager;
 
         #endregion
 
@@ -31,7 +30,7 @@ namespace Game.Scripts.Enemies.EnemyPath
         {
             if (data is not SplineContainer splineContainer) return;
             
-            EnemyPaths.Add(splineContainer);
+            _levelManager.EnemyPaths.Add(splineContainer);
         }
 
         #endregion

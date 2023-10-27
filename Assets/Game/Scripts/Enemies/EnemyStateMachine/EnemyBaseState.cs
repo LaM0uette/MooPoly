@@ -42,6 +42,8 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
 
         protected void Move(float speed)
         {
+            if (EnemyStateMachine.EnemyPath is null) return;
+            
             float distanceToMove = speed / 10 * Time.deltaTime;
             float percentageToMove = distanceToMove / EnemyStateMachine.TotalSplineLength;
 

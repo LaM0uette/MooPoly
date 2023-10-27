@@ -1,7 +1,13 @@
 {
     "name": "Levels",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:656cb231772560048bd76d32d64f774f",
+        "GUID:21d1eb854b91ade49bc69a263d12bee2",
+        "GUID:2e546126843d7704d8a5dfcd2aade73d",
+        "GUID:7c794181f53cc3a418df20ed2a0ba8e0",
+        "GUID:5bb5977b22d6b024fb5d2f4d2096b9c5"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -28,11 +28,14 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         // Components
         public Animator Animator { get; private set; }
         
+        // Properties
+        public float Health { get; set; }
+        
         // States
         public bool IsTransitioning { get; private set; }
 
         // Splines
-        [CanBeNull] public SplineContainer EnemyPath { get; private set; }
+        [CanBeNull] public SplineContainer EnemyPath { get; set; }
         public float PercentageOfCurve { get; set; }
         public float TotalSplineLength { get; private set; }
         
@@ -46,7 +49,9 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         private void Start()
         {
             PercentageOfCurve = 0;
-            if (EnemyPath is not null) TotalSplineLength = EnemyPath.CalculateLength();
+            
+            if (EnemyPath is not null) 
+                TotalSplineLength = EnemyPath.CalculateLength();
 
             SwitchState(new EnemyMoveState(this));
         }

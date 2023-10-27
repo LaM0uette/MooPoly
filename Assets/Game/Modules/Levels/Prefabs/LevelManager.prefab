@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 8518986077700318603}
+  - {fileID: 8188438556147594719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2351414406908367923
@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecaa314f913bbd479bdf38ac9aebbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2173441005909473052
+  LevelData: {fileID: 11400000, guid: 293eb1bd5858dc5459e802cfccc8de54, type: 2}
+--- !u!1 &1357436613951094481
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,22 +54,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8518986077700318603}
-  - component: {fileID: 7908477455204232299}
+  - component: {fileID: 8188438556147594719}
+  - component: {fileID: 3031358966996840462}
   m_Layer: 0
-  m_Name: EnemyPathObserver
+  m_Name: Observers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8518986077700318603
+--- !u!4 &8188438556147594719
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2173441005909473052}
+  m_GameObject: {fileID: 1357436613951094481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -77,17 +78,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3372462108394669914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7908477455204232299
+--- !u!114 &3031358966996840462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2173441005909473052}
+  m_GameObject: {fileID: 1357436613951094481}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d62ae3e4efde1b46bf7edcc5ef96c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _observer: {fileID: 11400000, guid: f08a9fafd6fa2704380536fbbda073a8, type: 2}
-  EnemyPaths: []
+  _levelManager: {fileID: 2351414406908367923}

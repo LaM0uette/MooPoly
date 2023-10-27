@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25babb46c16041842b94d9fe499f9978, type: 3}
+  m_Name: Test_01
+  m_EditorClassIdentifier: 
+  waves:
+  - EnemyPrefab: {fileID: 3071319084952558583, guid: 73d020bf95eb9654485f66ec8b6cf7fc,
+      type: 3}
+    EnemyCount: 5
+    PathIndex: 0
+  - EnemyPrefab: {fileID: 3071319084952558583, guid: 73d020bf95eb9654485f66ec8b6cf7fc,
+      type: 3}
+    EnemyCount: 10
+    PathIndex: 1
+  - EnemyPrefab: {fileID: 3071319084952558583, guid: 73d020bf95eb9654485f66ec8b6cf7fc,
+      type: 3}
+    EnemyCount: 15
+    PathIndex: 2
+  - EnemyPrefab: {fileID: 3071319084952558583, guid: 73d020bf95eb9654485f66ec8b6cf7fc,
+      type: 3}
+    EnemyCount: 20
+    PathIndex: 3
+  - EnemyPrefab: {fileID: 3071319084952558583, guid: 73d020bf95eb9654485f66ec8b6cf7fc,
+      type: 3}
+    EnemyCount: 25
+    PathIndex: 4
+  - EnemyPrefab: {fileID: 3071319084952558583, guid: 73d020bf95eb9654485f66ec8b6cf7fc,
+      type: 3}
+    EnemyCount: 30
+    PathIndex: 5
