@@ -49,14 +49,6 @@ namespace Game.Scripts.Levels
 
         #region Functions
 
-        public Wave GetCurrentWave(bool increment = false)
-        {
-            if (increment) CurrentWaveIndex++;
-            return LevelData.Waves[CurrentWaveIndex];
-        }
-        
-        public int GetWavesCount() => LevelData.Waves.Length;
-
         public IEnumerator SpawnEnemies(GameObject enemyPrefab, SplineContainer enemyPath, int enemyCount, int lifeIncrement)
         {
             for (var i = 0; i < enemyCount; i++)
@@ -72,13 +64,28 @@ namespace Game.Scripts.Levels
             }
         }
         
+        public void StopRepeat() => CancelInvoke(nameof(Repeat));
+        
+        #endregion
+
+        #region Waves
+
+        public Wave GetCurrentWave(bool increment = false) => increment ? LevelData.Waves[++CurrentWaveIndex] : LevelData.Waves[CurrentWaveIndex];
+        public int GetWavesCount() => LevelData.Waves.Length;
+        public bool IsLastWave() => CurrentWaveIndex + 1 >= GetWavesCount();
+
         #endregion
 
         #region Enemy
 
         public void EnemySpawned() => EnemiesAlive++;
         public void EnemyDied() => EnemiesAlive--;
-        public void CheckEnemiesAlive() => CanStartNextWave = EnemiesAlive <= 0;
+
+        public void CheckEnemiesAlive()
+        {
+            if (IsLastWave()) return;
+            CanStartNextWave = EnemiesAlive <= 0;
+        }
 
         #endregion
     }

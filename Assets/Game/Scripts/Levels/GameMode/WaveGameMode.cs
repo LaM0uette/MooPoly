@@ -36,6 +36,12 @@ namespace Game.Scripts.Levels.GameMode
 
         private void CheckNextWave()
         {
+            if (_levelManager.IsLastWave())
+            {
+                _levelManager.StopRepeat();
+                return;
+            }
+            
             if (!_levelManager.CanStartNextWave) return;
             _levelManager.CanStartNextWave = false;
             
@@ -58,10 +64,8 @@ namespace Game.Scripts.Levels.GameMode
         
         private void StartNextWave()
         {
+            Debug.Log("StartNextWave");
             var waveData = _levelManager.GetCurrentWave(true);
-            
-            if (_levelManager.CurrentWaveIndex >= _levelManager.GetWavesCount()) return;
-            
             var enemyPrefab = waveData.EnemyPrefab;
             var pathIndex = waveData.PathIndex % _levelManager.EnemyPaths.Count;
             var enemyPath = _levelManager.EnemyPaths[pathIndex];
