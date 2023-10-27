@@ -48,11 +48,11 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
             EnemyStateMachine.PercentageOfCurve += percentageToMove;
             EnemyStateMachine.PercentageOfCurve = Mathf.Clamp01(EnemyStateMachine.PercentageOfCurve);
 
-            var position = EnemyStateMachine.WalkPath.EvaluatePosition(EnemyStateMachine.PercentageOfCurve);
+            var position = EnemyStateMachine.EnemyPath.EvaluatePosition(EnemyStateMachine.PercentageOfCurve);
             position.y += EnemyStateMachine.EnemyData.HeightOffset;
             EnemyStateMachine.transform.position = position;
 
-            var direction = EnemyStateMachine.WalkPath.EvaluateTangent(EnemyStateMachine.PercentageOfCurve);
+            var direction = EnemyStateMachine.EnemyPath.EvaluateTangent(EnemyStateMachine.PercentageOfCurve);
             EnemyStateMachine.transform.forward = direction;
         }
 

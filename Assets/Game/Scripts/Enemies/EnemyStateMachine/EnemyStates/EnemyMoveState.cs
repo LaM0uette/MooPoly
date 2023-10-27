@@ -21,7 +21,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
 
         public override void Tick(float deltaTime)
         {
-            if (EnemyStateMachine.WalkPath is null) return;
+            if (EnemyStateMachine.EnemyPath is null) return;
             
             if (EnemyStateMachine.PercentageOfCurve >= 1)
             {
