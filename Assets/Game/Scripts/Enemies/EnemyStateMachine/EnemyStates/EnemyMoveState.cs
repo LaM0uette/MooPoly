@@ -1,10 +1,10 @@
 ﻿namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
 {
-    public class EnemyIdleState : EnemyBaseState
+    public class EnemyMoveState : EnemyBaseState
     {
         #region Statements
 
-        public EnemyIdleState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine)
+        public EnemyMoveState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine)
         {
         }
 
@@ -19,7 +19,9 @@
 
         public override void Tick(float deltaTime)
         {
-            Move();
+            Move(EnemyStateMachine.EnemyData.MoveSpeed);
+            
+            AnimatorSetFloat(EnemyStateMachine.SpeedHash, 1);
         }
         
         public override void CheckState()

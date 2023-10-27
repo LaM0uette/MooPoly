@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   BaseLife: 50
-  Speed: 10
+  MoveSpeed: 20
   HeightOffset: 0
   SpawnRate: 2
   CandyDropMax: 4

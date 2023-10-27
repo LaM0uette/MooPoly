@@ -9,7 +9,7 @@ namespace Game.Scripts.ScriptableObjects.EnemyData
         [Space, Title("Settings")]
         [EnumToggleButtons] public EnemyType Type;
         public float BaseLife;
-        public float Speed;
+        public float MoveSpeed;
         
         [Space, Title("Spawn")]
         public float HeightOffset;
