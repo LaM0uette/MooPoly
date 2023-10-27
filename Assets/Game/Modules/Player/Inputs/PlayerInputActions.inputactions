@@ -310,6 +310,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "1D Axis x10",
+                    "id": "c30ca87f-1249-4ed0-9fee-0a8d69a936a4",
+                    "path": "1DAxis(minValue=-10,maxValue=10)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ModifyTimeScale",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "dcb3fa01-9d28-4719-b3a2-3875e753fc20",
+                    "path": "<Keyboard>/numpadPlus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Desktop",
+                    "action": "ModifyTimeScale",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "20e5a0be-38cf-4770-a710-404e7ff732d0",
+                    "path": "<Keyboard>/numpadMinus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Desktop",
+                    "action": "ModifyTimeScale",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "99395ba0-ea34-470f-a01f-0eb6816824d2",
                     "path": "<Keyboard>/end",
