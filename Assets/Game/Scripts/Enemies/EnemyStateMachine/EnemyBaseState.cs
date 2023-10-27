@@ -42,7 +42,18 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
 
         protected void Move(float speed)
         {
-            // TODO: Move enemy
+            float distanceToMove = speed / 10 * Time.deltaTime;
+            float percentageToMove = distanceToMove / EnemyStateMachine.TotalSplineLength;
+
+            EnemyStateMachine.PercentageOfCurve += percentageToMove;
+            EnemyStateMachine.PercentageOfCurve = Mathf.Clamp01(EnemyStateMachine.PercentageOfCurve);
+
+            var position = EnemyStateMachine.WalkPath.EvaluatePosition(EnemyStateMachine.PercentageOfCurve);
+            position.y += EnemyStateMachine.EnemyData.HeightOffset;
+            EnemyStateMachine.transform.position = position;
+
+            var direction = EnemyStateMachine.WalkPath.EvaluateTangent(EnemyStateMachine.PercentageOfCurve);
+            EnemyStateMachine.transform.forward = direction;
         }
 
         #endregion

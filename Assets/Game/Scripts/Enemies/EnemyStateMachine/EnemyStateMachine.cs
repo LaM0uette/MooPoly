@@ -3,6 +3,7 @@ using Game.Scripts.BaseStateMachine;
 using Game.Scripts.Enemies.EnemyStateMachine.EnemyStates;
 using Game.Scripts.ScriptableObjects.EnemyData;
 using UnityEngine;
+using UnityEngine.Splines;
 
 namespace Game.Scripts.Enemies.EnemyStateMachine
 {
@@ -22,6 +23,11 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         #endregion
         
         #region Statements
+
+        // TEMP: Temporary
+        public SplineContainer WalkPath;
+        public float PercentageOfCurve;
+        public float TotalSplineLength;
         
         public Animator Animator { get; private set; }
         public bool IsTransitioning { get; private set; }
@@ -35,6 +41,9 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
 
         private void Start()
         {
+            PercentageOfCurve = 0;
+            TotalSplineLength = WalkPath.CalculateLength();
+            
             SwitchState(new EnemyMoveState(this));
         }
 
@@ -54,6 +63,15 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         {
             yield return new WaitForSeconds(delay);
             IsTransitioning = false;
+        }
+
+        #endregion
+
+        #region Functions
+
+        public void Dead()
+        {
+            Destroy(gameObject);
         }
 
         #endregion
