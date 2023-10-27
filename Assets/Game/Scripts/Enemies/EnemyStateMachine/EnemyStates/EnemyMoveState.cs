@@ -31,7 +31,6 @@ namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
             
             if (EnemyStateMachine.PercentageOfCurve >= 1)
             {
-                Debug.Log("FIN !");
                 EnemyStateMachine.Dead();
                 return;
             }

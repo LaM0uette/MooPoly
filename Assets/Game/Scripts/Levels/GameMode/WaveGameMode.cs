@@ -63,7 +63,8 @@ namespace Game.Scripts.Levels.GameMode
             if (_levelManager.CurrentWaveIndex >= _levelManager.GetWavesCount()) return;
             
             var enemyPrefab = waveData.EnemyPrefab;
-            var enemyPath = _levelManager.EnemyPaths[waveData.PathIndex];
+            var pathIndex = waveData.PathIndex % _levelManager.EnemyPaths.Count;
+            var enemyPath = _levelManager.EnemyPaths[pathIndex];
             var enemyCount = waveData.EnemyCount;
             
             StartCoroutine(_levelManager.SpawnEnemies(enemyPrefab, enemyPath, enemyCount, _levelManager.CurrentWaveIndex));

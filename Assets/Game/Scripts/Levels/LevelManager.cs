@@ -73,5 +73,13 @@ namespace Game.Scripts.Levels
         }
         
         #endregion
+
+        #region Enemy
+
+        public void EnemySpawned() => EnemiesAlive++;
+        public void EnemyDied() => EnemiesAlive--;
+        public void CheckEnemiesAlive() => CanStartNextWave = EnemiesAlive <= 0;
+
+        #endregion
     }
 }
