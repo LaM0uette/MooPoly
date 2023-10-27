@@ -1,0 +1,16 @@
+{
+    "name": "EnemyStateMachine",
+    "rootNamespace": "",
+    "references": [
+        "GUID:74a829038994dd54b8fa97930faf26b8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
