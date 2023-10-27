@@ -19,12 +19,12 @@ MonoBehaviour:
     AfterOpaque: 0
     Source: 1
     NormalSamples: 1
-    Intensity: 3.01
-    DirectLightingStrength: 0.6
-    Radius: 0.4
-    Samples: 0
-    BlurQuality: 0
-    Falloff: 65
+    Intensity: 1.6
+    DirectLightingStrength: 0.696
+    Radius: 0.27
+    Samples: 1
+    BlurQuality: 1
+    Falloff: 61.19
     SampleCount: -1
   m_BlueNoise256Textures:
   - {fileID: 2800000, guid: 36f118343fc974119bee3d09e2111500, type: 3}

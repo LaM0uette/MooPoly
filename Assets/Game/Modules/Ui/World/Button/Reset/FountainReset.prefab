@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6604280286278458021}
   - component: {fileID: 5802141758309365762}
   - component: {fileID: 2668587545141632944}
+  - component: {fileID: 7112092641178897333}
   m_Layer: 0
   m_Name: FountainReset
   m_TagString: Untagged
@@ -294,15 +295,15 @@ MonoBehaviour:
       serializedProperties: []
   frontParameters:
     enabled: 1
-    color: {r: 0, g: 0.4658259, b: 0.5686275, a: 1}
-    dilateShift: 1
+    color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 1}
+    dilateShift: 0.5
     blurShift: 0
     fillPass:
       shader: {fileID: 4800000, guid: 213090e563021044c92d1c27258b93f0, type: 3}
       serializedProperties:
       - PropertyName: _PublicColor
         Property:
-          ColorValue: {r: 0.37833747, g: 0.6717435, b: 0.735849, a: 0.39215687}
+          ColorValue: {r: 2, g: 2, b: 2, a: 0.27450982}
           FloatValue: 0
           VectorValue: {x: 0, y: 0, z: 0, w: 0}
           PropertyType: 0
@@ -318,6 +319,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222eae8efc09d3b47b82e44a3cf5fc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7112092641178897333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242056630029759953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &481144216713851367
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +343,7 @@ GameObject:
   - component: {fileID: 4606979669073289418}
   - component: {fileID: 8815941066207399500}
   - component: {fileID: 1802646946210444034}
+  - component: {fileID: 2269835087258029146}
   m_Layer: 0
   m_Name: SM_Env_Fountain_Statue_01
   m_TagString: Untagged
@@ -425,6 +439,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43008284755128168, guid: c7e4ece64e297ed4395fe060675823e8, type: 2}
+--- !u!114 &2269835087258029146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481144216713851367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3105789596113221594
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +462,7 @@ GameObject:
   - component: {fileID: 6329556863344349307}
   - component: {fileID: 7918114253585801463}
   - component: {fileID: 4655326794539568685}
+  - component: {fileID: 4577219259752307550}
   m_Layer: 0
   m_Name: SM_Env_Fountain_Lillies_01
   m_TagString: Untagged
@@ -508,6 +535,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4577219259752307550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105789596113221594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5940211680553509689
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +558,7 @@ GameObject:
   - component: {fileID: 6722407731569256030}
   - component: {fileID: 2827494842106590497}
   - component: {fileID: 1086314070381920206}
+  - component: {fileID: 6090031458365979854}
   m_Layer: 0
   m_Name: SM_Env_Fountain_Water_01
   m_TagString: Untagged
@@ -591,6 +631,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6090031458365979854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940211680553509689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8803320368594402396
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +654,7 @@ GameObject:
   - component: {fileID: 970079102406841218}
   - component: {fileID: 7572940297780775216}
   - component: {fileID: 6661084102293575165}
+  - component: {fileID: 5280676703462285095}
   m_Layer: 0
   m_Name: SM_Env_Fountain_Statue_Water_01
   m_TagString: Untagged
@@ -674,3 +727,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5280676703462285095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803320368594402396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

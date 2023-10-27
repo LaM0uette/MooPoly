@@ -5400,8 +5400,8 @@ Transform:
   m_GameObject: {fileID: 6887410514465422015}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000037252899, y: -0, z: -0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 3.8418763, y: 58.667, z: -50.13788}
-  m_LocalScale: {x: 97.02378, y: 97.02378, z: 97.02378}
+  m_LocalPosition: {x: 8.060736, y: 23.46955, z: -5.9659557}
+  m_LocalScale: {x: 45.128284, y: 45.128284, z: 45.128284}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 155809508421089268}
@@ -5422,7 +5422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forecastProfile: {fileID: 11400000, guid: 8a6296a55ec94494fa4791955335bbcc, type: 2}
-  weatherSelectionMode: 1
+  weatherSelectionMode: 0
   currentForecast: []
   weatherTransitionTime: 15
   weatherTimer: -15810
@@ -5434,13 +5434,13 @@ MonoBehaviour:
   currentTemperature: 1.3241118
   currentTemperatureCelsius: -17.04216
   currentPrecipitation: 49.265995
-  currentWeather: {fileID: 11400000, guid: ae94c1a397a01e442a11e8b23ebb1cef, type: 2}
+  currentWeather: {fileID: 11400000, guid: 48908a08bbd076e4182bc3ca961b9c34, type: 2}
   weatherChangeCheck: {fileID: 0}
   weightedWeatherProfiles:
   - weight: 1
-    profile: {fileID: 11400000, guid: ae94c1a397a01e442a11e8b23ebb1cef, type: 2}
+    profile: {fileID: 11400000, guid: 48908a08bbd076e4182bc3ca961b9c34, type: 2}
     transitioning: 1
-  fogDensity: 1.03
+  fogDensity: 1
   usePhysicalSunHeight: 0
   sunDirection: 53
   sunPitch: 14.9
@@ -5451,7 +5451,7 @@ MonoBehaviour:
   highAltitudeCloudColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
   sunlightColor: {r: 1.9686275, g: 1.9294118, b: 1.6470588, a: 1}
   starColor: {r: 0, g: 0, b: 0, a: 0}
-  ambientLightHorizonColor: {r: 0.6784314, g: 0.9019608, b: 1, a: 1}
+  ambientLightHorizonColor: {r: 0.6784314, g: 0.90196073, b: 1, a: 1}
   ambientLightZenithColor: {r: 0.08627451, g: 0.18239687, b: 0.39607844, a: 1}
   ambientLightMultiplier: 1
   galaxyIntensity: 0
@@ -5530,7 +5530,7 @@ MonoBehaviour:
   cozyCamera: {fileID: 0}
   cozyMaterials: {fileID: 4280888622329805709}
   VFX: {fileID: 5570093957817631958}
-  window: 1
+  window: 2
   icon1: {fileID: 2800000, guid: 75645812b98cbf94b9dd8d2f9401cf16, type: 3}
   icon2: {fileID: 2800000, guid: c669197bbed6f144b9740e40895f04e0, type: 3}
   icon3: {fileID: 2800000, guid: e51b7563b2e461141a757c1b77ca0217, type: 3}
@@ -5542,7 +5542,7 @@ MonoBehaviour:
   timeBlocksWindow: 1
   curveWindow: 1
   tickLengthWindow: 1
-  currentWeatherWindow: 0
+  currentWeatherWindow: 1
   forecastWindow: 1
   climateWindow: 0
   win1: 0
@@ -5567,13 +5567,13 @@ MonoBehaviour:
   - {fileID: 7608874416423791865}
   currentWeatherProfiles:
   - weight: 1
-    profile: {fileID: 11400000, guid: ae94c1a397a01e442a11e8b23ebb1cef, type: 2}
+    profile: {fileID: 11400000, guid: 48908a08bbd076e4182bc3ca961b9c34, type: 2}
     transitioning: 1
   setupProfiles: []
   queuedWeather: []
   possibleFilters: []
   atmosphereControl: 0
-  timeControl: 0
+  timeControl: 1
   skyStyle: 0
   cloudStyle: 7
   fogStyle: 1
@@ -5914,7 +5914,7 @@ MonoBehaviour:
   cloudChunkPrefab: {fileID: 8377891541840844724, guid: 14274e75fd089eb4d8a6f636d963d186,
     type: 3}
   coverageIntensityOffset: 0
-  cloudCoverage: 0.36089998
+  cloudCoverage: 0.15
   bendToHorizonMultiplier: 0.1
   offset: {x: 0, y: 0, z: 0}
   matrixHolder: {fileID: 0}
@@ -6019,7 +6019,7 @@ MonoBehaviour:
     endKey: 0.875
     colorBlocks:
     - {fileID: 11400000, guid: 98f1b3df4bcd8d34a9cea285fb0da7f8, type: 2}
-    seed: 634864513
+    seed: 1360897379
     selectedBlock: {fileID: 11400000, guid: 98f1b3df4bcd8d34a9cea285fb0da7f8, type: 2}
   - startKey: 0.875
     endKey: 0.9166667

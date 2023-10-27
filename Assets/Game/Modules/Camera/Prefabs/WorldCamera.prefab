@@ -1243,7 +1243,7 @@ MonoBehaviour:
   outlineLayerMask: -1
   primaryBufferSizeMode: 1
   primaryRendererScale: 0.5
-  primarySizeReference: 1300
+  primarySizeReference: 1400
   blurShift: 0
   dilateShift: 2
   dilateIterations: 1
