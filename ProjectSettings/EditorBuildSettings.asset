@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Level/Plain/PlainLevel_01.unity
     guid: bf6d225ad5da7af4db27aa9ec4ba6e54
+  - enabled: 1
+    path: Assets/Game/Scenes/_demo/DemoEnemyTurret.unity
+    guid: 6ab6df6315fb04047b402234a20089a3
   m_configObjects: {}
