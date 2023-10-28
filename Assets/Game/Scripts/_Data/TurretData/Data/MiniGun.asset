@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: MiniGun
   Type: 0
   Cost: 150
-  BuildTime: 3
+  BuildTime: 1
   Damage: 5
   Range: 20
   FireRate: 200

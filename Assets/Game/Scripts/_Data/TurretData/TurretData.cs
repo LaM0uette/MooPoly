@@ -12,7 +12,7 @@ namespace Game.Scripts._Data.TurretData
         
         [Space, Title("Build")]
         public int Cost;
-        public float BuildTime;
+        [Range(0, 1f)] public float BuildTime;
         
         [Space, Title("Stats")]
         public float Damage;

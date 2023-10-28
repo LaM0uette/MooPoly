@@ -16,9 +16,10 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
 
         public override void Enter()
         {
+            //TurretStateMachine.OnUpdateRepeating += SearchEnemy;
         }
 
-        public override void Tick(float deltaTime)
+        public override void TickFixed(float deltaTime)
         {
             Rotate();
         }
@@ -29,6 +30,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
 
         public override void Exit()
         {
+            //TurretStateMachine.OnUpdateRepeating -= SearchEnemy;
         }
 
         #endregion

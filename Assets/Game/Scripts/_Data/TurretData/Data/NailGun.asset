@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: NailGun
   Type: 1
   Cost: 180
-  BuildTime: 3
+  BuildTime: 1
   Damage: 8
   Range: 16
   FireRate: 160

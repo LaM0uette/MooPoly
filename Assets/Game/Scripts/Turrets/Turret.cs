@@ -11,6 +11,9 @@ namespace Game.Scripts.Turrets
         // Settings
         public TurretType Type { get; set; }
         
+        // Build
+        public float BuildTime { get; set; }
+        
         // Stats
         public float Damage { get; set; }
         public float Range { get; set; }
@@ -25,6 +28,7 @@ namespace Game.Scripts.Turrets
         public void Init(TurretData turretData)
         {
             Type = turretData.Type;
+            BuildTime = turretData.BuildTime;
             Damage = turretData.Damage;
             Range = turretData.Range;
             FireRate = turretData.FireRate;
