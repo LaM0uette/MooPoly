@@ -44,8 +44,8 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         {
             if (EnemyStateMachine.EnemyPath is null) return;
             
-            float distanceToMove = speed / 10 * Time.deltaTime;
-            float percentageToMove = distanceToMove / EnemyStateMachine.TotalSplineLength;
+            var distanceToMove = speed / 10 * Time.deltaTime;
+            var percentageToMove = distanceToMove / EnemyStateMachine.TotalSplineLength;
 
             EnemyStateMachine.PercentageOfCurve += percentageToMove;
             EnemyStateMachine.PercentageOfCurve = Mathf.Clamp01(EnemyStateMachine.PercentageOfCurve);
