@@ -1,11 +1,10 @@
-using Game.Scripts.Levels;
 using Game.Scripts.Observers;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace Game.Scripts.Enemies.EnemyPath
+namespace Game.Scripts.Levels.Observers
 {
-    public class OE_EnemyPaths : Observer
+    public class OE_LevelEnemyPaths : Observer
     {
         #region Statements
 
