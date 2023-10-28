@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Game.Scripts.ScriptableObjects.EnemyData
+namespace Game.Scripts._Data.EnemyData
 {
     [CreateAssetMenu(menuName = "MooPloy_Data/EnemyData")]
     public class EnemyData : ScriptableObject

@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Scripts.ScriptableObjects.LevelData
+namespace Game.Scripts._Data.LevelData
 {
     [Serializable]
     public struct Wave
     {
-        public EnemyData.EnemyData EnemyData;
+        public _Data.EnemyData.EnemyData EnemyData;
         public int EnemyCount;
         [Range(0, 5)] public int PathIndex;
     }

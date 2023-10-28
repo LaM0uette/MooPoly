@@ -1,4 +1,4 @@
-using Game.Scripts.ScriptableObjects.EnemyData;
+using Game.Scripts._Data.EnemyData;
 
 namespace Game.Scripts.Enemies.EnemyFactory
 {

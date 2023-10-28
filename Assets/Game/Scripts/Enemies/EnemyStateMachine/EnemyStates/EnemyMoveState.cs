@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
+﻿namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
 {
     public class EnemyMoveState : EnemyBaseState
     {

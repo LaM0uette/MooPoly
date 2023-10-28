@@ -1,7 +1,7 @@
 using EPOOutline;
+using Game.Scripts._Data.SceneData;
 using Game.Scripts.Interactable;
 using Game.Scripts.Observers;
-using Game.Scripts.ScriptableObjects.SceneData;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

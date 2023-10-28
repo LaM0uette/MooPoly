@@ -1,4 +1,4 @@
-using Game.Scripts.ScriptableObjects.SceneData;
+using Game.Scripts._Data.SceneData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

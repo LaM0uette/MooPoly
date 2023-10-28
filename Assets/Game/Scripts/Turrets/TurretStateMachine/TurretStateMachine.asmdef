@@ -1,0 +1,4 @@
+{
+	"name": "TurretStateMachine",
+	"references":[ "GUID:74a829038994dd54b8fa97930faf26b8", "GUID:c04b3b346abec2f4ba16ed62fc8d0d72", "GUID:013a0eed22954c945b389cc511bc14ef" ]
+}

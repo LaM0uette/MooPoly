@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Scripts._Data.EnemyData;
+using Game.Scripts._Data.LevelData;
 using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.Levels.GameMode;
-using Game.Scripts.ScriptableObjects.EnemyData;
-using Game.Scripts.ScriptableObjects.LevelData;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 using UnityEngine.Splines;
