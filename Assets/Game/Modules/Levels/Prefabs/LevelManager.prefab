@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8188438556147594719}
   - component: {fileID: 3031358966996840462}
-  - component: {fileID: 8762723913488581464}
+  - component: {fileID: 6554544482206273230}
   m_Layer: 0
   m_Name: Observers
   m_TagString: Untagged
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _observer: {fileID: 11400000, guid: f08a9fafd6fa2704380536fbbda073a8, type: 2}
   _levelManager: {fileID: 2351414406908367923}
---- !u!114 &8762723913488581464
+--- !u!114 &6554544482206273230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

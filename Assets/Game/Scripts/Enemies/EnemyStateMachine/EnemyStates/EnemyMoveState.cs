@@ -35,7 +35,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
                 return;
             }
             
-            Move(EnemyStateMachine.EnemyData.MoveSpeed);
+            Move(EnemyStateMachine.Enemy.MoveSpeed);
         }
         
         public override void CheckState()

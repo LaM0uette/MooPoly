@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Scripts.Enemies.EnemyBuild;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.Levels.GameMode;
+using Game.Scripts.ScriptableObjects.EnemyData;
 using Game.Scripts.ScriptableObjects.LevelData;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
@@ -53,18 +55,28 @@ namespace Game.Scripts.Levels
 
         #region Functions
 
-        public IEnumerator SpawnEnemies(GameObject enemyPrefab, SplineContainer enemyPath, int enemyCount, int lifeIncrement)
+        public IEnumerator SpawnEnemies(EnemyData enemyData, SplineContainer enemyPath, int enemyCount, int lifeIncrement)
         {
             for (var i = 0; i < enemyCount; i++)
             {
-                var enemyGameObject = Instantiate(enemyPrefab, enemyPath.transform.position, Quaternion.identity, _enemiesParent.transform);
+                var enemyGameObject = Instantiate(enemyData.Prefab, enemyPath.transform.position, Quaternion.identity, _enemiesParent.transform);
                 var enemyStateMachine = enemyGameObject.GetComponent<EnemyStateMachine>();
-                var enemyData = enemyStateMachine.EnemyData;
+                
+                var enemy = new Enemy
+                {
+                    Type = enemyData.Type,
+                    Health = enemyData.BaseLife + enemyData.BaseLife / 2 * lifeIncrement,
+                    MoveSpeed = enemyData.MoveSpeed,
+                    HeightOffset = enemyData.HeightOffset,
+                    SpawnRate = enemyData.SpawnRate,
+                    CandyDropMax = enemyData.CandyDropMax,
+                    SuperCandyChance = enemyData.SuperCandyChance
+                };
         
-                enemyStateMachine.Health = enemyData.BaseLife + enemyData.BaseLife / 2 * lifeIncrement;
+                enemyStateMachine.Enemy = enemy;
                 enemyStateMachine.EnemyPath = enemyPath;
 
-                yield return new WaitForSeconds(enemyData.SpawnRate);
+                yield return new WaitForSeconds(enemy.SpawnRate);
             }
         }
         

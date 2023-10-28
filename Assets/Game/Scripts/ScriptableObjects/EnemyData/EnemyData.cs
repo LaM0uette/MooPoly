@@ -8,6 +8,7 @@ namespace Game.Scripts.ScriptableObjects.EnemyData
     {
         [Space, Title("Settings")]
         [EnumToggleButtons] public EnemyType Type;
+        public GameObject Prefab;
         public float BaseLife;
         public float MoveSpeed;
         

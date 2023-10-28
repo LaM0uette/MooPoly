@@ -66,12 +66,12 @@ namespace Game.Scripts.Levels.GameMode
         {
             Debug.Log("StartNextWave");
             var waveData = _levelManager.GetCurrentWave(true);
-            var enemyPrefab = waveData.EnemyPrefab;
+            var enemyData = waveData.EnemyData;
             var pathIndex = waveData.PathIndex % _levelManager.EnemyPaths.Count;
             var enemyPath = _levelManager.EnemyPaths[pathIndex];
             var enemyCount = waveData.EnemyCount;
             
-            StartCoroutine(_levelManager.SpawnEnemies(enemyPrefab, enemyPath, enemyCount, _levelManager.CurrentWaveIndex));
+            StartCoroutine(_levelManager.SpawnEnemies(enemyData, enemyPath, enemyCount, _levelManager.CurrentWaveIndex));
         }
         
         #endregion

@@ -13,27 +13,21 @@ MonoBehaviour:
   m_Name: Test_01
   m_EditorClassIdentifier: 
   waves:
-  - EnemyPrefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1,
-      type: 3}
+  - EnemyData: {fileID: 11400000, guid: 6651d98dc1a02b842af88cedee20ea08, type: 2}
     EnemyCount: 5
     PathIndex: 0
-  - EnemyPrefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1,
-      type: 3}
+  - EnemyData: {fileID: 11400000, guid: 6651d98dc1a02b842af88cedee20ea08, type: 2}
     EnemyCount: 10
     PathIndex: 1
-  - EnemyPrefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1,
-      type: 3}
+  - EnemyData: {fileID: 11400000, guid: 6651d98dc1a02b842af88cedee20ea08, type: 2}
     EnemyCount: 15
     PathIndex: 2
-  - EnemyPrefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1,
-      type: 3}
+  - EnemyData: {fileID: 11400000, guid: 6651d98dc1a02b842af88cedee20ea08, type: 2}
     EnemyCount: 20
     PathIndex: 3
-  - EnemyPrefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1,
-      type: 3}
+  - EnemyData: {fileID: 11400000, guid: 6651d98dc1a02b842af88cedee20ea08, type: 2}
     EnemyCount: 25
     PathIndex: 4
-  - EnemyPrefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1,
-      type: 3}
+  - EnemyData: {fileID: 11400000, guid: 6651d98dc1a02b842af88cedee20ea08, type: 2}
     EnemyCount: 30
     PathIndex: 5

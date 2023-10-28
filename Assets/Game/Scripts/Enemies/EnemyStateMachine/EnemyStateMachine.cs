@@ -1,7 +1,8 @@
-using System;
 using System.Collections;
 using Game.Scripts.BaseStateMachine;
+using Game.Scripts.Enemies.EnemyBuild;
 using Game.Scripts.Enemies.EnemyStateMachine.EnemyStates;
+using Game.Scripts.Observers;
 using Game.Scripts.ScriptableObjects.EnemyData;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -28,9 +29,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         
         // Components
         public Animator Animator { get; private set; }
-        
-        // Properties
-        public float Health { get; set; }
+        public Enemy Enemy { get; set; } = new();
         
         // States
         public bool IsTransitioning { get; private set; }
@@ -39,9 +38,9 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         [CanBeNull] public SplineContainer EnemyPath { get; set; }
         public float PercentageOfCurve { get; set; }
         public float TotalSplineLength { get; private set; }
-        
-        public EnemyData EnemyData;
 
+        [SerializeField] private ObserverEvent _observer;
+        
         private void Awake()
         {
             Animator = GetComponent<Animator>();
@@ -57,6 +56,20 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
             SwitchState(new EnemyMoveState(this));
         }
 
+        #endregion
+        
+        #region Events
+        
+        private void OnEnable()
+        {
+            _observer.Notify(true);
+        }
+        
+        private void OnDisable()
+        {
+            _observer.Notify(false);
+        }
+        
         #endregion
         
         #region Animations

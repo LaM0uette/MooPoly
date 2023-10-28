@@ -7,7 +7,7 @@ namespace Game.Scripts.ScriptableObjects.LevelData
     [Serializable]
     public struct Wave
     {
-        public GameObject EnemyPrefab;
+        public EnemyData.EnemyData EnemyData;
         public int EnemyCount;
         [Range(0, 5)] public int PathIndex;
     }
