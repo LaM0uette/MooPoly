@@ -33,17 +33,21 @@ namespace Game.Scripts.Levels
         {
             _currentGameMode.StartMode();
             
-            InvokeRepeating(nameof(Repeat), 5f, 1f);
+            InvokeRepeat(5f, 1f);
         }
 
         #endregion
         
-        #region GameMode
+        #region Game
 
         private void Repeat()
         {
             _currentGameMode.RepeatMode();
         }
+        
+        private void InvokeRepeat(float startTime, float repeatRate) => InvokeRepeating(nameof(Repeat), startTime, repeatRate);
+        
+        public void StopRepeat() => CancelInvoke(nameof(Repeat));
 
         #endregion
 
@@ -64,15 +68,12 @@ namespace Game.Scripts.Levels
             }
         }
         
-        public void StopRepeat() => CancelInvoke(nameof(Repeat));
-        
         #endregion
 
         #region Waves
 
         public Wave GetCurrentWave(bool increment = false) => increment ? LevelData.Waves[++CurrentWaveIndex] : LevelData.Waves[CurrentWaveIndex];
-        public int GetWavesCount() => LevelData.Waves.Length;
-        public bool IsLastWave() => CurrentWaveIndex + 1 >= GetWavesCount();
+        public bool IsLastWave() => CurrentWaveIndex + 1 >= LevelData.Waves.Length;
 
         #endregion
 
