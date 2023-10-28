@@ -1,6 +1,6 @@
 using System.Collections;
 using Game.Scripts.BaseStateMachine;
-using Game.Scripts.Enemies.EnemyBuild;
+using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine.EnemyStates;
 using Game.Scripts.Observers;
 using Game.Scripts.ScriptableObjects.EnemyData;

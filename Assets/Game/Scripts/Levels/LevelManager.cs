@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Game.Scripts.Enemies.EnemyBuild;
+using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.Levels.GameMode;
 using Game.Scripts.ScriptableObjects.EnemyData;
@@ -62,16 +62,8 @@ namespace Game.Scripts.Levels
                 var enemyGameObject = Instantiate(enemyData.Prefab, enemyPath.transform.position, Quaternion.identity, _enemiesParent.transform);
                 var enemyStateMachine = enemyGameObject.GetComponent<EnemyStateMachine>();
                 
-                var enemy = new Enemy
-                {
-                    Type = enemyData.Type,
-                    Health = enemyData.BaseLife + enemyData.BaseLife / 2 * lifeIncrement,
-                    MoveSpeed = enemyData.MoveSpeed,
-                    HeightOffset = enemyData.HeightOffset,
-                    SpawnRate = enemyData.SpawnRate,
-                    CandyDropMax = enemyData.CandyDropMax,
-                    SuperCandyChance = enemyData.SuperCandyChance
-                };
+                var newHealth = enemyData.BaseLife + enemyData.BaseLife / 2 * lifeIncrement;
+                var enemy = EnemyFactory.CreateEnemy(enemyData, newHealth);
         
                 enemyStateMachine.Enemy = enemy;
                 enemyStateMachine.EnemyPath = enemyPath;

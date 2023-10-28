@@ -1,6 +1,6 @@
 using Game.Scripts.ScriptableObjects.EnemyData;
 
-namespace Game.Scripts.Enemies.EnemyBuild
+namespace Game.Scripts.Enemies.EnemyFactory
 {
     public class Enemy
     {
