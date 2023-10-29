@@ -49,6 +49,13 @@ namespace Game.Scripts.Turrets
             Bullet = BulletFactory.Create(turretData.BulletData);
         }
 
+        protected void InstanciateBullet(EnemyStateMachine enemy)
+        {
+            var bulletGo = Instantiate(Bullet.Prefab, FirePoint.position, FirePoint.rotation, BulletsParent.transform);
+            var bulletBehaviour = bulletGo.GetComponent<BulletBehaviour>();
+            bulletBehaviour.Init(enemy, Damage);
+        }
+
         public abstract void Shoot(EnemyStateMachine enemy);
 
         #endregion

@@ -1,4 +1,4 @@
 {
 	"name": "MooCoins",
-	"references":[ "GUID:6579b6d7813ed224d897b1dc732ebca1", "GUID:5bb5977b22d6b024fb5d2f4d2096b9c5" ]
+	"references":[ "GUID:6579b6d7813ed224d897b1dc732ebca1", "GUID:5bb5977b22d6b024fb5d2f4d2096b9c5", "GUID:7e6ebce566e7ca14cb0ca351f26d09cd" ]
 }

@@ -1,3 +1,4 @@
+using Game.Scripts.Observers;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 
@@ -6,6 +7,10 @@ namespace Game.Scripts.MooCoins
     public class MooCoinBehaviour : MonoBehaviour
     {
         #region Statements
+        
+        public MooCoin MooCoin { get; set; } = new();
+        
+        [SerializeField] private ObserverEvent _observer;
 
         private float _speedMovement = 3f;
         private GameObject _playerTarget;
@@ -26,7 +31,6 @@ namespace Game.Scripts.MooCoins
         {
             if (_playerTarget is null) return;
             
-            //_speedMovement += Time.deltaTime * 6;
             _speedMovement *= 1.3f;
             
             var pos = transform.position;
@@ -50,7 +54,7 @@ namespace Game.Scripts.MooCoins
 
         private void Earn()
         {
-            //_observableEvent.Notify(_candyData);
+            _observer.Notify(MooCoin);
             Destroy(gameObject);
         }
 
