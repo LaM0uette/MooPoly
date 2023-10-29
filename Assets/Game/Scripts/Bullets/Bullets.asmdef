@@ -1,4 +1,18 @@
 {
-	"name": "Bullets",
-	"references":[ "GUID:d10dd2a8de33d1c46ac2cb78240dc4d2" ]
+    "name": "Bullets",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d10dd2a8de33d1c46ac2cb78240dc4d2",
+        "GUID:74a829038994dd54b8fa97930faf26b8",
+        "GUID:2e546126843d7704d8a5dfcd2aade73d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
