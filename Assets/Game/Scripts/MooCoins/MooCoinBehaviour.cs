@@ -4,16 +4,23 @@ using UnityEngine;
 
 namespace Game.Scripts.MooCoins
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class MooCoinBehaviour : MonoBehaviour
     {
         #region Statements
         
+        public Rigidbody Rigidbody { get; set; } = new();
         public MooCoin MooCoin { get; set; } = new();
         
         [SerializeField] private ObserverEvent _observer;
 
         private float _speedMovement = 3f;
         private GameObject _playerTarget;
+
+        private void Awake()
+        {
+            Rigidbody = GetComponent<Rigidbody>();
+        }
 
         #endregion
 

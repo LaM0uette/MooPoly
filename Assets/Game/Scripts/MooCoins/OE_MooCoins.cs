@@ -28,7 +28,6 @@ namespace Game.Scripts.MooCoins
             if (data is not MooCoin mooCoin) return;
             
             Debug.Log($"MooCoin: {mooCoin.CandyEarned}");
-            //_levelManager.EnemyPaths.Add(splineContainer);
         }
 
         #endregion

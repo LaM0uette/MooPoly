@@ -19,6 +19,8 @@
 
         public override void Tick(float deltaTime)
         {
+            EnemyStateMachine.CheckHealth();
+            
             if (EnemyStateMachine.EnemyPath is null)
             {
                 AnimatorSetFloat(EnemyStateMachine.SpeedHash, 0);
@@ -29,7 +31,7 @@
             
             if (EnemyStateMachine.PercentageOfCurve >= 1)
             {
-                EnemyStateMachine.Dead();
+                EnemyStateMachine.Die();
                 return;
             }
             

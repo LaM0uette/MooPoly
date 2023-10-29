@@ -29,7 +29,8 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         // Components
         public Animator Animator { get; private set; }
         public Enemy Enemy { get; set; } = new();
-        public bool IsDead { get; set; }
+        public bool IsDead { get; private set; }
+        public bool IsTransitioning { get; private set; }
 
         // Splines
         [CanBeNull] public SplineContainer EnemyPath { get; set; }
@@ -79,13 +80,15 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         public void TransitionToAnimation(int animationId, float transitionDuration = .1f)
         {
             Animator.CrossFadeInFixedTime(animationId, transitionDuration);
+            IsTransitioning = true;
             
             StartCoroutine(EndTransitionAfterDelay(transitionDuration));
         }
         
-        private static IEnumerator EndTransitionAfterDelay(float delay)
+        private IEnumerator EndTransitionAfterDelay(float delay)
         {
             yield return new WaitForSeconds(delay);
+            IsTransitioning = false;
         }
 
         #endregion
@@ -95,15 +98,18 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         public void TakeDamage(float damage)
         {
             Enemy.Health -= damage;
-            CheckIfDead();
         }
         
-        private void CheckIfDead()
+        public void CheckHealth()
         {
             if (Enemy.Health > 0) return;
             
-            Dead();
-            //SwitchState(new EnemyDieState(this));
+            Die();
+        }
+
+        public void Die()
+        {
+            SwitchState(new EnemyDieState(this));
         }
 
         public void Dead()
