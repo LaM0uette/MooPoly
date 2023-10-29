@@ -11,7 +11,7 @@ namespace Game.Scripts.Turrets.Variants
         {
             var bulletGo = Instantiate(Bullet.Prefab, FirePoint.position, FirePoint.rotation, BulletsParent.transform);
             var bulletBehaviour = bulletGo.GetComponent<BulletBehaviour>();
-            bulletBehaviour.SetEnemy(enemy);
+            bulletBehaviour.Init(enemy, Damage);
         }
 
         #endregion

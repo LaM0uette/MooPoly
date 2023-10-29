@@ -9,7 +9,9 @@ namespace Game.Scripts.Bullets
         #region Statements
 
         public Bullet Bullet { get; set; } = new();
+        
         [CanBeNull] private EnemyStateMachine _enemy { get; set; }
+        private float _turretDamage { get; set; }
 
         #endregion
 
@@ -29,8 +31,12 @@ namespace Game.Scripts.Bullets
         #endregion
 
         #region Functions
-        
-        public void SetEnemy(EnemyStateMachine enemy) => _enemy = enemy;
+
+        public void Init(EnemyStateMachine enemy, float turretDamage)
+        {
+            _enemy = enemy;
+            _turretDamage = turretDamage;
+        }
 
         private void FollowEnemy()
         {
@@ -50,7 +56,9 @@ namespace Game.Scripts.Bullets
         
         private void HitTarget()
         {
-            Debug.Log("Hit target");
+            if (_enemy is null || _enemy.IsDead) return;
+            
+            _enemy.TakeDamage(_turretDamage + Bullet.Damage);
             Destroy(gameObject);
         }
 

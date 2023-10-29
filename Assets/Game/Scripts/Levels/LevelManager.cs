@@ -62,7 +62,7 @@ namespace Game.Scripts.Levels
                 var enemyGameObject = Instantiate(enemyData.Prefab, enemyPath.transform.position, Quaternion.identity, _enemiesParent.transform);
                 var enemyStateMachine = enemyGameObject.GetComponent<EnemyStateMachine>();
                 
-                var newHealth = enemyData.BaseLife + enemyData.BaseLife / 2 * lifeIncrement;
+                var newHealth = enemyData.BaseLife + enemyData.BaseLife / 3 * lifeIncrement;
                 var enemy = EnemyFactory.CreateEnemy(enemyData, newHealth);
         
                 enemyStateMachine.Enemy = enemy;

@@ -88,6 +88,20 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         #endregion
 
         #region Functions
+        
+        public void TakeDamage(float damage)
+        {
+            Enemy.Health -= damage;
+            CheckIfDead();
+        }
+        
+        private void CheckIfDead()
+        {
+            if (Enemy.Health > 0) return;
+            
+            Dead();
+            //SwitchState(new EnemyDieState(this));
+        }
 
         public void Dead()
         {
