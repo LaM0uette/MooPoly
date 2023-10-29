@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Game.Scripts.Generic.Managers;
 using Game.Scripts.Interactable;
 using UnityEngine;
 

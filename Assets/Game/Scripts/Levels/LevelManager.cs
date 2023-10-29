@@ -5,7 +5,6 @@ using Game.Scripts._Data.LevelData;
 using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.Levels.GameMode;
-using Game.Scripts.MooCoins;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -24,13 +23,11 @@ namespace Game.Scripts.Levels
         public LevelData LevelData;
         
         private GameObject _enemiesParent;
-        private GameObject _mooCoinsParent;
         private IGameMode _currentGameMode;
 
         private void Awake()
         {
             _enemiesParent = GameObject.FindGameObjectWithTag(TagRef.EnemiesParent);
-            _mooCoinsParent = GameObject.FindGameObjectWithTag(TagRef.MooCoinsParent);
             _currentGameMode = gameObject.AddComponent<WaveGameMode>();
         }
 
@@ -88,9 +85,8 @@ namespace Game.Scripts.Levels
 
         public void EnemySpawned() => EnemiesAlive++;
 
-        public void EnemyDied(Enemy enemy)
+        public void EnemyDied()
         {
-            EarnMooCoins(enemy.MooCoins, enemy.DeadPosition);
             EnemiesAlive--;
         }
 
@@ -98,28 +94,6 @@ namespace Game.Scripts.Levels
         {
             if (IsLastWave()) return;
             CanStartNextWave = EnemiesAlive <= 0;
-        }
-
-        #endregion
-
-        #region MooCoins
-
-        private void EarnMooCoins(IEnumerable<MooCoinProbability> mooCoins, Vector3 pos)
-        {
-            pos.y += 1f;
-            
-            foreach (var mooCoin in mooCoins)
-            {
-                var random = Random.Range(0, 1f);
-                if (random > mooCoin.Probability) continue;
-                
-                var mooCoinGameObject = Instantiate(mooCoin.MooCoinData.Prefab, pos, Quaternion.Euler(90, 0, 0), _mooCoinsParent.transform);
-                var mooCoinBehaviour = mooCoinGameObject.GetComponent<MooCoinBehaviour>();
-                mooCoinBehaviour.MooCoin = MooCoinFactory.Create(mooCoin.MooCoinData);
-                
-                var randomForce = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(1, 3), Random.Range(-0.3f, 0.3f));
-                mooCoinBehaviour.Rigidbody.AddForce(randomForce * 5f, ForceMode.Impulse);
-            }
         }
 
         #endregion

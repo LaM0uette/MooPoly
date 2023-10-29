@@ -25,14 +25,14 @@ namespace Game.Scripts.Levels.Observers
             _observer.Unregister(this);
         }
 
-        public override void OnNotify<T>(T enemyT)
+        public override void OnNotify<T>(T isAlive)
         {
-            if (enemyT is not Enemy enemy) return;
+            if (isAlive is not bool alive) return;
             
-            if (!enemy.IsDead)
+            if (alive)
                 _levelManager.EnemySpawned();
             else
-                _levelManager.EnemyDied(enemy);
+                _levelManager.EnemyDied();
             
             _levelManager.CheckEnemiesAlive();
         }

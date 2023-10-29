@@ -31,7 +31,7 @@
             
             if (EnemyStateMachine.PercentageOfCurve >= 1)
             {
-                EnemyStateMachine.Die();
+                EnemyStateMachine.Steal();
                 return;
             }
             

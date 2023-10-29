@@ -17,7 +17,6 @@ namespace Game.Scripts.Enemies.EnemyFactory
         public float SpawnRate { get; set; } = 1;
 
         // Dead
-        public Vector3 DeadPosition { get; set; }
         public bool IsDead { get; set; }
         
         // MooCoins

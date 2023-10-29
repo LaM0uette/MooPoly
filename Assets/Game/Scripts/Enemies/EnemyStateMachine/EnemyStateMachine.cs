@@ -2,7 +2,9 @@ using System.Collections;
 using Game.Scripts.BaseStateMachine;
 using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine.EnemyStates;
+using Game.Scripts.MooCoins;
 using Game.Scripts.Observers;
+using Game.Scripts.StaticUtilities;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -38,14 +40,16 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         public float PercentageOfCurve { get; set; }
         public float TotalSplineLength { get; private set; }
         
-        // Target
+        // GameObject
         public GameObject Target;
+        private GameObject _mooCoinsParent;
 
         [SerializeField] private ObserverEvent _observer;
         
         private void Awake()
         {
             Animator = GetComponent<Animator>();
+            _mooCoinsParent = GameObject.FindGameObjectWithTag(TagRef.MooCoinsParent);
         }
 
         private void Start()
@@ -65,13 +69,13 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         private void OnEnable()
         {
             Enemy.IsDead = false;
-            _observer.Notify(Enemy);
+            _observer.Notify(true);
         }
         
         private void OnDisable()
         {
             Enemy.IsDead = true;
-            _observer.Notify(Enemy);
+            _observer.Notify(false);
         }
         
         #endregion
@@ -107,17 +111,30 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
             
             Die();
         }
-
-        public void Die()
+        
+        public void EarnMooCoins()
         {
-            SwitchState(new EnemyDieState(this));
+            var mooCoins = Enemy.MooCoins;
+            var pos = transform.position;
+            pos.y += 1f;
+            
+            foreach (var mooCoin in mooCoins)
+            {
+                var random = Random.Range(0, 1f);
+                if (random > mooCoin.Probability) continue;
+                
+                var mooCoinGameObject = Instantiate(mooCoin.MooCoinData.Prefab, pos, Quaternion.Euler(90, 0, 0), _mooCoinsParent.transform);
+                var mooCoinBehaviour = mooCoinGameObject.GetComponent<MooCoinBehaviour>();
+                mooCoinBehaviour.MooCoin = MooCoinFactory.Create(mooCoin.MooCoinData);
+                
+                var randomForce = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(1, 3), Random.Range(-0.3f, 0.3f));
+                mooCoinBehaviour.Rigidbody.AddForce(randomForce * 5f, ForceMode.Impulse);
+            }
         }
 
-        public void Dead()
-        {
-            Enemy.DeadPosition = transform.position;
-            Destroy(gameObject);
-        }
+        public void Steal() => SwitchState(new EnemyStealState(this));
+        public void Die() => SwitchState(new EnemyDieState(this));
+        public void Dead() => Destroy(gameObject);
 
         #endregion
     }

@@ -20,4 +20,4 @@ MonoBehaviour:
   Range: 16
   FireRate: 160
   RotationSpeed: 20
-  RepeatRate: 0.1
+  BulletData: {fileID: 11400000, guid: b0b598827d87e5647bf05e53869aef0b, type: 2}
