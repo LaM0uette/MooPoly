@@ -35,6 +35,9 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         [CanBeNull] public SplineContainer EnemyPath { get; set; }
         public float PercentageOfCurve { get; set; }
         public float TotalSplineLength { get; private set; }
+        
+        // Target
+        public GameObject Target;
 
         [SerializeField] private ObserverEvent _observer;
         

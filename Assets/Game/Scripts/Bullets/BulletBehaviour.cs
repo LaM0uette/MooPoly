@@ -42,7 +42,7 @@ namespace Game.Scripts.Bullets
         {
             if (_enemy is null || _enemy.IsDead) return;
             
-            var direction = _enemy.transform.position - transform.position;
+            var direction = _enemy.Target.transform.position - transform.position;
             var distanceThisFrame = Bullet.Speed * Time.deltaTime;
             
             if (direction.magnitude <= distanceThisFrame)

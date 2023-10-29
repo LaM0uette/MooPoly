@@ -1,4 +1,3 @@
-using System;
 using Game.Scripts._Data.TurretData;
 using Game.Scripts.Bullets;
 using Game.Scripts.Enemies.EnemyStateMachine;

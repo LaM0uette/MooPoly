@@ -50,7 +50,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         {
             if (_enemy.IsDead) return;
             
-            TurretStateMachine.DebugLine(_turretPosition, _enemy.transform.position, Color.red);
+            TurretStateMachine.DebugLine(_turretPosition, _enemy.Target.transform.position, Color.red);
         }
 
         public override void Exit()
@@ -63,7 +63,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         
         private void LookAtEnemy()
         {
-            var direction = _enemy.transform.position - _turretPosition;
+            var direction = _enemy.Target.transform.position - _turretPosition;
             var flatDirection = new Vector3(direction.x, 0, direction.z);
             var lookRotation = Quaternion.LookRotation(flatDirection);
 
