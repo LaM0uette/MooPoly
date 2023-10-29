@@ -37,6 +37,14 @@
             PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.MoveStateHash);
         }
 
+        public override void CheckState()
+        {
+            if (PlayerStateMachine.IsTransitioning) return;
+            
+            if (!PlayerStateMachine.IsMoving() && AnimatorGetFloat(PlayerStateMachine.SpeedHash) <= 0.01f)
+                PlayerStateMachine.SwitchState(new PlayerIdleState(PlayerStateMachine));
+        }
+
         public override void Tick(float deltaTime)
         {
             ApplyGravity();
@@ -51,14 +59,6 @@
         public override void TickLate(float deltaTime)
         {
             CameraZoom();
-        }
-
-        public override void CheckState()
-        {
-            if (PlayerStateMachine.IsTransitioning) return;
-            
-            if (!PlayerStateMachine.IsMoving() && AnimatorGetFloat(PlayerStateMachine.SpeedHash) <= 0.01f)
-                PlayerStateMachine.SwitchState(new PlayerIdleState(PlayerStateMachine));
         }
 
         public override void Exit()

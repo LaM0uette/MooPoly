@@ -20,19 +20,19 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
             PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.JumpHash);
         }
 
-        public override void Tick(float deltaTime)
-        {
-            ApplyGravity(2.4f);
-            
-            Move(PlayerStateMachine.MoveSpeed);
-        }
-
         public override void CheckState()
         {
             if (PlayerStateMachine.IsTransitioning) return;
             
             if (HasAnimationReachedStage(.2f) && PlayerStateMachine.IsGrounded())
                 PlayerStateMachine.SwitchState(new PlayerMoveState(PlayerStateMachine));
+        }
+
+        public override void Tick(float deltaTime)
+        {
+            ApplyGravity(2.4f);
+            
+            Move(PlayerStateMachine.MoveSpeed);
         }
 
         public override void Exit()

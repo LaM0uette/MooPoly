@@ -26,10 +26,6 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
         {
             PlayerStateMachine.transform.position = _position;
         }
-
-        public override void Tick(float deltaTime)
-        {
-        }
         
         public override void TickFixed(float deltaTime)
         {

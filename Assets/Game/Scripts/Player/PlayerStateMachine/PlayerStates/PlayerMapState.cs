@@ -39,14 +39,6 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
             PlayerStateMachine.MapCamera.m_Priority = 11;
         }
 
-        public override void Tick(float deltaTime)
-        {
-        }
-
-        public override void CheckState()
-        {
-        }
-
         public override void Exit()
         {
             UnsubscribeEvents();

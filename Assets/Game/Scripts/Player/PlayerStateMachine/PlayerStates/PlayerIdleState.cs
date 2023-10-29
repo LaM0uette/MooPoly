@@ -40,6 +40,12 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
             
             PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.IdleStateHash, .2f);
         }
+        
+        public override void CheckState()
+        {
+            if (PlayerStateMachine.IsMoving())
+                PlayerStateMachine.SwitchState(new PlayerMoveState(PlayerStateMachine));
+        }
 
         public override void Tick(float deltaTime)
         {
@@ -58,12 +64,6 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
         public override void TickLate(float deltaTime)
         {
             CameraZoom();
-        }
-        
-        public override void CheckState()
-        {
-            if (PlayerStateMachine.IsMoving())
-                PlayerStateMachine.SwitchState(new PlayerMoveState(PlayerStateMachine));
         }
 
         public override void Exit()

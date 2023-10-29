@@ -8,10 +8,12 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         #region Statements
         
         private readonly EnemyStateMachine _enemy;
+        private readonly Vector3 _turretPosition;
 
         public TurretShootState(TurretStateMachine turretStateMachine, EnemyStateMachine enemy) : base(turretStateMachine)
         {
             _enemy = enemy;
+            _turretPosition = TurretStateMachine.TurretHeadTransform.position;
         }
 
         #endregion
@@ -22,17 +24,24 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         {
         }
 
-        public override void Tick(float deltaTime)
+        public override void CheckState()
         {
             if (_enemy.IsDead) 
                 TurretStateMachine.SwitchState(new TurretIdleState(TurretStateMachine));
+        }
+
+        public override void TickFixed(float deltaTime)
+        {
+            if (_enemy.IsDead) return;
+            
+            LookAtEnemy();
         }
         
         public override void TickLate(float deltaTime)
         {
             if (_enemy.IsDead) return;
             
-            TurretStateMachine.DebugLine(TurretStateMachine.transform.position, _enemy.transform.position, Color.red);
+            TurretStateMachine.DebugLine(_turretPosition, _enemy.transform.position, Color.red);
         }
 
         public override void Exit()
@@ -42,7 +51,20 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         #endregion
 
         #region Functions
+        
+        private void LookAtEnemy()
+        {
+            var direction = _enemy.transform.position - _turretPosition;
+            var flatDirection = new Vector3(direction.x, 0, direction.z);
+            var lookRotation = Quaternion.LookRotation(flatDirection);
 
+            var rotation = Quaternion.Lerp(TurretStateMachine.TurretMobileTransform.rotation, lookRotation, Time.deltaTime * TurretStateMachine.Turret.RotationSpeed).eulerAngles;
+            TurretStateMachine.TurretMobileTransform.rotation = Quaternion.Euler(0, rotation.y, 0);
+
+            var angleX = Vector3.Angle(direction, flatDirection) * (direction.y < 0 ? -1 : 1);
+            TurretStateMachine.TurretHeadTransform.localRotation = Quaternion.Euler(-angleX, 0, 0);
+        }
+        
         #endregion
     }
 }

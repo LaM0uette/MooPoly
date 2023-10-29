@@ -35,10 +35,6 @@
             
             Move(EnemyStateMachine.Enemy.MoveSpeed);
         }
-        
-        public override void CheckState()
-        {
-        }
 
         public override void Exit()
         {

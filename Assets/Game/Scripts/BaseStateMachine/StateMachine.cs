@@ -15,8 +15,8 @@ namespace Game.Scripts.BaseStateMachine
 
         private void Update()
         {
-            _currentState.Tick(Time.deltaTime);
             _currentState.CheckState();
+            _currentState.Tick(Time.deltaTime);
         }
         
         private void LateUpdate()

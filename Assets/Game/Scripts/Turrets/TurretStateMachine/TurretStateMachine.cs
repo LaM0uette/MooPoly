@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace Game.Scripts.Turrets.TurretStateMachine
 {
-    [RequireComponent(typeof(SphereCollider))]
     public class TurretStateMachine : StateMachine
     {
         #region Statements
@@ -35,7 +34,6 @@ namespace Game.Scripts.Turrets.TurretStateMachine
 
         private void Start()
         {
-            GetComponent<SphereCollider>().radius = turretData.Range;
             InvokeRepeating(nameof(UpdateRepeating), 0, 0.1f);
             SwitchState(new TurretBuildState(this));
         }
