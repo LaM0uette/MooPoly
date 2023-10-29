@@ -16,6 +16,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
 
         public override void Enter()
         {
+            EnemyStateMachine.Enemy.IsDead = true;
             EnemyStateMachine.TransitionToAnimation(EnemyStateMachine.DieHash);
         }
 
@@ -23,7 +24,6 @@ namespace Game.Scripts.Enemies.EnemyStateMachine.EnemyStates
         {
             if (EnemyStateMachine.IsTransitioning || !HasAnimationReachedStage(.9f)) return;
 
-            Debug.Log("Dead");
             EnemyStateMachine.Dead();
         }
 

@@ -1,8 +1,17 @@
+using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Scripts._Data.EnemyData
 {
+    [Serializable]
+    public struct MooCoinProbability
+    {
+        public MooCoinData.MooCoinData MooCoinData;
+        [Range(0, 1f)] public float Probability;
+    }
+    
     [CreateAssetMenu(menuName = "MooPloy_Data/EnemyData")]
     public class EnemyData : ScriptableObject
     {
@@ -16,8 +25,8 @@ namespace Game.Scripts._Data.EnemyData
         public float HeightOffset;
         public float SpawnRate;
         
-        [Space, Title("Candy")]
-        public int CandyDropMax;
-        [Range(0, 1f)] public float SuperCandyChance;
+        [Space, Title("Coin")]
+        [SerializeField] private List<MooCoinProbability> _mooCoins = new();
+        public MooCoinProbability[] MooCoins => _mooCoins.ToArray();
     }
 }

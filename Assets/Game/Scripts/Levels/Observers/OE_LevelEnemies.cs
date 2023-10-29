@@ -1,3 +1,4 @@
+using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Observers;
 using UnityEngine;
 
@@ -24,14 +25,14 @@ namespace Game.Scripts.Levels.Observers
             _observer.Unregister(this);
         }
 
-        public override void OnNotify<T>(T isAlive)
+        public override void OnNotify<T>(T enemyT)
         {
-            if (isAlive is not bool alive) return;
+            if (enemyT is not Enemy enemy) return;
             
-            if (alive)
+            if (!enemy.IsDead)
                 _levelManager.EnemySpawned();
             else
-                _levelManager.EnemyDied();
+                _levelManager.EnemyDied(enemy);
             
             _levelManager.CheckEnemiesAlive();
         }

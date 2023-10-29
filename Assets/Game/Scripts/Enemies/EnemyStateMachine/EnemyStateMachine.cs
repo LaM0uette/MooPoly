@@ -29,7 +29,6 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         // Components
         public Animator Animator { get; private set; }
         public Enemy Enemy { get; set; } = new();
-        public bool IsDead { get; private set; }
         public bool IsTransitioning { get; private set; }
 
         // Splines
@@ -63,14 +62,14 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         
         private void OnEnable()
         {
-            IsDead = false;
-            _observer.Notify(true);
+            Enemy.IsDead = false;
+            _observer.Notify(Enemy);
         }
         
         private void OnDisable()
         {
-            IsDead = true;
-            _observer.Notify(false);
+            Enemy.IsDead = true;
+            _observer.Notify(Enemy);
         }
         
         #endregion
@@ -114,6 +113,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
 
         public void Dead()
         {
+            Enemy.DeadPosition = transform.position;
             Destroy(gameObject);
         }
 

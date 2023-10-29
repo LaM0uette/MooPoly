@@ -16,6 +16,10 @@ namespace Game.Scripts.MooCoins
 
         private float _speedMovement = 3f;
         private GameObject _playerTarget;
+        private float _gravityAcceleration = -16f;
+        private float _verticalVelocity;
+        private bool _isGrounded;
+
 
         private void Awake()
         {
@@ -34,24 +38,40 @@ namespace Game.Scripts.MooCoins
             Debug.Log("Player detected");
         }
         
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Default")) 
+            {
+                _isGrounded = true;
+                Rigidbody.velocity = Vector3.zero;
+            }
+        }
+        
         private void FixedUpdate()
         {
+            if (!_isGrounded && _playerTarget is null)
+            {
+                _verticalVelocity += _gravityAcceleration * Time.deltaTime;
+                transform.position += new Vector3(0, _verticalVelocity * Time.deltaTime, 0);
+                return;
+            }
+    
             if (_playerTarget is null) return;
-            
+    
             _speedMovement *= 1.3f;
-            
+    
             var pos = transform.position;
             var direction = _playerTarget.transform.position - pos;
             direction.y += pos.y;
-            
+    
             var distanceThisFrame = _speedMovement * Time.deltaTime;
-            
+    
             if (direction.magnitude <= distanceThisFrame)
             {
                 Earn();
                 return;
             }
-            
+    
             transform.Translate(direction.normalized * distanceThisFrame, Space.World);
         }
 

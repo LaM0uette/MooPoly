@@ -1,4 +1,5 @@
 using Game.Scripts._Data.EnemyData;
+using UnityEngine;
 
 namespace Game.Scripts.Enemies.EnemyFactory
 {
@@ -15,9 +16,12 @@ namespace Game.Scripts.Enemies.EnemyFactory
         public float HeightOffset { get; set; } = 0;
         public float SpawnRate { get; set; } = 1;
 
-        // Candy
-        public int CandyDropMax { get; set; } = 5;
-        public float SuperCandyChance { get; set; } = 0.01f;
+        // Dead
+        public Vector3 DeadPosition { get; set; }
+        public bool IsDead { get; set; }
+        
+        // MooCoins
+        public MooCoinProbability[] MooCoins { get; set; }
 
         #endregion
     }

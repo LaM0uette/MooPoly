@@ -13,8 +13,7 @@ namespace Game.Scripts.Enemies.EnemyFactory
                 MoveSpeed = enemyData.MoveSpeed,
                 HeightOffset = enemyData.HeightOffset,
                 SpawnRate = enemyData.SpawnRate,
-                CandyDropMax = enemyData.CandyDropMax,
-                SuperCandyChance = enemyData.SuperCandyChance
+                MooCoins = enemyData.MooCoins
             };
         }
     }

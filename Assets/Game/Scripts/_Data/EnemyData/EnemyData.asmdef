@@ -1,3 +1,4 @@
 {
-	"name": "EnemyData"
+	"name": "EnemyData",
+	"references":[ "GUID:6579b6d7813ed224d897b1dc732ebca1" ]
 }
