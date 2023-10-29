@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Game.Scripts.Interactable;
+using Game.Scripts.Interactables;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 
@@ -17,9 +17,9 @@ namespace Game.Scripts.Player.Controller
     {
         #region Statements
         
-        public static IInteract CurrentInteract { get; private set; }
+        public static Interactable CurrentInteract { get; private set; }
 
-        private static readonly List<IInteract> Interacts = new();
+        private static readonly List<Interactable> Interacts = new();
         
         [SerializeField] private List<TurretsToBuild> _turretsToBuild = new();
         private GameObject _turretsParent;
@@ -35,27 +35,27 @@ namespace Game.Scripts.Player.Controller
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.TryGetComponent<IInteract>(out var interact)) return;
-            Interacts.Add(interact);
+            if (!other.TryGetComponent<Interactable>(out var interactable)) return;
+            Interacts.Add(interactable);
         }
         
         private void OnTriggerExit(Collider other)
         {
-            if (!other.TryGetComponent<IInteract>(out var interact)) return;
+            if (!other.TryGetComponent<Interactable>(out var interactable)) return;
             
-            interact.ShowOutline(false);
-            Interacts.Remove(interact);
+            interactable.ShowOutline(false);
+            Interacts.Remove(interactable);
             
             SetCurrentInteract();
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (!other.TryGetComponent<IInteract>(out var interact)) return;
-            if (CurrentInteract == interact) return;
+            if (!other.TryGetComponent<Interactable>(out var interactable)) return;
+            if (CurrentInteract == interactable) return;
             
             SetCurrentInteract();
-            SetOutline(interact);
+            SetOutline(interactable);
         }
 
         #endregion
@@ -79,15 +79,15 @@ namespace Game.Scripts.Player.Controller
             CurrentInteract = GetClosestInteract();
         }
 
-        private static void SetOutline(IInteract interact)
+        private static void SetOutline(Interactable interactable)
         {
             CurrentInteract.ShowOutline(true);
             
-            if (interact != CurrentInteract)
-                interact.ShowOutline(false);
+            if (interactable != CurrentInteract)
+                interactable.ShowOutline(false);
         }
 
-        private IInteract GetClosestInteract()
+        private Interactable GetClosestInteract()
         {
             var closestInteract = Interacts[0];
             var closestDistance = Vector3.Distance(transform.position, closestInteract.GetTransform().position);
@@ -115,7 +115,7 @@ namespace Game.Scripts.Player.Controller
             var turret = Instantiate(_turretsToBuild[index].TurretPrefab, trs.position, Quaternion.identity, _turretsParent.transform);
 
             Interacts.Remove(CurrentInteract);
-            CurrentInteract?.Destroy();
+            CurrentInteract.Destroy();
             CurrentInteract = null;
         }
 

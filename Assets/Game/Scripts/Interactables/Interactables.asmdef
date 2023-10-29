@@ -2,7 +2,8 @@
     "name": "Interactable",
     "rootNamespace": "",
     "references": [
-        "GUID:7e6ebce566e7ca14cb0ca351f26d09cd"
+        "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
+        "GUID:a76b0eefca9ee9a45bceb9200497250d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

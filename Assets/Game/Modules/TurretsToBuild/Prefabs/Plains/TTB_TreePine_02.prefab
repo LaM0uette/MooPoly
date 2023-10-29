@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5612595690201826387}
   - component: {fileID: 5315344898410903050}
   - component: {fileID: 2474360368835986784}
-  - component: {fileID: 1793331450161906499}
   - component: {fileID: 4945967320518388707}
   m_Layer: 0
   m_Name: TreePine_02
@@ -85,69 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1793331450161906499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6742270681082010675}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  complexMaskingMode: 0
-  drawingMode: 1
-  outlineLayer: 0
-  outlineTargets:
-  - IsVisible: 1
-    CutoutMask: 8
-    edgeDilateAmount: 5
-    frontEdgeDilateAmount: 5
-    backEdgeDilateAmount: 5
-    renderer: {fileID: 2474360368835986784}
-    SubmeshIndex: 0
-    BoundsMode: 0
-    Bounds:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
-    CutoutThreshold: 0.5
-    CullMode: 2
-    cutoutTextureName: 
-    DilateRenderingMode: 0
-    cutoutTextureIndex: 0
-  renderStyle: 1
-  outlineParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 0
-    blurShift: 0
-    fillPass:
-      shader: {fileID: 4800000, guid: 213090e563021044c92d1c27258b93f0, type: 3}
-      serializedProperties:
-      - PropertyName: _PublicColor
-        Property:
-          ColorValue: {r: 0.62411, g: 0.8018868, b: 0.63096803, a: 0.5882353}
-          FloatValue: 0
-          VectorValue: {x: 0, y: 0, z: 0, w: 0}
-          PropertyType: 0
-  backParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
-  frontParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
 --- !u!114 &4945967320518388707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +104,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].CullMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 2474360368835986784}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].CutoutMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].CutoutThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].edgeDilateAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].Bounds.m_Extent.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].Bounds.m_Extent.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].Bounds.m_Extent.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].backEdgeDilateAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872327546742227497, guid: cdeaf380791ba144da68115b4b9f96f5,
+        type: 3}
+      propertyPath: outlineTargets.Array.data[0].frontEdgeDilateAmount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2884855034543652051, guid: cdeaf380791ba144da68115b4b9f96f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,11 +214,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5757109933920550896, guid: cdeaf380791ba144da68115b4b9f96f5,
-        type: 3}
-      propertyPath: _outlinable
-      value: 
-      objectReference: {fileID: 1793331450161906499}
     - target: {fileID: 9192251324670645447, guid: cdeaf380791ba144da68115b4b9f96f5,
         type: 3}
       propertyPath: m_Name

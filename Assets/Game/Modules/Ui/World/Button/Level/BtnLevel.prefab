@@ -89,7 +89,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2.3
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9166983026276573110
 MonoBehaviour:
@@ -103,13 +103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02e3955886a0c04b83f99205bac4431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Outline: {fileID: 3860039816059865745}
   IsUnlocked: 0
   _observer: {fileID: 11400000, guid: f2c422fb7a8c53f458837038ef7acb59, type: 2}
   _sceneData: {fileID: 0}
   _unlockMaterial: {fileID: 2100000, guid: 23f343bede491c64ba5c4f108075a9c0, type: 2}
   _lockMaterial: {fileID: 2100000, guid: 51718a10ed04d78488ef170b323b0c59, type: 2}
   _meshRenderer: {fileID: 1293298817505738428}
-  _outlinable: {fileID: 3860039816059865745}
 --- !u!1 &8129403553014176597
 GameObject:
   m_ObjectHideFlags: 0

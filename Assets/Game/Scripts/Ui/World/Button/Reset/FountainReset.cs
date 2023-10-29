@@ -1,40 +1,20 @@
-using EPOOutline;
 using Game.Scripts.Generic.PlayerPref;
-using Game.Scripts.Interactable;
-using UnityEngine;
+using Game.Scripts.Interactables;
 
 namespace Game.Scripts.Ui.World.Button.Reset
 {
-    public class FountainReset : MonoBehaviour, IInteract
+    public class FountainReset : Interactable
     {
-        #region Statements
-
-        private Outlinable _outlinable;
-
-        private void Awake()
-        {
-            _outlinable = GetComponent<Outlinable>();
-        }
-
-        #endregion
-        
         #region Functions
 
-        public void Interact()
+        public override void Interact()
         {
             PlayerPrefsSave.DeletePlayerPositionMenu();
         }
         
-        public void ShowOutline(bool value)
+        public override void ShowOutline(bool value)
         {
-            _outlinable.enabled = value;
-        }
-
-        public Transform GetTransform() => transform;
-        
-        public void Destroy()
-        {
-            
+            Outline.enabled = value;
         }
 
         #endregion
