@@ -1,9 +1,18 @@
+using System;
 using System.Collections.Generic;
 using Game.Scripts.Interactable;
+using Game.Scripts.StaticUtilities;
 using UnityEngine;
 
 namespace Game.Scripts.Player.Controller
 {
+    [Serializable]
+    public struct TurretsToBuild
+    {
+        public int TurretIndex;
+        public GameObject TurretPrefab;
+    }
+    
     public class PlayerController : MonoBehaviour
     {
         #region Statements
@@ -11,6 +20,14 @@ namespace Game.Scripts.Player.Controller
         public static IInteract CurrentInteract { get; private set; }
 
         private static readonly List<IInteract> Interacts = new();
+        
+        [SerializeField] private List<TurretsToBuild> _turretsToBuild = new();
+        private GameObject _turretsParent;
+
+        private void Awake()
+        {
+            _turretsParent = GameObject.FindGameObjectWithTag(TagRef.TurretsParent);
+        }
 
         #endregion
 
@@ -86,6 +103,20 @@ namespace Game.Scripts.Player.Controller
             }
 
             return closestInteract;
+        }
+
+        #endregion
+
+        #region Turrets
+
+        public void Temp(int index)
+        {
+            var trs = CurrentInteract.GetTransform();
+            var turret = Instantiate(_turretsToBuild[index].TurretPrefab, trs.position, Quaternion.identity, _turretsParent.transform);
+
+            Interacts.Remove(CurrentInteract);
+            CurrentInteract?.Destroy();
+            CurrentInteract = null;
         }
 
         #endregion

@@ -1,4 +1,5 @@
 using System;
+using Game.Scripts.Player.Controller;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,6 +10,8 @@ namespace Game.Scripts.Ui.TurretsToBuild
         #region Statements
         
         public static Action OnUiManager;
+        
+        [SerializeField] private PlayerController _playerController;
 
         private UIDocument _uiDocument;
         private VisualElement _root;
@@ -50,9 +53,9 @@ namespace Game.Scripts.Ui.TurretsToBuild
             btnNailGun.RegisterCallback<ClickEvent>(_ => { BtnTurret(2); } );
         }
         
-        private void BtnTurret(float value)
+        private void BtnTurret(int value)
         {
-            Debug.Log(value);
+            _playerController.Temp(value);
             Close();
         }
         

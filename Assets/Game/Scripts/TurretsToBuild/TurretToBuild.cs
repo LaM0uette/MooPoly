@@ -35,6 +35,11 @@ namespace Game.Scripts.TurretsToBuild
         
         public Transform GetTransform() => gameObject.transform;
 
+        public void Destroy()
+        {
+            Destroy(gameObject);
+        }
+
         #endregion
     }
 }

@@ -7,5 +7,7 @@ namespace Game.Scripts.Interactable
         public void Interact();
         public void ShowOutline(bool value);
         public Transform GetTransform();
+        
+        public void Destroy();
     }
 }

@@ -49,6 +49,11 @@ namespace Game.Scripts.Ui.World.Button.Level
         }
         
         public Transform GetTransform() => gameObject.transform;
+        
+        public void Destroy()
+        {
+            
+        }
 
         #endregion
     }

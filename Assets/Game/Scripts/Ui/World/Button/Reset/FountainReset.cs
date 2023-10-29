@@ -31,6 +31,11 @@ namespace Game.Scripts.Ui.World.Button.Reset
         }
 
         public Transform GetTransform() => transform;
+        
+        public void Destroy()
+        {
+            
+        }
 
         #endregion
     }
