@@ -84,11 +84,7 @@ namespace Game.Scripts.Levels
         #region Enemy
 
         public void EnemySpawned() => EnemiesAlive++;
-
-        public void EnemyDied()
-        {
-            EnemiesAlive--;
-        }
+        public void EnemyDied() => EnemiesAlive--;
 
         public void CheckEnemiesAlive()
         {
