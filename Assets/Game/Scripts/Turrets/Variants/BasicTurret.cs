@@ -1,4 +1,4 @@
-using Game.Scripts.Enemies.EnemyFactory;
+using Game.Scripts.Enemies.EnemyStateMachine;
 using UnityEngine;
 
 namespace Game.Scripts.Turrets.Variants
@@ -7,7 +7,7 @@ namespace Game.Scripts.Turrets.Variants
     {
         #region Functions
 
-        public override void Shoot(Enemy enemy)
+        public override void Shoot(EnemyStateMachine enemy)
         {
             Debug.Log("Shoot");
         }

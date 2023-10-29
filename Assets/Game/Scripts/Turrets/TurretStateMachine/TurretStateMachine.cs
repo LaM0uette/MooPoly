@@ -20,7 +20,6 @@ namespace Game.Scripts.Turrets.TurretStateMachine
         public Transform TurretMobileTransform;
         public Transform TurretHeadTransform;
         public Transform InitialPos;
-        public Transform FinalPos;
         public Transform FirePoint;
         
         [Space, Title("Data")]

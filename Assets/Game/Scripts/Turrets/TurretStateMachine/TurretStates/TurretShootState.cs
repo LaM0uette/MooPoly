@@ -9,6 +9,8 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         
         private readonly EnemyStateMachine _enemy;
         private readonly Vector3 _turretPosition;
+        
+        private float _fireRateCountdown;
 
         public TurretShootState(TurretStateMachine turretStateMachine, EnemyStateMachine enemy) : base(turretStateMachine)
         {
@@ -28,6 +30,13 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         {
             if (_enemy.IsDead) 
                 TurretStateMachine.SwitchState(new TurretIdleState(TurretStateMachine));
+        }
+        
+        public override void Tick(float deltaTime)
+        {
+            if (_enemy.IsDead) return;
+            
+            CheckIfCanShoot();
         }
 
         public override void TickFixed(float deltaTime)
@@ -63,6 +72,25 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
 
             var angleX = Vector3.Angle(direction, flatDirection) * (direction.y < 0 ? -1 : 1);
             TurretStateMachine.TurretHeadTransform.localRotation = Quaternion.Euler(-angleX, 0, 0);
+        }
+        
+        private void CheckIfCanShoot()
+        {
+            if (!CanShoot() || _enemy.IsDead) return;
+
+            TurretStateMachine.Turret.Shoot(_enemy);
+        }
+        
+        private bool CanShoot()
+        {
+            if (_fireRateCountdown <= 0f)
+            {
+                _fireRateCountdown = 100f / TurretStateMachine.Turret.FireRate;
+                return true;
+            }
+            
+            _fireRateCountdown -= Time.deltaTime;
+            return false;
         }
         
         #endregion

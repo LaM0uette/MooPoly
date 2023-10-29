@@ -1,5 +1,6 @@
 using Game.Scripts._Data.TurretData;
 using Game.Scripts.Enemies.EnemyFactory;
+using Game.Scripts.Enemies.EnemyStateMachine;
 using UnityEngine;
 
 namespace Game.Scripts.Turrets
@@ -34,7 +35,7 @@ namespace Game.Scripts.Turrets
             RotationSpeed = turretData.RotationSpeed;
         }
 
-        public abstract void Shoot(Enemy enemy);
+        public abstract void Shoot(EnemyStateMachine enemy);
 
         #endregion
     }
