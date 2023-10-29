@@ -29,6 +29,8 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         // Components
         public Animator Animator { get; private set; }
         public Enemy Enemy { get; set; } = new();
+        
+        // States
         public bool IsTransitioning { get; private set; }
 
         // Splines

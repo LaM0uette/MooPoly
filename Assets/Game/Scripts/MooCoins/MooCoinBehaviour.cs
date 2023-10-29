@@ -9,18 +9,23 @@ namespace Game.Scripts.MooCoins
     {
         #region Statements
         
-        public Rigidbody Rigidbody { get; set; } = new();
+        // Components
+        public Rigidbody Rigidbody { get; private set; } = new();
         public MooCoin MooCoin { get; set; } = new();
         
+        // Fields
+        [SerializeField] private LayerMask _layerMask;
         [SerializeField] private ObserverEvent _observer;
 
+        // Movements
         private float _speedMovement = 3f;
         private GameObject _playerTarget;
-        private float _gravityAcceleration = -16f;
+
+        // Gravity
+        private const float _gravityAcceleration = -20f;
         private float _verticalVelocity;
         private bool _isGrounded;
-
-
+        
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody>();
@@ -35,16 +40,14 @@ namespace Game.Scripts.MooCoins
             if (!other.CompareTag(TagRef.Player)) return;
 
             _playerTarget = other.gameObject;
-            Debug.Log("Player detected");
         }
         
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Default")) 
-            {
-                _isGrounded = true;
-                Rigidbody.velocity = Vector3.zero;
-            }
+            if (((1 << collision.gameObject.layer) & _layerMask) == 0) return;
+            
+            _isGrounded = true;
+            Rigidbody.velocity = Vector3.zero;
         }
         
         private void FixedUpdate()

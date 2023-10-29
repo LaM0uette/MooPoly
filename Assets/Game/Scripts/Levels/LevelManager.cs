@@ -113,12 +113,12 @@ namespace Game.Scripts.Levels
                 var random = Random.Range(0, 1f);
                 if (random > mooCoin.Probability) continue;
                 
-                var mooCoinGameObject = Instantiate(mooCoin.MooCoinData.Prefab, pos, Quaternion.Euler(0, 0, 90), _mooCoinsParent.transform);
+                var mooCoinGameObject = Instantiate(mooCoin.MooCoinData.Prefab, pos, Quaternion.Euler(90, 0, 0), _mooCoinsParent.transform);
                 var mooCoinBehaviour = mooCoinGameObject.GetComponent<MooCoinBehaviour>();
+                mooCoinBehaviour.MooCoin = MooCoinFactory.Create(mooCoin.MooCoinData);
                 
                 var randomForce = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(1, 3), Random.Range(-0.3f, 0.3f));
                 mooCoinBehaviour.Rigidbody.AddForce(randomForce * 5f, ForceMode.Impulse);
-                mooCoinBehaviour.MooCoin = MooCoinFactory.Create(mooCoin.MooCoinData);
             }
         }
 
