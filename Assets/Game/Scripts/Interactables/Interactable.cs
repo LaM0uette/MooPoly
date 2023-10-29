@@ -16,9 +16,19 @@ namespace Game.Scripts.Interactables
         #region Functions
         
         public Transform GetTransform() => gameObject.transform;
+        public void SetOutline(bool value) => Outline.enabled = value;
 
+        public virtual void Enter()
+        {
+            SetOutline(true);
+        }
+        
+        public virtual void Exit()
+        {
+            SetOutline(false);
+        }
+        
         public abstract void Interact();
-        public abstract void ShowOutline(bool value);
 
         public virtual void Destroy() { }
 

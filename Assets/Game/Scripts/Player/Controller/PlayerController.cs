@@ -42,8 +42,7 @@ namespace Game.Scripts.Player.Controller
         private void OnTriggerExit(Collider other)
         {
             if (!other.TryGetComponent<Interactable>(out var interactable)) return;
-            
-            interactable.ShowOutline(false);
+            interactable.Exit();
             Interacts.Remove(interactable);
             
             SetCurrentInteract();
@@ -81,10 +80,10 @@ namespace Game.Scripts.Player.Controller
 
         private static void SetOutline(Interactable interactable)
         {
-            CurrentInteract.ShowOutline(true);
+            CurrentInteract.Enter();
             
             if (interactable != CurrentInteract)
-                interactable.ShowOutline(false);
+                interactable.Exit();
         }
 
         private Interactable GetClosestInteract()

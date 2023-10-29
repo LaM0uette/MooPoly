@@ -27,6 +27,7 @@ namespace Game.Scripts.MooCoins
         {
             if (data is not MooCoin mooCoin) return;
             
+            // TODO: Add to player's moo coin
             Debug.Log($"MooCoin: {mooCoin.CandyEarned}");
         }
 

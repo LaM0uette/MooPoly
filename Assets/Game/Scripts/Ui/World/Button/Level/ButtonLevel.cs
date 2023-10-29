@@ -36,11 +36,17 @@ namespace Game.Scripts.Ui.World.Button.Level
             
             _observer.Notify(_sceneData);
         }
-
-        public override void ShowOutline(bool value)
+        
+        public override void Enter()
         {
             if (!IsUnlocked) return;
-            Outline.enabled = value;
+            base.Enter();
+        }
+        
+        public override void Exit()
+        {
+            if (!IsUnlocked) return;
+            base.Exit();
         }
 
         #endregion

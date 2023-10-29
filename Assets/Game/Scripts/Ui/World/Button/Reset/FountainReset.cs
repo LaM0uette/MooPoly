@@ -11,11 +11,6 @@ namespace Game.Scripts.Ui.World.Button.Reset
         {
             PlayerPrefsSave.DeletePlayerPositionMenu();
         }
-        
-        public override void ShowOutline(bool value)
-        {
-            Outline.enabled = value;
-        }
 
         #endregion
     }

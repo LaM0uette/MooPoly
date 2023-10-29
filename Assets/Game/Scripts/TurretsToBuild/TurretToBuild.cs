@@ -12,17 +12,16 @@ namespace Game.Scripts.TurretsToBuild
             UiManager.OnUiManager?.Invoke();
         }
 
-        public override void ShowOutline(bool value)
+        public override void Enter()
         {
-            switch (value)
-            {
-                case true when Outline.isActiveAndEnabled:
-                case false when !Outline.isActiveAndEnabled:
-                    return;
-                default:
-                    Outline.enabled = value;
-                    break;
-            }
+            if (Outline.isActiveAndEnabled) return;
+            base.Enter();
+        }
+        
+        public override void Exit()
+        {
+            if (!Outline.isActiveAndEnabled) return;
+            base.Exit();
         }
 
         public override void Destroy()
