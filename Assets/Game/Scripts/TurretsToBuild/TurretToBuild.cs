@@ -1,5 +1,5 @@
 using Game.Scripts.Interactables;
-using Game.Scripts.Ui.TurretsToBuild;
+using Game.Scripts.Ui.GameHUD;
 
 namespace Game.Scripts.TurretsToBuild
 {

@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: flex-start; align-items: center; align-self: auto;">
-        <ui:VisualElement name="Ve_TurretsToBuild" style="flex-grow: 1; position: absolute; right: 15px; min-width: 400px; min-height: 700px; background-color: rgba(140, 140, 140, 0.82);">
+        <ui:VisualElement name="VE_TurretsToBuild" style="flex-grow: 1; position: absolute; right: 15px; min-width: 400px; min-height: 700px; background-color: rgba(140, 140, 140, 0.82);">
             <ui:Button text="CLOSE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Btn_Close" style="-unity-font-style: bold; font-size: 20px;" />
             <ui:Button text="CrossBow" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Btn_CrossBow" />
             <ui:Button text="MiniGun" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Btn_MiniGun" />

@@ -3,7 +3,7 @@ using Game.Scripts.Player.Controller;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Game.Scripts.Ui.TurretsToBuild
+namespace Game.Scripts.Ui.GameHUD
 {
     public class UiManager : MonoBehaviour
     {
@@ -21,7 +21,7 @@ namespace Game.Scripts.Ui.TurretsToBuild
         {
             _uiDocument = GetComponent<UIDocument>();
             _root = _uiDocument.rootVisualElement;
-            _veTurretsToBuild = _root.Query("Ve_TurretsToBuild");
+            _veTurretsToBuild = _root.Query("VE_TurretsToBuild");
             
             _veTurretsToBuild.style.visibility = Visibility.Hidden;
             OnUiManager += Show;
