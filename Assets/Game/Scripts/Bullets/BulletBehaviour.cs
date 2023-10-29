@@ -41,16 +41,19 @@ namespace Game.Scripts.Bullets
         private void FollowEnemy()
         {
             if (_enemy is null || _enemy.Enemy.IsDead) return;
-            
+
             var direction = _enemy.Target.transform.position - transform.position;
+
+            transform.rotation = Quaternion.LookRotation(direction);
+
             var distanceThisFrame = Bullet.Speed * Time.deltaTime;
-            
+
             if (direction.magnitude <= distanceThisFrame)
             {
                 HitTarget();
                 return;
             }
-            
+
             transform.Translate(direction.normalized * distanceThisFrame, Space.World);
         }
         

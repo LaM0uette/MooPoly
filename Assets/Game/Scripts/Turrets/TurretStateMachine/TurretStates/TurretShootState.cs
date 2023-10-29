@@ -9,8 +9,6 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         
         private readonly EnemyStateMachine _enemy;
         private readonly Vector3 _turretPosition;
-        
-        private float _fireRateCountdown;
 
         public TurretShootState(TurretStateMachine turretStateMachine, EnemyStateMachine enemy) : base(turretStateMachine)
         {
@@ -83,13 +81,13 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         
         private bool CanShoot()
         {
-            if (_fireRateCountdown <= 0f)
+            if (TurretStateMachine.FireRateCountdown <= 0f)
             {
-                _fireRateCountdown = 100f / TurretStateMachine.Turret.FireRate;
+                TurretStateMachine.FireRateCountdown = 100f / TurretStateMachine.Turret.FireRate;
                 return true;
             }
             
-            _fireRateCountdown -= Time.deltaTime;
+            TurretStateMachine.FireRateCountdown -= Time.deltaTime;
             return false;
         }
         

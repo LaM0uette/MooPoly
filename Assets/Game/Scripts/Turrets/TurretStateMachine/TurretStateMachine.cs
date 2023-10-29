@@ -14,6 +14,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine
         
         public Action OnUpdateRepeating { get; set; }
         public Turret Turret { get; private set; }
+        public float FireRateCountdown { get; set; }
         
         [Space, Title("Turret")]
         public LayerMask EnemyLayer;
