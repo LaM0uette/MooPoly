@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Prefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1, type: 3}
-  BaseLife: 50
-  MoveSpeed: 20
+  BaseLife: 40
+  MoveSpeed: 16
   HeightOffset: 0
-  SpawnRate: 2
+  SpawnRate: 1.4
   CandyDropMax: 4
   SuperCandyChance: 0.05

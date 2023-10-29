@@ -63,7 +63,7 @@ namespace Game.Scripts.Levels
                 var enemyStateMachine = enemyGameObject.GetComponent<EnemyStateMachine>();
                 
                 var newHealth = enemyData.BaseLife + enemyData.BaseLife / 3 * lifeIncrement;
-                var enemy = EnemyFactory.CreateEnemy(enemyData, newHealth);
+                var enemy = EnemyFactory.Create(enemyData, newHealth);
         
                 enemyStateMachine.Enemy = enemy;
                 enemyStateMachine.EnemyPath = enemyPath;

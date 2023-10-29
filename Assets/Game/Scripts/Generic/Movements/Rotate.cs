@@ -6,6 +6,12 @@ namespace Game.Scripts.Generic.Movements
     public class Rotate : MonoBehaviour
     {
         #region Statements
+        
+        private enum RotationSpace
+        {
+            Local,
+            World
+        }
 
         private enum Axis
         {
@@ -14,6 +20,7 @@ namespace Game.Scripts.Generic.Movements
             Z
         }
 
+        [SerializeField] private RotationSpace _rotationSpace;
         [SerializeField, EnumToggleButtons] private Axis _axis;
         [SerializeField] private float _speed = 1f;
         
@@ -36,7 +43,8 @@ namespace Game.Scripts.Generic.Movements
 
         private void Update()
         {
-            transform.Rotate(_axisVector, _speed * Time.deltaTime);
+            transform.Rotate(_axisVector, _speed * Time.deltaTime,
+                _rotationSpace is RotationSpace.World ? Space.World : Space.Self);
         }
 
         #endregion

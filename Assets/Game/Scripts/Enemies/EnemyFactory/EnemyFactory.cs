@@ -4,7 +4,7 @@ namespace Game.Scripts.Enemies.EnemyFactory
 {
     public static class EnemyFactory
     {
-        public static Enemy CreateEnemy(EnemyData enemyData, float newHealth)
+        public static Enemy Create(EnemyData enemyData, float newHealth)
         {
             return new Enemy
             {

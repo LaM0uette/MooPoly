@@ -47,7 +47,7 @@ namespace Game.Scripts.Turrets
             Range = turretData.Range;
             FireRate = turretData.FireRate;
             RotationSpeed = turretData.RotationSpeed;
-            Bullet = BulletFactory.CreateBullet(turretData.BulletData);
+            Bullet = BulletFactory.Create(turretData.BulletData);
         }
 
         public abstract void Shoot(EnemyStateMachine enemy);

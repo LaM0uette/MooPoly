@@ -4,7 +4,7 @@ namespace Game.Scripts.Bullets
 {
     public static class BulletFactory
     {
-        public static Bullet CreateBullet(BulletData bulletData)
+        public static Bullet Create(BulletData bulletData)
         {
             return new Bullet
             {
