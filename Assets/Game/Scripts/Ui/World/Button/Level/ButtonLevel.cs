@@ -47,10 +47,6 @@ namespace Game.Scripts.Ui.World.Button.Level
             
             _outlinable.enabled = value;
         }
-
-        public void ShowUi()
-        {
-        }
         
         public Transform GetTransform() => gameObject.transform;
 

@@ -30,10 +30,6 @@ namespace Game.Scripts.TurretsToBuild
                     break;
             }
         }
-
-        public void ShowUi()
-        {
-        }
         
         public Transform GetTransform() => gameObject.transform;
 

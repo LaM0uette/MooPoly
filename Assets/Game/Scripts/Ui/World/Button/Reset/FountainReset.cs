@@ -30,10 +30,6 @@ namespace Game.Scripts.Ui.World.Button.Reset
             _outlinable.enabled = value;
         }
 
-        public void ShowUi()
-        {
-        }
-
         public Transform GetTransform() => transform;
 
         #endregion
