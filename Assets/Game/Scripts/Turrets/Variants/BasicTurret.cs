@@ -1,5 +1,4 @@
 using Game.Scripts.Enemies.EnemyStateMachine;
-using UnityEngine;
 
 namespace Game.Scripts.Turrets.Variants
 {
@@ -9,7 +8,7 @@ namespace Game.Scripts.Turrets.Variants
 
         public override void Shoot(EnemyStateMachine enemy)
         {
-            Debug.Log("Shoot");
+            var bulletGo = Instantiate(Bullet.Prefab, FirePoint.position, FirePoint.rotation, BulletsParent.transform);
         }
 
         #endregion

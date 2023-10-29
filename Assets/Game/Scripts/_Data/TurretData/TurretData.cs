@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Scripts._Data.TurretData
 {
@@ -19,5 +20,8 @@ namespace Game.Scripts._Data.TurretData
         public float Range;
         public float FireRate;
         public float RotationSpeed;
+        
+        [Space, Title("Bullet")]
+        public BulletData.BulletData BulletData;
     }
 }

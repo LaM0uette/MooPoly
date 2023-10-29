@@ -13,5 +13,6 @@ namespace Game.Scripts.StaticUtilities
         // Parents
         public const string TurretsParent = "TurretsParent";
         public const string EnemiesParent = "EnemiesParent";
+        public const string BulletsParent = "BulletsParent";
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Confiner
   - TurretsParent
   - EnemiesParent
+  - BulletsParent
   layers:
   - Default
   - TransparentFX

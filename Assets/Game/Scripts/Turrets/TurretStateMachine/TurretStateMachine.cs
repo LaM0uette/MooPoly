@@ -28,7 +28,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine
         private void Awake()
         {
             Turret = gameObject.AddComponent<BasicTurret>();
-            Turret.Init(turretData);
+            Turret.Init(turretData, FirePoint);
         }
 
         private void Start()
