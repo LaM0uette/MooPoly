@@ -27,18 +27,20 @@ namespace Game.Scripts.Player.Controller
         private void OnTriggerExit(Collider other)
         {
             if (!other.TryGetComponent<IInteract>(out var interact)) return;
-            Interacts.Remove(interact);
             
             interact.ShowOutline(false);
+            Interacts.Remove(interact);
             
             SetCurrentInteract();
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (!other.TryGetComponent<IInteract>(out _)) return;
+            if (!other.TryGetComponent<IInteract>(out var interact)) return;
+            if (CurrentInteract == interact) return;
             
             SetCurrentInteract();
+            SetOutline(interact);
         }
 
         #endregion
@@ -55,13 +57,19 @@ namespace Game.Scripts.Player.Controller
         {
             if (Interacts.Count <= 0)
             {
-                CurrentInteract.ShowOutline(false);
                 CurrentInteract = null;
                 return;
             }
             
             CurrentInteract = GetClosestInteract();
+        }
+
+        private static void SetOutline(IInteract interact)
+        {
             CurrentInteract.ShowOutline(true);
+            
+            if (interact != CurrentInteract)
+                interact.ShowOutline(false);
         }
 
         private IInteract GetClosestInteract()
