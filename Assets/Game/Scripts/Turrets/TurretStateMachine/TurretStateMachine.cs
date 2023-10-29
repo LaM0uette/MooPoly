@@ -8,16 +8,16 @@ using UnityEngine;
 
 namespace Game.Scripts.Turrets.TurretStateMachine
 {
+    [RequireComponent(typeof(SphereCollider))]
     public class TurretStateMachine : StateMachine
     {
         #region Statements
         
         public Action OnUpdateRepeating { get; set; }
-        
-        // Components
         public Turret Turret { get; private set; }
         
-        [Space, Title("Turret GameObject")]
+        [Space, Title("Turret")]
+        public LayerMask EnemyLayer;
         public Transform TurretMobileTransform;
         public Transform TurretHeadTransform;
         public Transform InitialPos;
@@ -35,8 +35,8 @@ namespace Game.Scripts.Turrets.TurretStateMachine
 
         private void Start()
         {
-            InvokeRepeat(0, turretData.RepeatRate);
-            
+            GetComponent<SphereCollider>().radius = turretData.Range;
+            InvokeRepeating(nameof(UpdateRepeating), 0, 0.1f);
             SwitchState(new TurretBuildState(this));
         }
 
@@ -44,9 +44,6 @@ namespace Game.Scripts.Turrets.TurretStateMachine
 
         #region Functions
 
-        private void InvokeRepeat(float startTime, float repeatRate) => 
-            InvokeRepeating(nameof(UpdateRepeating), startTime, repeatRate);
-        
         private void UpdateRepeating() => OnUpdateRepeating?.Invoke();
 
         #endregion
@@ -60,6 +57,8 @@ namespace Game.Scripts.Turrets.TurretStateMachine
         
         private void OnDrawGizmosSelected()
         {
+            if (turretData is null) return;
+            
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, turretData.Range);
         }

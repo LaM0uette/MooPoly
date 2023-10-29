@@ -29,9 +29,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         // Components
         public Animator Animator { get; private set; }
         public Enemy Enemy { get; set; } = new();
-        
-        // States
-        public bool IsTransitioning { get; private set; }
+        public bool IsDead { get; set; }
 
         // Splines
         [CanBeNull] public SplineContainer EnemyPath { get; set; }
@@ -61,11 +59,13 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         
         private void OnEnable()
         {
+            IsDead = false;
             _observer.Notify(true);
         }
         
         private void OnDisable()
         {
+            IsDead = true;
             _observer.Notify(false);
         }
         
@@ -76,15 +76,13 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         public void TransitionToAnimation(int animationId, float transitionDuration = .1f)
         {
             Animator.CrossFadeInFixedTime(animationId, transitionDuration);
-            IsTransitioning = true;
             
             StartCoroutine(EndTransitionAfterDelay(transitionDuration));
         }
         
-        private IEnumerator EndTransitionAfterDelay(float delay)
+        private static IEnumerator EndTransitionAfterDelay(float delay)
         {
             yield return new WaitForSeconds(delay);
-            IsTransitioning = false;
         }
 
         #endregion

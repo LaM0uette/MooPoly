@@ -19,7 +19,6 @@ namespace Game.Scripts.Turrets
         public float Range { get; set; }
         public float FireRate { get; set; }
         public float RotationSpeed { get; set; }
-        public float RepeatRate { get; set; }
 
         #endregion
 
@@ -33,7 +32,6 @@ namespace Game.Scripts.Turrets
             Range = turretData.Range;
             FireRate = turretData.FireRate;
             RotationSpeed = turretData.RotationSpeed;
-            RepeatRate = turretData.RepeatRate;
         }
 
         public abstract void Shoot(Enemy enemy);

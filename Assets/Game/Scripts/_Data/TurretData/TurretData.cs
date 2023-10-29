@@ -19,6 +19,5 @@ namespace Game.Scripts._Data.TurretData
         public float Range;
         public float FireRate;
         public float RotationSpeed;
-        public float RepeatRate;
     }
 }
