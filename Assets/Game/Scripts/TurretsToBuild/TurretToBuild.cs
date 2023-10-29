@@ -1,5 +1,6 @@
 using EPOOutline;
 using Game.Scripts.Interactable;
+using Game.Scripts.Ui.TurretsToBuild;
 using UnityEngine;
 
 namespace Game.Scripts.TurretsToBuild
@@ -16,6 +17,7 @@ namespace Game.Scripts.TurretsToBuild
 
         public void Interact()
         {
+            UiManager.OnUiManager?.Invoke();
         }
 
         public void ShowOutline(bool value)
