@@ -1434,7 +1434,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 2827670316288549123}
   m_Father: {fileID: 5668704310085923179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3227474707417833384
@@ -1466,7 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c659468044dd947a509a245398c65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 8274819867985450967}
+  _uisTurretsToBuild: {fileID: 6870855531555161348}
 --- !u!1 &6348497264084746673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1734,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8411769432994378728}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8143709850820090652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2827670316288549123}
+  - component: {fileID: 6870855531555161348}
+  m_Layer: 3
+  m_Name: UIS_TurretsToBuild
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2827670316288549123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143709850820090652}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4510847897352519974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6870855531555161348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143709850820090652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf9fd092a055fd4f92ab63e43dfc303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScreenName: TurretsToBuild
+  Document: {fileID: 3227474707417833384}
+  _playerController: {fileID: 8274819867985450967}
 --- !u!1 &8278735121277448504
 GameObject:
   m_ObjectHideFlags: 0

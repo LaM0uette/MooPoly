@@ -1,7 +1,8 @@
 using System;
-using Game.Scripts.Player.Controller;
+using System.Collections.Generic;
+using Game.Scripts.Ui.GameHUD.Screens;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace Game.Scripts.Ui.GameHUD
 {
@@ -11,62 +12,51 @@ namespace Game.Scripts.Ui.GameHUD
         
         public static Action OnUiManager;
         
-        [SerializeField] private PlayerController _playerController;
-
-        private UIDocument _uiDocument;
-        private VisualElement _root;
-        private VisualElement _veTurretsToBuild;
+        [SerializeField] private UIS_TurretsToBuild _uisTurretsToBuild;
+        
+        private readonly List<UiScreen> _allModalUIScreens = new();
 
         private void Awake()
         {
-            _uiDocument = GetComponent<UIDocument>();
-            _root = _uiDocument.rootVisualElement;
-            _veTurretsToBuild = _root.Query("VE_TurretsToBuild");
-            
-            _veTurretsToBuild.style.visibility = Visibility.Hidden;
-            OnUiManager += Show;
+            SetupModalScreens();
+        }
+
+        #endregion
+
+        #region Events
+
+        private void OnEnable()
+        {
+            OnUiManager += ShowTurretsToBuildUIScreen;
+        }
+
+        private void OnDisable()
+        {
+            OnUiManager -= ShowTurretsToBuildUIScreen;
         }
 
         #endregion
 
         #region Functions
 
-        private void Show()
+        private void SetupModalScreens()
         {
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
-            UnityEngine.Cursor.visible = true;
-            
-            _veTurretsToBuild.style.visibility = Visibility.Visible;
-            SetupButtons();
-        }
-
-        private void SetupButtons()
-        {
-            var btnClose = _veTurretsToBuild.Q<Button>("Btn_Close");
-            var btnCrossBow = _veTurretsToBuild.Q<Button>("Btn_CrossBow");
-            var btnMiniGun = _veTurretsToBuild.Q<Button>("Btn_MiniGun");
-            var btnNailGun = _veTurretsToBuild.Q<Button>("Btn_NailGun");
-            
-            btnClose.RegisterCallback<ClickEvent>(_ => { Close(); } );
-            btnCrossBow.RegisterCallback<ClickEvent>(_ => { BtnTurret(0); } );
-            btnMiniGun.RegisterCallback<ClickEvent>(_ => { BtnTurret(1); } );
-            btnNailGun.RegisterCallback<ClickEvent>(_ => { BtnTurret(2); } );
+            _allModalUIScreens?.Add(_uisTurretsToBuild);
         }
         
-        private void BtnTurret(int value)
+        private void ShowTurretsToBuildUIScreen() => ShowModalScreen(_uisTurretsToBuild);
+        
+        private void ShowModalScreen(Object modalScreen)
         {
-            _playerController.Temp(value);
-            Close();
+            foreach (var modalUIScreen in _allModalUIScreens)
+            {
+                if (modalUIScreen == modalScreen)
+                    modalUIScreen.ShowScreen();
+                else
+                    modalUIScreen.HideScreen();
+            }
         }
         
-        private void Close()
-        {
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-            UnityEngine.Cursor.visible = false;
-            
-            _veTurretsToBuild.style.visibility = Visibility.Hidden;
-        }
-
         #endregion
     }
 }
