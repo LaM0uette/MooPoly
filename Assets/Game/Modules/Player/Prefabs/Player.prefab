@@ -1102,16 +1102,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5fbc6199192ad4f887dea09c14d633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _observerCoins: {fileID: 11400000, guid: 062fe719643992c4487b10bc9b2270be, type: 2}
   _turretsToBuild:
   - TurretIndex: 0
     TurretPrefab: {fileID: 3384707303740066317, guid: bc3353934bd7aa349b4dbec22d77132b,
       type: 3}
+    TurretData: {fileID: 11400000, guid: 584b1875ea970a746a1a2710830228cf, type: 2}
   - TurretIndex: 1
     TurretPrefab: {fileID: 7332006524029513210, guid: a790a07e4f847404ba133fb203127797,
       type: 3}
+    TurretData: {fileID: 11400000, guid: 760ebcdf632165e42ac2310dd7a27857, type: 2}
   - TurretIndex: 2
     TurretPrefab: {fileID: 7375198715313226133, guid: 7a76e650b512d464a8275c7788788eb0,
       type: 3}
+    TurretData: {fileID: 11400000, guid: 4090eff3bc3924747834f94918228e87, type: 2}
 --- !u!1 &4312576981090735726
 GameObject:
   m_ObjectHideFlags: 0

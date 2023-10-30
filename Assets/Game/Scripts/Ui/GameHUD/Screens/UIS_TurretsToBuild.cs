@@ -55,7 +55,7 @@ namespace Game.Scripts.Ui.GameHUD.Screens
 
         private void BtnTurret(int value)
         {
-            _playerController.Temp(value);
+            _playerController.BuildTurret(value);
             Close();
         }
         

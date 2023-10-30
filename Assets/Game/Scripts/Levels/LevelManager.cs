@@ -54,11 +54,6 @@ namespace Game.Scripts.Levels
 
         #region Events
 
-        private void OnEnable()
-        {
-            _observerCoins.Notify(LevelData.MooCoinsStart);
-        }
-
         private void OnDisable()
         {
             GameManager.Instance.ResetLevelMooCoins();

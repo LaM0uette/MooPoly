@@ -16,6 +16,7 @@ namespace Game.Scripts.Turrets
         public TurretType Type { get; private set; }
         
         // Build
+        public int Cost { get; private set; }
         public float BuildTime { get; private set; }
         public Transform FirePoint { get; private set; }
         
@@ -40,6 +41,7 @@ namespace Game.Scripts.Turrets
         public void Init(TurretData turretData, Transform firePoint)
         {
             Type = turretData.Type;
+            Cost = turretData.Cost;
             BuildTime = turretData.BuildTime;
             FirePoint = firePoint;
             Damage = turretData.Damage;

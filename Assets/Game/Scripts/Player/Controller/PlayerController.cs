@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Game.Scripts._Data.TurretData;
+using Game.Scripts.Generic.Managers;
 using Game.Scripts.Interactables;
+using Game.Scripts.Observers;
 using Game.Scripts.StaticUtilities;
+using Game.Scripts.Turrets.TurretStateMachine;
 using UnityEngine;
 
 namespace Game.Scripts.Player.Controller
@@ -11,6 +15,7 @@ namespace Game.Scripts.Player.Controller
     {
         public int TurretIndex;
         public GameObject TurretPrefab;
+        public TurretData TurretData;
     }
     
     public class PlayerController : MonoBehaviour
@@ -20,6 +25,8 @@ namespace Game.Scripts.Player.Controller
         public static Interactable CurrentInteract { get; private set; }
 
         private static readonly List<Interactable> Interacts = new();
+        
+        [SerializeField] private ObserverEvent _observerCoins;
         
         [SerializeField] private List<TurretsToBuild> _turretsToBuild = new();
         private GameObject _turretsParent;
@@ -108,11 +115,15 @@ namespace Game.Scripts.Player.Controller
 
         #region Turrets
 
-        public void Temp(int index)
+        public void BuildTurret(int index)
         {
+            var turretCost = _turretsToBuild[index].TurretData.Cost;
+            if (GameManager.Instance.CurrentLevelMooCoins < turretCost) return;
+            
             var trs = CurrentInteract.GetTransform();
             var turret = Instantiate(_turretsToBuild[index].TurretPrefab, trs.position, Quaternion.identity, _turretsParent.transform);
-
+            
+            _observerCoins.Notify(-turretCost);
             Interacts.Remove(CurrentInteract);
             CurrentInteract.Destroy();
             CurrentInteract = null;

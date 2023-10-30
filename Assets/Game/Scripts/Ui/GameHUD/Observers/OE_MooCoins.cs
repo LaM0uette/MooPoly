@@ -42,7 +42,7 @@ namespace Game.Scripts.Ui.GameHUD.Observers
                 _ => 0
             };
 
-            GameManager.Instance.IncreaseLevelMooCoins(coinsEarned);
+            GameManager.Instance.EarnLevelMooCoins(coinsEarned);
             _uisLevelCoins.UpdateLevelCoins(GameManager.Instance.CurrentLevelMooCoins);
         }
 

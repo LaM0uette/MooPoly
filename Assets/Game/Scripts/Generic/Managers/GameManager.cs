@@ -22,8 +22,7 @@ namespace Game.Scripts.Generic.Managers
 
         #region Functions
         
-        public void IncreaseLevelMooCoins(int value) => CurrentLevelMooCoins += value;
-        public void DecreaseLevelMooCoins(int value) => CurrentLevelMooCoins -= value;
+        public void EarnLevelMooCoins(int value) => CurrentLevelMooCoins += value;
         public void ResetLevelMooCoins() => CurrentLevelMooCoins = 0;
 
         #endregion
