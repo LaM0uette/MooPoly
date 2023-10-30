@@ -123,7 +123,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
                 var random = Random.Range(0, 1f);
                 if (random > mooCoin.Probability) continue;
                 
-                var mooCoinGameObject = Instantiate(mooCoin.MooCoinData.Prefab, pos, Quaternion.Euler(90, 0, 0), _mooCoinsParent.transform);
+                var mooCoinGameObject = Instantiate(mooCoin.MooCoinData.Prefab, pos, Quaternion.Euler(90, 0, Random.Range(0, 359f)), _mooCoinsParent.transform);
                 var mooCoinBehaviour = mooCoinGameObject.GetComponent<MooCoinBehaviour>();
                 mooCoinBehaviour.MooCoin = MooCoinFactory.Create(mooCoin.MooCoinData);
                 
