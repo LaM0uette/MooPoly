@@ -5,7 +5,10 @@ using Game.Scripts._Data.EnemyData;
 using Game.Scripts._Data.LevelData;
 using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
+using Game.Scripts.Generic.Managers;
 using Game.Scripts.Levels.GameMode;
+using Game.Scripts.MooCoins;
+using Game.Scripts.Observers;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -18,6 +21,8 @@ namespace Game.Scripts.Levels
         
         public static Action OnLevelStart;
         public static Action OnLevelEnd;
+        
+        [SerializeField] private ObserverEvent _observerCoins;
         
         public bool CanStartNextWave { get; set; }
         public int CurrentWaveIndex { get; set; }
@@ -38,9 +43,25 @@ namespace Game.Scripts.Levels
         private void Start()
         {
             _currentGameMode.StartMode();
+            
             OnLevelStart?.Invoke();
+            _observerCoins.Notify(LevelData.MooCoinsStart);
             
             InvokeRepeat(5f, 1f);
+        }
+
+        #endregion
+
+        #region Events
+
+        private void OnEnable()
+        {
+            _observerCoins.Notify(LevelData.MooCoinsStart);
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.ResetLevelMooCoins();
         }
 
         #endregion

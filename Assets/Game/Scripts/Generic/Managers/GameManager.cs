@@ -7,6 +7,8 @@ namespace Game.Scripts.Generic.Managers
         #region Statements
 
         public static GameManager Instance;
+        
+        public int CurrentLevelMooCoins { get; private set; }
 
         private void Awake()
         {
@@ -15,6 +17,14 @@ namespace Game.Scripts.Generic.Managers
             else 
                 Destroy(gameObject);
         }
+
+        #endregion
+
+        #region Functions
+        
+        public void IncreaseLevelMooCoins(int value) => CurrentLevelMooCoins += value;
+        public void DecreaseLevelMooCoins(int value) => CurrentLevelMooCoins -= value;
+        public void ResetLevelMooCoins() => CurrentLevelMooCoins = 0;
 
         #endregion
     }

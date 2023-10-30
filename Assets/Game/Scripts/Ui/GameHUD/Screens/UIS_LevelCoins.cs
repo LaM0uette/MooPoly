@@ -22,7 +22,16 @@ namespace Game.Scripts.Ui.GameHUD.Screens
             
             _levelCoins = Root.Q(_levelCoinsHash);
             _lbCoins = Root.Q<Label>(_lbCoinsHash);
-            _lbCoins.text = 1500.ToString();
+            _lbCoins.text = 000.ToString();
+        }
+
+        #endregion
+
+        #region Functions
+
+        public void UpdateLevelCoins(int coins)
+        {
+            _lbCoins.text = coins.ToString();
         }
 
         #endregion

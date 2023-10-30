@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecaa314f913bbd479bdf38ac9aebbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _observerCoins: {fileID: 11400000, guid: 062fe719643992c4487b10bc9b2270be, type: 2}
   LevelData: {fileID: 11400000, guid: 293eb1bd5858dc5459e802cfccc8de54, type: 2}
 --- !u!1 &1357436613951094481
 GameObject:

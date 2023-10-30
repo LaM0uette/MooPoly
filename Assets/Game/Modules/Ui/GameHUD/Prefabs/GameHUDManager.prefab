@@ -123,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6430956216340226831}
   - component: {fileID: 1223953369183312739}
+  - component: {fileID: 6139077788128857408}
   m_Layer: 3
   m_Name: UIS_LevelCoins
   m_TagString: Untagged
@@ -159,4 +160,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenName: LevelCoins
   Document: {fileID: 5684895480287291179}
-  _playerController: {fileID: 0}
+--- !u!114 &6139077788128857408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459155362165884817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a0c73fafd320943a2e21673335f4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _observer: {fileID: 11400000, guid: 062fe719643992c4487b10bc9b2270be, type: 2}
