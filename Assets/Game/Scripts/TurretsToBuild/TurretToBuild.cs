@@ -9,7 +9,7 @@ namespace Game.Scripts.TurretsToBuild
 
         public override void Interact()
         {
-            UiManager.OnUiManager?.Invoke();
+            GameHUDManager.OnUiManager?.Invoke();
         }
 
         public override void Enter()

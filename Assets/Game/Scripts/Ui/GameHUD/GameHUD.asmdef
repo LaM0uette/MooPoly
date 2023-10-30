@@ -1,4 +1,4 @@
 {
 	"name": "UiTurretsToBuild",
-	"references":[ "GUID:f14bc151b592a0d49ac746048ccaf3f5" ]
+	"references":[ "GUID:f14bc151b592a0d49ac746048ccaf3f5", "GUID:878895639a8587743b1bb64843d1f38a" ]
 }

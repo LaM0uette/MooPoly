@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Game/Modules/Ui/GameHUD/USS/uss.uss?fileID=7433441132597879392&amp;guid=1120c5e0cd7f89c40a156c87d45fded2&amp;type=3#uss" />
+    <ui:VisualElement picking-mode="Ignore" style="width: 100%; height: 100%; justify-content: flex-start;">
+        <ui:VisualElement style="align-self: flex-end; align-items: stretch; margin-right: 3%; margin-top: 3%; background-color: rgba(99, 99, 99, 0.67); flex-direction: row;">
+            <ui:Label tabindex="-1" text="Coins :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Lb_TitleCoins" style="font-size: 40px;" />
+            <ui:Label tabindex="-1" text="000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Lb_Coins" style="font-size: 40px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

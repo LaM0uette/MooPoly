@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Scripts._Data.EnemyData;
@@ -14,6 +15,9 @@ namespace Game.Scripts.Levels
     public class LevelManager : MonoBehaviour
     {
         #region Statements
+        
+        public static Action OnLevelStart;
+        public static Action OnLevelEnd;
         
         public bool CanStartNextWave { get; set; }
         public int CurrentWaveIndex { get; set; }
@@ -34,6 +38,7 @@ namespace Game.Scripts.Levels
         private void Start()
         {
             _currentGameMode.StartMode();
+            OnLevelStart?.Invoke();
             
             InvokeRepeat(5f, 1f);
         }
