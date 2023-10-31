@@ -9,16 +9,10 @@ namespace Game.Scripts.Ui.GameHUD.Screens
         #region Elements
 
         private const string _turretsToBuildHash = "TurretsToBuild";
-        private const string _btnCloseHash = "Btn_Close";
-        private const string _btnCrossBowHash = "Btn_CrossBow";
-        private const string _btnMiniGunHash = "Btn_MiniGun";
-        private const string _btnNailGunHash = "Btn_NailGun";
+        private const string _ttbHash = "TTB";
         
         private VisualElement _turretsToBuild;
-        private Button _btnClose;
-        private Button _btnCrossBow;
-        private Button _btnMiniGun;
-        private Button _btnNailGun;
+        private VisualElement _ttb;
 
         #endregion
 
@@ -35,18 +29,25 @@ namespace Game.Scripts.Ui.GameHUD.Screens
             base.SetVisualElements();
             
             _turretsToBuild = Root.Q(_turretsToBuildHash);
-            _btnClose = Root.Q<Button>(_btnCloseHash);
-            _btnCrossBow = Root.Q<Button>(_btnCrossBowHash);
-            _btnMiniGun = Root.Q<Button>(_btnMiniGunHash);
-            _btnNailGun = Root.Q<Button>(_btnNailGunHash);
-        }
-        
-        protected override void RegisterButtonCallbacks()
-        {
-            _btnClose.RegisterCallback<ClickEvent>(_ => { Close(); } );
-            _btnCrossBow.RegisterCallback<ClickEvent>(_ => { BtnTurret(0); } );
-            _btnMiniGun.RegisterCallback<ClickEvent>(_ => { BtnTurret(1); } );
-            _btnNailGun.RegisterCallback<ClickEvent>(_ => { BtnTurret(2); } );
+            _ttb = Root.Q(_ttbHash);
+            
+            var turretsToBuild = _playerController.TurretsToBuild;
+
+            for (var i = 0; i < turretsToBuild.Count; i++)
+            {
+                var turret = turretsToBuild[i];
+                
+                var button = new Button
+                {
+                    name = $"Btn_{turret.TurretData.Name}",
+                    text = $"{turret.TurretData.Name}: {turret.TurretData.Cost}€"
+                };
+
+                var i1 = i;
+                button.RegisterCallback<ClickEvent>(_ => { BtnTurret(i1); } );
+                button.AddToClassList("turretButton");
+                _ttb.Add(button);
+            }
         }
 
         #endregion
@@ -56,11 +57,6 @@ namespace Game.Scripts.Ui.GameHUD.Screens
         private void BtnTurret(int value)
         {
             _playerController.BuildTurret(value);
-            Close();
-        }
-        
-        private void Close()
-        {
             HideScreen();
         }
 

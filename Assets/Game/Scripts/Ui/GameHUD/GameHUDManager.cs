@@ -63,8 +63,8 @@ namespace Game.Scripts.Ui.GameHUD
         
         private void ShowTurretsToBuildUIScreen() => ShowModalScreen(_uisTurretsToBuild);
         
-        private void ShowLevelCoinsUIScreen() => _uisLevelCoins.ShowScreen();
-        private void HideLevelCoinsUIScreen() => _uisLevelCoins.HideScreen();
+        private void ShowLevelCoinsUIScreen() => _uisLevelCoins.ShowScreen(false);
+        private void HideLevelCoinsUIScreen() => _uisLevelCoins.HideScreen(false);
 
         private void ShowLevelUpdateUIScreen(string text)
         {

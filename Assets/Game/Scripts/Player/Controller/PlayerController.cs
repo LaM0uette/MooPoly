@@ -30,6 +30,7 @@ namespace Game.Scripts.Player.Controller
         [SerializeField] private ObserverEvent _observerCoins;
         
         [SerializeField] private List<TurretsToBuild> _turretsToBuild = new();
+        public List<TurretsToBuild> TurretsToBuild => _turretsToBuild;
         private GameObject _turretsParent;
 
         private void Awake()
