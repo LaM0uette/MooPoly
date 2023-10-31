@@ -5,6 +5,9 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
     public class TurretBuildState : TurretBaseState
     {
         #region Statements
+        
+        private Vector3 _initialPos;
+        private Vector3 _finalPos;
 
         public TurretBuildState(TurretStateMachine turretStateMachine) : base(turretStateMachine)
         {
@@ -16,8 +19,10 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
 
         public override void Enter()
         {
-            var initialPos = TurretStateMachine.InitialPos.position;
-            TurretStateMachine.transform.position = initialPos;
+            _initialPos = TurretStateMachine.InitialPos.position;
+            _finalPos = _initialPos - _initialPos;
+            
+            TurretStateMachine.transform.position = _initialPos;
         }
 
         public override void TickFixed(float deltaTime)
@@ -38,7 +43,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
 
         private bool IsBelowFinalPosition()
         {
-            return TurretStateMachine.transform.position.y <= 0;
+            return TurretStateMachine.transform.position.y <= _finalPos.y;
         }
 
         private void MoveUpward(float deltaTime)
