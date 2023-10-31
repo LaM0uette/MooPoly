@@ -33,19 +33,25 @@ namespace Game.Scripts.Ui.GameHUD
         
         protected virtual void RegisterButtonCallbacks() { }
         
-        public virtual void ShowScreen()
+        public virtual void ShowScreen(bool lockCursor = true)
         {
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
-            UnityEngine.Cursor.visible = true;
+            if (lockCursor)
+            {
+                UnityEngine.Cursor.lockState = CursorLockMode.None;
+                UnityEngine.Cursor.visible = true;
+            }
             
             ShowVisualElement(Screen, true);
         }
 
-        public virtual void HideScreen()
+        public virtual void HideScreen(bool lockCursor = true)
         {
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-            UnityEngine.Cursor.visible = false;
-            
+            if (lockCursor)
+            {
+                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                UnityEngine.Cursor.visible = false;
+            }
+
             if (IsVisible())
                 ShowVisualElement(Screen, false);
         }

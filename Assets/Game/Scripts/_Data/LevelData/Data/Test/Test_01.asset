@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25babb46c16041842b94d9fe499f9978, type: 3}
   m_Name: Test_01
   m_EditorClassIdentifier: 
-  MooCoinsStart: 350
+  MooCoinsStart: 500
   waves:
   - EnemyData: {fileID: 11400000, guid: 6651d98dc1a02b842af88cedee20ea08, type: 2}
     EnemyCount: 5

@@ -22,8 +22,8 @@ MonoBehaviour:
   - MooCoinData: {fileID: 11400000, guid: 6526e37abbcb4f445b8c1805ed8ad103, type: 2}
     Probability: 1
   - MooCoinData: {fileID: 11400000, guid: 3b9ada0364f8ed348b00ed9778c65efc, type: 2}
-    Probability: 0.7
+    Probability: 0.8
   - MooCoinData: {fileID: 11400000, guid: f39f29da631e3154db60dd1e59b0b7d3, type: 2}
-    Probability: 0.35
+    Probability: 0.5
   - MooCoinData: {fileID: 11400000, guid: c6c79ae6dfa57e6489c1f0029055775a, type: 2}
-    Probability: 0.1
+    Probability: 0.3

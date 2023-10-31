@@ -7,7 +7,6 @@ using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.Levels.GameMode;
-using Game.Scripts.MooCoins;
 using Game.Scripts.Observers;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;

@@ -5,7 +5,6 @@ using Game.Scripts.Generic.Managers;
 using Game.Scripts.Interactables;
 using Game.Scripts.Observers;
 using Game.Scripts.StaticUtilities;
-using Game.Scripts.Turrets.TurretStateMachine;
 using UnityEngine;
 
 namespace Game.Scripts.Player.Controller
@@ -21,6 +20,8 @@ namespace Game.Scripts.Player.Controller
     public class PlayerController : MonoBehaviour
     {
         #region Statements
+        
+        public static Action<bool> OnTriggerInteract;
         
         public static Interactable CurrentInteract { get; private set; }
 
@@ -78,10 +79,12 @@ namespace Game.Scripts.Player.Controller
         {
             if (Interacts.Count <= 0)
             {
+                OnTriggerInteract?.Invoke(false);
                 CurrentInteract = null;
                 return;
             }
             
+            OnTriggerInteract?.Invoke(true);
             CurrentInteract = GetClosestInteract();
         }
 
@@ -127,6 +130,7 @@ namespace Game.Scripts.Player.Controller
             Interacts.Remove(CurrentInteract);
             CurrentInteract.Destroy();
             CurrentInteract = null;
+            OnTriggerInteract?.Invoke(false);
         }
 
         #endregion

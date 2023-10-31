@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: CrossBow
   Type: 2
-  Cost: 220
+  Cost: 150
   BuildTime: 0.6
   Damage: 15
   Range: 30

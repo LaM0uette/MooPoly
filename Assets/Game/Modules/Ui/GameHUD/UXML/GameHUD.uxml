@@ -1,6 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="LevelCoins" src="project://database/Assets/Game/Modules/Ui/GameHUD/UXML/LevelCoins.uxml?fileID=9197481963319205126&amp;guid=9f5d782de8c57884d852d9ac86c4e6ae&amp;type=3#LevelCoins" />
     <ui:Template name="TurretsToBuild" src="project://database/Assets/Game/Modules/Ui/GameHUD/UXML/TurretsToBuild.uxml?fileID=9197481963319205126&amp;guid=b72329ac6ae851f429144257f46ae4ab&amp;type=3#TurretsToBuild" />
+    <ui:Template name="Interact" src="project://database/Assets/Game/Modules/Ui/GameHUD/UXML/Interact.uxml?fileID=9197481963319205126&amp;guid=c17e888b38311024db970b8922153b8f&amp;type=3#Interact" />
     <ui:Instance template="LevelCoins" name="LevelCoins" style="align-self: flex-end; margin-top: 3%; margin-right: 7%; display: none;" />
     <ui:Instance template="TurretsToBuild" name="TurretsToBuild" style="width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="Interact" name="Interact" style="position: absolute; left: 53%; top: 41%; display: none;" />
 </ui:UXML>
