@@ -20,7 +20,7 @@ namespace Game.Scripts.Levels.GameMode
 
         public void StartMode()
         {
-            Debug.Log("Start");
+            LevelManager.OnLevelUpdate?.Invoke("Start");
             _levelManager.CanStartNextWave = true;
             _levelManager.CurrentWaveIndex = -1;
         }
@@ -38,6 +38,7 @@ namespace Game.Scripts.Levels.GameMode
         {
             if (_levelManager.IsLastWave())
             {
+                LevelManager.OnLevelUpdate?.Invoke("Finish");
                 _levelManager.StopRepeat();
                 return;
             }
@@ -54,7 +55,7 @@ namespace Game.Scripts.Levels.GameMode
             
             while (remainingTime > 0)
             {
-                Debug.Log("Start in " + remainingTime);
+                LevelManager.OnLevelUpdate?.Invoke("Start in " + remainingTime);
                 yield return new WaitForSeconds(1);
                 remainingTime--;
             }
@@ -64,7 +65,7 @@ namespace Game.Scripts.Levels.GameMode
         
         private void StartNextWave()
         {
-            Debug.Log("StartNextWave");
+            LevelManager.OnLevelUpdate?.Invoke($"Wave {(_levelManager.CurrentWaveIndex + 2):00}");
             var waveData = _levelManager.GetCurrentWave(true);
             var enemyData = waveData.EnemyData;
             var pathIndex = waveData.PathIndex % _levelManager.EnemyPaths.Count;

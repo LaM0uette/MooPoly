@@ -20,6 +20,7 @@ namespace Game.Scripts.Levels
         
         public static Action OnLevelStart;
         public static Action OnLevelEnd;
+        public static Action<string> OnLevelUpdate;
         
         [SerializeField] private ObserverEvent _observerCoins;
         

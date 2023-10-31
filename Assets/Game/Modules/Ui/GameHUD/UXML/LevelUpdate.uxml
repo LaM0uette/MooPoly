@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Game/Modules/Ui/GameHUD/USS/uss.uss?fileID=7433441132597879392&amp;guid=1120c5e0cd7f89c40a156c87d45fded2&amp;type=3#uss" />
+    <ui:VisualElement picking-mode="Ignore" style="width: 100%; height: 100%; justify-content: flex-start;">
+        <ui:VisualElement style="align-self: center; margin-right: 3%; margin-top: 3%; background-color: rgba(99, 99, 99, 0.67); flex-direction: row;">
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Lb_LevelUpdate" style="-unity-font: url(&apos;project://database/Assets/UI%20Toolkit/Fonts/Milk%20Kids.ttf?fileID=12800000&amp;guid=1810ee77a5a8c694796f004e2e727cc3&amp;type=3#Milk Kids&apos;); -unity-font-definition: url(&apos;project://database/Assets/UI%20Toolkit/Fonts/Milk%20Kids%20SDF.asset?fileID=11400000&amp;guid=b561421cc93836149b6d2c13017a815e&amp;type=2#Milk Kids SDF&apos;); font-size: 30px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 8px; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Game.Scripts.Levels;
 using Game.Scripts.Player.Controller;
@@ -17,6 +18,7 @@ namespace Game.Scripts.Ui.GameHUD
         [SerializeField] private UIS_TurretsToBuild _uisTurretsToBuild;
         [SerializeField] private UIS_LevelCoins _uisLevelCoins;
         [SerializeField] private UIS_Interact _uisInteract;
+        [SerializeField] private UIS_LevelUpdate _uisLevelUpdate;
         
         private readonly List<UiScreen> _allModalUIScreens = new();
 
@@ -35,6 +37,7 @@ namespace Game.Scripts.Ui.GameHUD
             
             LevelManager.OnLevelStart += ShowLevelCoinsUIScreen;
             LevelManager.OnLevelEnd += HideLevelCoinsUIScreen;
+            LevelManager.OnLevelUpdate += ShowLevelUpdateUIScreen;
             
             PlayerController.OnTriggerInteract += InteractUIScreenHandle;
         }
@@ -44,6 +47,7 @@ namespace Game.Scripts.Ui.GameHUD
             OnUiManager -= ShowTurretsToBuildUIScreen;
             LevelManager.OnLevelStart -= ShowLevelCoinsUIScreen;
             LevelManager.OnLevelEnd -= HideLevelCoinsUIScreen;
+            LevelManager.OnLevelUpdate += ShowLevelUpdateUIScreen;
             
             PlayerController.OnTriggerInteract -= InteractUIScreenHandle;
         }
@@ -62,6 +66,14 @@ namespace Game.Scripts.Ui.GameHUD
         private void ShowLevelCoinsUIScreen() => _uisLevelCoins.ShowScreen();
         private void HideLevelCoinsUIScreen() => _uisLevelCoins.HideScreen();
 
+        private void ShowLevelUpdateUIScreen(string text)
+        {
+            _uisLevelUpdate.UpdateText(text);
+            _uisLevelUpdate.ShowScreen(false);
+            //StartCoroutine(nameof(FuncWithDelay), 3f);
+        }
+        private void HideLevelUpdateUIScreen() => _uisLevelUpdate.HideScreen(false);
+        
         private void InteractUIScreenHandle(bool value)
         {
             if (value)
@@ -82,5 +94,18 @@ namespace Game.Scripts.Ui.GameHUD
         }
         
         #endregion
+        
+        private IEnumerator FuncWithDelay(float delay)
+        {
+            var remainingTime = delay;
+            
+            while (remainingTime > 0)
+            {
+                yield return new WaitForSeconds(1);
+                remainingTime--;
+            }
+
+            HideLevelUpdateUIScreen();
+        }
     }
 }
