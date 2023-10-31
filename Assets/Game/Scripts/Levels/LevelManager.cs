@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Game.Scripts._Data.EnemyData;
 using Game.Scripts._Data.LevelData;
+using Game.Scripts._Data.SceneData;
 using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.Levels.GameMode;
 using Game.Scripts.Observers;
+using Game.Scripts.Scenes;
 using Game.Scripts.StaticUtilities;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -22,14 +25,14 @@ namespace Game.Scripts.Levels
         public static Action OnLevelEnd;
         public static Action<string> OnLevelUpdate;
         
-        [SerializeField] private ObserverEvent _observerCoins;
-        
         public bool CanStartNextWave { get; set; }
         public int CurrentWaveIndex { get; set; }
         public int EnemiesAlive { get; set; }
         public List<SplineContainer> EnemyPaths { get; set; } = new();
         
-        public LevelData LevelData;
+        [Space, Title("Observers"), SerializeField] private ObserverEvent _observerCoins;
+        [Space, Title("LevelData")] public LevelData LevelData;
+        [Space, Title("SceneData"), SerializeField] private SceneData _sceneData;
         
         private GameObject _enemiesParent;
         private IGameMode _currentGameMode;
@@ -91,6 +94,25 @@ namespace Game.Scripts.Levels
 
                 yield return new WaitForSeconds(enemy.SpawnRate);
             }
+        }
+        
+        public void WinGame()
+        {
+            StopRepeat();
+            OnLevelEnd?.Invoke();
+            LoadScene();
+        }
+        
+        public void LoseGame()
+        {
+            StopRepeat();
+            OnLevelEnd?.Invoke();
+            LoadScene();
+        }
+        
+        private void LoadScene()
+        {
+            ScenesManager.LoadScene(_sceneData);
         }
         
         #endregion

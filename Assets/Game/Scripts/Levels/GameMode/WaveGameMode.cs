@@ -36,10 +36,10 @@ namespace Game.Scripts.Levels.GameMode
 
         private void CheckNextWave()
         {
-            if (_levelManager.IsLastWave())
+            if (_levelManager.IsLastWave() && _levelManager.EnemiesAlive <= 0)
             {
                 LevelManager.OnLevelUpdate?.Invoke("Finish");
-                _levelManager.StopRepeat();
+                _levelManager.WinGame();
                 return;
             }
             

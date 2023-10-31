@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _observerCoins: {fileID: 11400000, guid: 062fe719643992c4487b10bc9b2270be, type: 2}
   LevelData: {fileID: 11400000, guid: 293eb1bd5858dc5459e802cfccc8de54, type: 2}
+  _sceneData: {fileID: 11400000, guid: aaa0000b75e4dfa41a59b7b869ae1454, type: 2}
 --- !u!1 &1357436613951094481
 GameObject:
   m_ObjectHideFlags: 0
