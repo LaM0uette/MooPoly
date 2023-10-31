@@ -105,7 +105,7 @@ namespace Game.Scripts.Ui.GameHUD
                 if (modalUIScreen == modalScreen)
                     modalUIScreen.ShowScreen();
                 else
-                    modalUIScreen.HideScreen();
+                    modalUIScreen.HideScreen(false);
             }
         }
 
