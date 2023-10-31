@@ -129,6 +129,12 @@ namespace Game.Scripts.Levels
         public void EnemySpawned() => EnemiesAlive++;
         public void EnemyDied() => EnemiesAlive--;
 
+        private void KillCow()
+        {
+            // decremente le compteur de vies
+            // si le compteur est à 0, on perd
+        }
+
         public void CheckEnemiesAlive()
         {
             if (IsLastWave()) return;
