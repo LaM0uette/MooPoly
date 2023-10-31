@@ -1,3 +1,4 @@
+using Game.Scripts.Generic.Functions;
 using Game.Scripts.Observers;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -30,6 +31,7 @@ namespace Game.Scripts.Levels.Observers
             if (data is not SplineContainer splineContainer) return;
             
             _levelManager.EnemyPaths.Add(splineContainer);
+            _levelManager.EnemyPaths.Shuffle();
         }
 
         #endregion

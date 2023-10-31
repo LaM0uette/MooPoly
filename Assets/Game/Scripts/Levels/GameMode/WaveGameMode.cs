@@ -1,4 +1,5 @@
 using System.Collections;
+using Game.Scripts.Generic.Functions;
 using UnityEngine;
 
 namespace Game.Scripts.Levels.GameMode
@@ -21,6 +22,7 @@ namespace Game.Scripts.Levels.GameMode
         public void StartMode()
         {
             LevelManager.OnLevelUpdate?.Invoke("Start");
+            
             _levelManager.CanStartNextWave = true;
             _levelManager.CurrentWaveIndex = -1;
         }
