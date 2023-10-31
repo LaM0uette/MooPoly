@@ -68,7 +68,7 @@ namespace Game.Scripts.Ui.GameHUD
             return Root.Q(elementName);
         }
         
-        private bool IsVisible()
+        public bool IsVisible()
         {
             if (Screen is null)
                 return false;

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Game.Scripts.Scenes
 {
+    // TODO: à déplacer dans generic > managers
     public class ScenesManager : MonoBehaviour
     {
         #region Statements

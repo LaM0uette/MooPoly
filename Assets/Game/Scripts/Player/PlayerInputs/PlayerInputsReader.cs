@@ -15,6 +15,8 @@ namespace Game.Scripts.Player.PlayerInputs
         public Action InteractEvent { get; set; }
         public Action LevelMapEvent { get; set; }
         
+        public static Action PauseEvent { get; set; }
+        
         #endregion
 
         #region Events
@@ -25,6 +27,8 @@ namespace Game.Scripts.Player.PlayerInputs
         public void OnJump() => JumpEvent?.Invoke();
         public void OnInteract() => InteractEvent?.Invoke();
         public void OnLevelMap() => LevelMapEvent?.Invoke();
+        
+        public void OnPause() => PauseEvent?.Invoke();
         
         #endregion
     }

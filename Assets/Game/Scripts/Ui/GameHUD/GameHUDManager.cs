@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Game.Scripts.Levels;
 using Game.Scripts.Player.Controller;
+using Game.Scripts.Player.PlayerInputs;
 using Game.Scripts.Ui.GameHUD.Screens;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -19,6 +20,7 @@ namespace Game.Scripts.Ui.GameHUD
         [SerializeField] private UIS_LevelCoins _uisLevelCoins;
         [SerializeField] private UIS_Interact _uisInteract;
         [SerializeField] private UIS_LevelUpdate _uisLevelUpdate;
+        [SerializeField] private UIS_Pause _uisPause;
         
         private readonly List<UiScreen> _allModalUIScreens = new();
 
@@ -40,6 +42,8 @@ namespace Game.Scripts.Ui.GameHUD
             LevelManager.OnLevelUpdate += ShowLevelUpdateUIScreen;
             
             PlayerController.OnTriggerInteract += InteractUIScreenHandle;
+            
+            PlayerInputsReader.PauseEvent += ShowPauseUIScreen;
         }
 
         private void OnDisable()
@@ -50,6 +54,8 @@ namespace Game.Scripts.Ui.GameHUD
             LevelManager.OnLevelUpdate += ShowLevelUpdateUIScreen;
             
             PlayerController.OnTriggerInteract -= InteractUIScreenHandle;
+            
+            PlayerInputsReader.PauseEvent -= ShowPauseUIScreen;
         }
 
         #endregion
@@ -59,6 +65,7 @@ namespace Game.Scripts.Ui.GameHUD
         private void SetupModalScreens()
         {
             _allModalUIScreens?.Add(_uisTurretsToBuild);
+            _allModalUIScreens?.Add(_uisPause);
         }
         
         private void ShowTurretsToBuildUIScreen() => ShowModalScreen(_uisTurretsToBuild);
@@ -81,7 +88,16 @@ namespace Game.Scripts.Ui.GameHUD
             else
                 _uisInteract.HideScreen(false);
         }
+
+        private void ShowPauseUIScreen()
+        {
+            if (_uisPause.IsVisible())
+                HideAllModals();
+            else
+                ShowModalScreen(_uisPause);
+        }
         
+        //
         private void ShowModalScreen(Object modalScreen)
         {
             foreach (var modalUIScreen in _allModalUIScreens)
@@ -90,6 +106,14 @@ namespace Game.Scripts.Ui.GameHUD
                     modalUIScreen.ShowScreen();
                 else
                     modalUIScreen.HideScreen();
+            }
+        }
+
+        private void HideAllModals()
+        {
+            foreach (var modalUIScreen in _allModalUIScreens)
+            {
+                modalUIScreen.HideScreen();
             }
         }
         

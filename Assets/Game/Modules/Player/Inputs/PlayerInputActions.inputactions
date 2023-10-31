@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "ccb5d91c-fc78-40d8-a786-52e5f8ab6616",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -249,6 +258,28 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "597f9228-7e40-4360-91cc-c1c5e76fc1af",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Desktop",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d2594ec-78d2-4ead-9431-02b6eb6ab386",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -269,6 +300,15 @@
                     "name": "ResetTimeScale",
                     "type": "Button",
                     "id": "73744dcc-4f19-4178-b604-559263164a1a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GainCoins",
+                    "type": "Button",
+                    "id": "41f1c5a2-9f70-41af-ae5f-d499db2ddd6e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -350,6 +390,17 @@
                     "processors": "",
                     "groups": "Desktop",
                     "action": "ResetTimeScale",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc5a465f-45f0-499f-a486-529e4a26f6a8",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Desktop",
+                    "action": "GainCoins",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
