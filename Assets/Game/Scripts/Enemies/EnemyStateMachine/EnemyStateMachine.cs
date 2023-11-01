@@ -144,7 +144,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
             Enemy.IsDead = true;
             _observer.Notify("Died");
             
-            Destroy(gameObject);
+            Destroy(gameObject, 0);
         }
 
         #endregion

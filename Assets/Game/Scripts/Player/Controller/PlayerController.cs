@@ -161,7 +161,7 @@ namespace Game.Scripts.Player.Controller
                 if (interactable is not null && interactable != CurrentInteract)
                 {
                     Interacts.Remove(interactable);
-                    Destroy(hitCollider.gameObject);
+                    Destroy(hitCollider.gameObject, 0);
                 }
             }
         }

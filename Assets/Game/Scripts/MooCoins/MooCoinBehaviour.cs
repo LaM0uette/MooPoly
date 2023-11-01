@@ -87,7 +87,7 @@ namespace Game.Scripts.MooCoins
         private void Earn()
         {
             _observer.Notify(MooCoin.CandyEarned);
-            Destroy(gameObject);
+            Destroy(gameObject, 0);
         }
 
         #endregion

@@ -26,7 +26,7 @@ namespace Game.Scripts.TurretsToBuild
 
         public override void Destroy()
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 0);
         }
 
         #endregion
