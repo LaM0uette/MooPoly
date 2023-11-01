@@ -1,10 +1,10 @@
-using Game.Scripts.Observers;
+using Game.Scripts._Data.Observer;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace Game.Scripts.Enemies.EnemyPath
+namespace Game.Scripts._Observers.EnemyPathObserver
 {
-    public class EnemyPath : MonoBehaviour
+    public class EnemyPathObserver : MonoBehaviour
     {
         #region Statements
 

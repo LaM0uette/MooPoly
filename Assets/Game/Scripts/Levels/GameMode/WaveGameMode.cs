@@ -1,5 +1,4 @@
 using System.Collections;
-using Game.Scripts.Generic.Functions;
 using UnityEngine;
 
 namespace Game.Scripts.Levels.GameMode

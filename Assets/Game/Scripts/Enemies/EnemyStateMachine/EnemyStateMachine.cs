@@ -1,9 +1,9 @@
 using System.Collections;
+using Game.Scripts._Data.Observer;
 using Game.Scripts.BaseStateMachine;
 using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine.EnemyStates;
 using Game.Scripts.MooCoins;
-using Game.Scripts.Observers;
 using Game.Scripts.StaticUtilities;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -39,12 +39,12 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         [CanBeNull] public SplineContainer EnemyPath { get; set; }
         public float PercentageOfCurve { get; set; }
         public float TotalSplineLength { get; private set; }
-        
-        // GameObject
+
         public GameObject Target;
-        private GameObject _mooCoinsParent;
 
         [SerializeField] private ObserverEvent _observer;
+        
+        private GameObject _mooCoinsParent;
         
         private void Awake()
         {
@@ -131,7 +131,8 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
                 mooCoinBehaviour.Rigidbody.AddForce(randomForce * 5f, ForceMode.Impulse);
             }
         }
-
+        
+        public bool IsDead() => Enemy.IsDead;
         public void Steal() => SwitchState(new EnemyStealState(this));
         public void Die() => SwitchState(new EnemyDieState(this));
         public void Dead() => Destroy(gameObject);

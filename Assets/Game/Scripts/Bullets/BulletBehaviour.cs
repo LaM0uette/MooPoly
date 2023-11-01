@@ -26,7 +26,7 @@ namespace Game.Scripts.Bullets
 
         private void FixedUpdate()
         {
-            if (_enemy is null || _enemy.Enemy.IsDead)
+            if (_enemy is null || _enemy.IsDead())
             {
                 Destroy(gameObject);
                 return;
@@ -41,7 +41,7 @@ namespace Game.Scripts.Bullets
         
         private void FollowEnemy()
         {
-            if (_enemy is null || _enemy.Enemy.IsDead) return;
+            if (_enemy is null || _enemy.IsDead()) return;
 
             var direction = _enemy.Target.transform.position - transform.position;
 
@@ -60,7 +60,7 @@ namespace Game.Scripts.Bullets
         
         private void HitTarget()
         {
-            if (_enemy is null || _enemy.Enemy.IsDead) return;
+            if (_enemy is null || _enemy.IsDead()) return;
             
             _enemy.TakeDamage(_turretDamage + Bullet.Damage);
             Destroy(gameObject);

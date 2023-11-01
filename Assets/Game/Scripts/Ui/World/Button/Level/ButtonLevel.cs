@@ -1,6 +1,6 @@
+using Game.Scripts._Data.Observer;
 using Game.Scripts._Data.SceneData;
 using Game.Scripts.Interactables;
-using Game.Scripts.Observers;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

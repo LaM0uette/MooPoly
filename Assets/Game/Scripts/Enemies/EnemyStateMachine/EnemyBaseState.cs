@@ -23,11 +23,6 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
             EnemyStateMachine.Animator.SetFloat(id, value, dampTime, Time.deltaTime);
         }
         
-        protected float AnimatorGetFloat(int id)
-        {
-            return EnemyStateMachine.Animator.GetFloat(id);
-        }
-        
         protected bool HasAnimationReachedStage(float value, int layerIndex = 0)
         {
             var state = EnemyStateMachine.Animator.GetCurrentAnimatorStateInfo(layerIndex);

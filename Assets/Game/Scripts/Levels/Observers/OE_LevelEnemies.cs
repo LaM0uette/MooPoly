@@ -1,5 +1,4 @@
-using Game.Scripts.Enemies.EnemyFactory;
-using Game.Scripts.Observers;
+using Game.Scripts._Data.Observer;
 using UnityEngine;
 
 namespace Game.Scripts.Levels.Observers

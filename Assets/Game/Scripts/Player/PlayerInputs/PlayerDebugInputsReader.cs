@@ -1,4 +1,4 @@
-using Game.Scripts.Observers;
+using Game.Scripts._Data.Observer;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

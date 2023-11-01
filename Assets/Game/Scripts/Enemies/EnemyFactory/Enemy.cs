@@ -1,5 +1,4 @@
 using Game.Scripts._Data.EnemyData;
-using UnityEngine;
 
 namespace Game.Scripts.Enemies.EnemyFactory
 {
@@ -13,7 +12,7 @@ namespace Game.Scripts.Enemies.EnemyFactory
         public float MoveSpeed { get; set; } = 1;
 
         // Spawn
-        public float HeightOffset { get; set; } = 0;
+        public float HeightOffset { get; set; }
         public float SpawnRate { get; set; } = 1;
 
         // Dead

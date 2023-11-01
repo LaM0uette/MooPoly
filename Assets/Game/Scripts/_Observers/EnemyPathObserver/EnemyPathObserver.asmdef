@@ -1,9 +1,10 @@
 {
-    "name": "EnemyPath",
+    "name": "EnemyPathObserver",
     "rootNamespace": "",
     "references": [
+        "GUID:21d1eb854b91ade49bc69a263d12bee2",
         "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
-        "GUID:21d1eb854b91ade49bc69a263d12bee2"
+        "GUID:878895639a8587743b1bb64843d1f38a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

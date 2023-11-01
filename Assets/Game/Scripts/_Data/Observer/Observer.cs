@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Observers
+namespace Game.Scripts._Data.Observer
 {
     public abstract class Observer : MonoBehaviour
     {

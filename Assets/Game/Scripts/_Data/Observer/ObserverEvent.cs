@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Scripts.Observers
+namespace Game.Scripts._Data.Observer
 {
     [CreateAssetMenu(menuName = "Observer/ObserverEvent")]
     public class ObserverEvent : ScriptableObject

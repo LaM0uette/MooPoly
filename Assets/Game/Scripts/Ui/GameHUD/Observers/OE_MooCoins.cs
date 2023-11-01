@@ -1,7 +1,6 @@
-using System;
+using Game.Scripts._Data.Observer;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.MooCoins;
-using Game.Scripts.Observers;
 using Game.Scripts.Ui.GameHUD.Screens;
 using UnityEngine;
 

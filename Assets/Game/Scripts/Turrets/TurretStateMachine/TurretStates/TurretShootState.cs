@@ -26,27 +26,27 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
 
         public override void CheckState()
         {
-            if (_enemy.Enemy.IsDead) 
+            if (_enemy.IsDead()) 
                 TurretStateMachine.SwitchState(new TurretIdleState(TurretStateMachine));
         }
         
         public override void Tick(float deltaTime)
         {
-            if (_enemy.Enemy.IsDead) return;
+            if (_enemy.IsDead()) return;
             
             CheckIfCanShoot();
         }
 
         public override void TickFixed(float deltaTime)
         {
-            if (_enemy.Enemy.IsDead) return;
+            if (_enemy.IsDead()) return;
             
             LookAtEnemy();
         }
         
         public override void TickLate(float deltaTime)
         {
-            if (_enemy.Enemy.IsDead) return;
+            if (_enemy.IsDead()) return;
             
             TurretStateMachine.DebugLine(_turretPosition, _enemy.Target.transform.position, Color.red);
         }
@@ -74,7 +74,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         
         private void CheckIfCanShoot()
         {
-            if (!CanShoot() || _enemy.Enemy.IsDead) return;
+            if (!CanShoot() || _enemy.IsDead()) return;
 
             TurretStateMachine.Turret.Shoot(_enemy);
         }

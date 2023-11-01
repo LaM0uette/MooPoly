@@ -1,11 +1,13 @@
-using Game.Scripts.Generic.Functions;
-using Game.Scripts.Observers;
+//using Game.Scripts.Generic.Functions;
+
+using Game.Scripts._Data.Observer;
+using Game.Scripts.Levels;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace Game.Scripts.Levels.Observers
+namespace Game.Scripts._Observers.EnemyPathObserver
 {
-    public class OE_LevelEnemyPaths : Observer
+    public class EnemyPathObserverEvent : Observer
     {
         #region Statements
 
@@ -31,7 +33,7 @@ namespace Game.Scripts.Levels.Observers
             if (data is not SplineContainer splineContainer) return;
             
             _levelManager.EnemyPaths.Add(splineContainer);
-            _levelManager.EnemyPaths.Shuffle();
+            //_levelManager.EnemyPaths.Shuffle();
         }
 
         #endregion

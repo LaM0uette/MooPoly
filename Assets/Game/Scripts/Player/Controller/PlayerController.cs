@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Game.Scripts._Data.Observer;
 using Game.Scripts._Data.TurretData;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.Interactables;
-using Game.Scripts.Observers;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 
