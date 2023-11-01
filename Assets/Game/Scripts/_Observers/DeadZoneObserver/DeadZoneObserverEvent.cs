@@ -2,9 +2,9 @@ using Game.Scripts._Data.Observer;
 using Game.Scripts.Player.PlayerStateMachine;
 using UnityEngine;
 
-namespace Game.Scripts.World.WorldEvents.DeadZone
+namespace Game.Scripts._Observers.DeadZoneObserver
 {
-    public class OE_DeadZone : Observer
+    public class DeadZoneObserverEvent : Observer
     {
         #region Statements
 

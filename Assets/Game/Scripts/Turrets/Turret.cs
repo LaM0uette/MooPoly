@@ -11,13 +11,10 @@ namespace Game.Scripts.Turrets
     {
         #region Statements
         
-        public static GameObject BulletsParent { get; private set; }
-
         // Settings
         public TurretType Type { get; private set; }
         
         // Build
-        public int Cost { get; private set; }
         public float BuildTime { get; private set; }
         public Transform FirePoint { get; private set; }
         
@@ -27,7 +24,8 @@ namespace Game.Scripts.Turrets
         public float FireRate { get; private set; }
         public float RotationSpeed { get; private set; }
         
-        // Bullet
+        // Bullets
+        private static GameObject BulletsParent { get; set; }
         private Bullet Bullet;
 
         private void Awake()
@@ -42,7 +40,6 @@ namespace Game.Scripts.Turrets
         public void Init(TurretData turretData, Transform firePoint)
         {
             Type = turretData.Type;
-            Cost = turretData.Cost;
             BuildTime = turretData.BuildTime;
             FirePoint = firePoint;
             Damage = turretData.Damage;

@@ -5,6 +5,7 @@ using Game.Scripts.Turrets.TurretStateMachine.TurretStates;
 using Game.Scripts.Turrets.Variants;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Scripts.Turrets.TurretStateMachine
 {
@@ -13,6 +14,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine
         #region Statements
         
         public Action OnUpdateRepeating { get; set; }
+        
         public Turret Turret { get; private set; }
         public float FireRateCountdown { get; set; }
         
@@ -24,12 +26,12 @@ namespace Game.Scripts.Turrets.TurretStateMachine
         public Transform FirePoint;
         
         [Space, Title("Data")]
-        [SerializeField] private TurretData turretData;
+        [SerializeField] private TurretData _turretData;
 
         private void Awake()
         {
             Turret = gameObject.AddComponent<BasicTurret>();
-            Turret.Init(turretData, FirePoint);
+            Turret.Init(_turretData, FirePoint);
         }
 
         private void Start()
@@ -40,7 +42,7 @@ namespace Game.Scripts.Turrets.TurretStateMachine
 
         #endregion
 
-        #region Functions
+        #region Events
 
         private void UpdateRepeating() => OnUpdateRepeating?.Invoke();
 
@@ -55,10 +57,10 @@ namespace Game.Scripts.Turrets.TurretStateMachine
         
         private void OnDrawGizmosSelected()
         {
-            if (turretData is null) return;
+            if (_turretData is null) return;
             
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, turretData.Range);
+            Gizmos.DrawWireSphere(transform.position, _turretData.Range);
         }
 
         #endregion

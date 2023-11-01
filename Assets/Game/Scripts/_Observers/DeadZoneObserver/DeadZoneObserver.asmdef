@@ -1,9 +1,9 @@
 {
-    "name": "DeadZone",
+    "name": "DeadZoneObserver",
     "rootNamespace": "",
     "references": [
-        "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
         "GUID:5bb5977b22d6b024fb5d2f4d2096b9c5",
+        "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
         "GUID:74a829038994dd54b8fa97930faf26b8",
         "GUID:e17c13f910ef4034fbdaefc0063eacbe"
     ],

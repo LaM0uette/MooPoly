@@ -27,10 +27,6 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
         {
             Rotate();
         }
-        
-        public override void CheckState()
-        {
-        }
 
         public override void Exit()
         {

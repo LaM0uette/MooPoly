@@ -258,6 +258,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 584b1875ea970a746a1a2710830228cf,
         type: 2}
+    - target: {fileID: 9075077723677424144, guid: cd000b8832755104b8dd66501fcb5284,
+        type: 3}
+      propertyPath: _turretData
+      value: 
+      objectReference: {fileID: 11400000, guid: 584b1875ea970a746a1a2710830228cf,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

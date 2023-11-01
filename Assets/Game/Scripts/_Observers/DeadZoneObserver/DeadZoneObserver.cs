@@ -2,10 +2,10 @@ using Game.Scripts._Data.Observer;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 
-namespace Game.Scripts.World.WorldEvents.DeadZone
+namespace Game.Scripts._Observers.DeadZoneObserver
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class DeadZone : MonoBehaviour
+    public class DeadZoneObserver : MonoBehaviour
     {
         [SerializeField] private ObserverEvent _observer;
         

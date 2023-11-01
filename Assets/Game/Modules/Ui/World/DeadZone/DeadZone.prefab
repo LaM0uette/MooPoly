@@ -66,4 +66,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80c6f1d7b4a2264489312a979a31965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deadZoneObserver: {fileID: 0}
+  _observer: {fileID: 11400000, guid: 81d09ec9c8c87a14ebc9fe63bfe1f3f9, type: 2}
