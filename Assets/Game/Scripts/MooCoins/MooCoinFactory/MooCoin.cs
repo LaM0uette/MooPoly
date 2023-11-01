@@ -1,4 +1,4 @@
-namespace Game.Scripts.MooCoins
+namespace Game.Scripts.MooCoins.MooCoinFactory
 {
     public class MooCoin
     {

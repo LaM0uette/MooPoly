@@ -1,6 +1,6 @@
 using Game.Scripts._Data.MooCoinData;
 
-namespace Game.Scripts.MooCoins
+namespace Game.Scripts.MooCoins.MooCoinFactory
 {
     public static class MooCoinFactory
     {

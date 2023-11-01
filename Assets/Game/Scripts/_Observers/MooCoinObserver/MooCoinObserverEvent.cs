@@ -1,12 +1,11 @@
 using Game.Scripts._Data.Observer;
 using Game.Scripts.Generic.Managers;
-using Game.Scripts.MooCoins;
 using Game.Scripts.Ui.GameHUD.Screens;
 using UnityEngine;
 
-namespace Game.Scripts.Ui.GameHUD.Observers
+namespace Game.Scripts._Observers.MooCoinObserver
 {
-    public class OE_MooCoins : Observer
+    public class MooCoinObserverEvent : Observer
     {
         #region Statements
 
@@ -34,14 +33,9 @@ namespace Game.Scripts.Ui.GameHUD.Observers
 
         public override void OnNotify<T>(T data)
         {
-            var coinsEarned = data switch
-            {
-                MooCoin mooCoin => mooCoin.CandyEarned,
-                int coins => coins,
-                _ => 0
-            };
+            if (data is not int coins) return;
 
-            GameManager.Instance.EarnLevelMooCoins(coinsEarned);
+            GameManager.Instance.EarnLevelMooCoins(coins);
             _uisLevelCoins.UpdateLevelCoins(GameManager.Instance.CurrentLevelMooCoins);
         }
 

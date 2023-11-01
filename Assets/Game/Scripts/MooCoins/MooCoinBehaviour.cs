@@ -1,5 +1,7 @@
 using Game.Scripts._Data.Observer;
+using Game.Scripts.MooCoins.MooCoinFactory;
 using Game.Scripts.StaticUtilities;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Scripts.MooCoins
@@ -14,8 +16,8 @@ namespace Game.Scripts.MooCoins
         public MooCoin MooCoin { get; set; } = new();
         
         // Fields
-        [SerializeField] private LayerMask _layerMask;
-        [SerializeField] private ObserverEvent _observer;
+        [Space, Title("LayerMask"), SerializeField] private LayerMask _layerMask;
+        [Space, Title("Observer"), SerializeField] private ObserverEvent _observer;
 
         // Movements
         private float _speedMovement = 3f;
@@ -84,7 +86,7 @@ namespace Game.Scripts.MooCoins
 
         private void Earn()
         {
-            _observer.Notify(MooCoin);
+            _observer.Notify(MooCoin.CandyEarned);
             Destroy(gameObject);
         }
 

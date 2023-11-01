@@ -1,12 +1,10 @@
 {
-    "name": "MooCoins",
+    "name": "MooCoinObserver",
     "rootNamespace": "",
     "references": [
         "GUID:4a2792f6e6f5e2a47a94bfad01faf292",
-        "GUID:5bb5977b22d6b024fb5d2f4d2096b9c5",
         "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
-        "GUID:6579b6d7813ed224d897b1dc732ebca1",
-        "GUID:54893851090f25047b5498877b226fd8"
+        "GUID:f80830e347b657442b9e8715d0533419"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

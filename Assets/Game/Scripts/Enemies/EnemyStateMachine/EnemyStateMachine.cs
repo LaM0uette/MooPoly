@@ -4,6 +4,7 @@ using Game.Scripts.BaseStateMachine;
 using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine.EnemyStates;
 using Game.Scripts.MooCoins;
+using Game.Scripts.MooCoins.MooCoinFactory;
 using Game.Scripts.StaticUtilities;
 using JetBrains.Annotations;
 using UnityEngine;
