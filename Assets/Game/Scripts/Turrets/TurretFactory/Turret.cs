@@ -5,7 +5,7 @@ using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;
 
-namespace Game.Scripts.Turrets
+namespace Game.Scripts.Turrets.TurretFactory
 {
     public abstract class Turret : MonoBehaviour
     {
@@ -16,10 +16,10 @@ namespace Game.Scripts.Turrets
         
         // Build
         public float BuildTime { get; private set; }
-        public Transform FirePoint { get; private set; }
+        public Transform FirePoint { get; set; }
         
         // Stats
-        public float Damage { get; private set; }
+        public float Damage { get; set; }
         public float Range { get; private set; }
         public float FireRate { get; private set; }
         public float RotationSpeed { get; private set; }
@@ -46,6 +46,7 @@ namespace Game.Scripts.Turrets
             Range = turretData.Range;
             FireRate = turretData.FireRate;
             RotationSpeed = turretData.RotationSpeed;
+            
             Bullet = BulletFactory.Create(turretData.BulletData);
         }
 

@@ -1,6 +1,6 @@
 using Game.Scripts.Enemies.EnemyStateMachine;
 
-namespace Game.Scripts.Turrets.Variants
+namespace Game.Scripts.Turrets.TurretFactory.Variants
 {
     public class BasicTurret : Turret
     {

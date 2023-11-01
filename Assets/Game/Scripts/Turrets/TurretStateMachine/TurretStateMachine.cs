@@ -1,11 +1,11 @@
 using System;
 using Game.Scripts._Data.TurretData;
 using Game.Scripts.BaseStateMachine;
+using Game.Scripts.Turrets.TurretFactory;
+using Game.Scripts.Turrets.TurretFactory.Variants;
 using Game.Scripts.Turrets.TurretStateMachine.TurretStates;
-using Game.Scripts.Turrets.Variants;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Scripts.Turrets.TurretStateMachine
 {
