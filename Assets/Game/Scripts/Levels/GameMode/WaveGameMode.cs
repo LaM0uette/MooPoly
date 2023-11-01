@@ -24,6 +24,7 @@ namespace Game.Scripts.Levels.GameMode
             
             _levelManager.CanStartNextWave = true;
             _levelManager.CurrentWaveIndex = -1;
+            _levelManager.CowAlive = 10;
         }
 
         public void RepeatMode()

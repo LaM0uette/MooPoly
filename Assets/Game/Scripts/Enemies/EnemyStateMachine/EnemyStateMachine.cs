@@ -70,13 +70,7 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         private void OnEnable()
         {
             Enemy.IsDead = false;
-            _observer.Notify(true);
-        }
-        
-        private void OnDisable()
-        {
-            Enemy.IsDead = true;
-            _observer.Notify(false);
+            _observer.Notify("Spawned");
         }
         
         #endregion
@@ -136,7 +130,22 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         public bool IsDead() => Enemy.IsDead;
         public void Steal() => SwitchState(new EnemyStealState(this));
         public void Die() => SwitchState(new EnemyDieState(this));
-        public void Dead() => Destroy(gameObject);
+
+        public void StealDead()
+        {
+            Enemy.IsDead = true;
+            _observer.Notify("ReachedEnd");
+            
+            Destroy(gameObject);
+        }
+        
+        public void Dead()
+        {
+            Enemy.IsDead = true;
+            _observer.Notify("Died");
+            
+            Destroy(gameObject);
+        }
 
         #endregion
     }

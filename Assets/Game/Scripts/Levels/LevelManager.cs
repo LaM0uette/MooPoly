@@ -27,9 +27,11 @@ namespace Game.Scripts.Levels
         public bool CanStartNextWave { get; set; }
         public int CurrentWaveIndex { get; set; }
         public int EnemiesAlive { get; private set; }
+        public int CowAlive { get; set; }
         public List<SplineContainer> EnemyPaths { get; } = new();
         
-        [Space, Title("Observers"), SerializeField] private ObserverEvent _observerCoins;
+        [Space, Title("Observers"), SerializeField] private ObserverEvent _mooCoinsObserver;
+        [Space, Title("Observers"), SerializeField] private ObserverEvent _cowObserver;
         [Space, Title("LevelData"), SerializeField] private LevelData _levelData;
         [Space, Title("SceneData"), SerializeField] private SceneData _sceneData;
         
@@ -47,7 +49,7 @@ namespace Game.Scripts.Levels
             _currentGameMode.StartMode();
             
             OnLevelStart?.Invoke();
-            _observerCoins.Notify(_levelData.MooCoinsStart);
+            _mooCoinsObserver.Notify(_levelData.MooCoinsStart);
             
             InvokeRepeat(5f, 1f);
         }
@@ -126,18 +128,32 @@ namespace Game.Scripts.Levels
         #region Enemy
 
         public void EnemySpawned() => EnemiesAlive++;
-        public void EnemyDied() => EnemiesAlive--;
-
-        private void KillCow()
+        public void EnemyDied() 
         {
-            // decremente le compteur de vies
-            // si le compteur est à 0, on perd
+            EnemiesAlive--;
         }
-
+        public void EnemyReachedEnd()
+        {
+            EnemyDied();
+            KillCow();
+        }
         public void CheckEnemiesAlive()
         {
             if (IsLastWave()) return;
             CanStartNextWave = EnemiesAlive <= 0;
+        }
+        
+        private void KillCow()
+        {
+            CowAlive--;
+            _cowObserver.Notify();
+            
+            CheckCowAlive();
+        }
+        private void CheckCowAlive()
+        {
+            if (CowAlive > 0) return;
+            LoseGame();
         }
 
         #endregion

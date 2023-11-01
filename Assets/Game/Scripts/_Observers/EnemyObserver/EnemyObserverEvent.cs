@@ -25,14 +25,16 @@ namespace Game.Scripts._Observers.EnemyObserver
             _observer.Unregister(this);
         }
 
-        public override void OnNotify<T>(T isAlive)
+        public override void OnNotify<T>(T evt)
         {
-            if (isAlive is not bool alive) return;
+            if (evt is not string eventName) return;
             
-            if (alive)
+            if (eventName == "Spawned")
                 _levelManager.EnemySpawned();
-            else
+            else if (eventName == "Died")
                 _levelManager.EnemyDied();
+            else if (eventName == "ReachedEnd")
+                _levelManager.EnemyReachedEnd();
             
             _levelManager.CheckEnemiesAlive();
         }

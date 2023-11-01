@@ -22,7 +22,7 @@
         {
             if (EnemyStateMachine.IsTransitioning || !HasAnimationReachedStage(.9f)) return;
 
-            EnemyStateMachine.Dead();
+            EnemyStateMachine.StealDead();
         }
 
         public override void Exit()

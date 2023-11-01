@@ -1,0 +1,4 @@
+{
+	"name": "CowObserver",
+	"references":[ "GUID:7e6ebce566e7ca14cb0ca351f26d09cd", "GUID:7c5b9b16c8c2dd84d97ead4b8607bd65" ]
+}
