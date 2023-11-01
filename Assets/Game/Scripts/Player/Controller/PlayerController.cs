@@ -134,8 +134,11 @@ namespace Game.Scripts.Player.Controller
             var turretCost = _turretsToBuild[index].TurretData.Cost;
             if (GameManager.Instance.CurrentLevelMooCoins < turretCost) return;
             
-            var trs = CurrentInteract.GetTransform();
-            Instantiate(_turretsToBuild[index].TurretPrefab, trs.position, Quaternion.identity, _turretsParent.transform);
+            var interactTransform = CurrentInteract.GetTransform();
+            var interactPosition = interactTransform.position;
+            
+            Instantiate(_turretsToBuild[index].TurretPrefab, interactPosition, Quaternion.identity, _turretsParent.transform);
+            DestroyTurretsToBuildInRadius(interactPosition, 1.6f);
             
             _observerCoins.Notify(-turretCost);
             
@@ -145,6 +148,22 @@ namespace Game.Scripts.Player.Controller
             CurrentInteract = null;
             
             OnTriggerInteract?.Invoke(false);
+        }
+        
+        private static void DestroyTurretsToBuildInRadius(Vector3 turretPosition, float radius)
+        {
+            var hitColliders = Physics.OverlapSphere(turretPosition, radius);
+
+            foreach (var hitCollider in hitColliders)
+            {
+                if (!hitCollider.TryGetComponent<Interactable>(out var interactable)) return;
+                
+                if (interactable is not null && interactable != CurrentInteract)
+                {
+                    Interacts.Remove(interactable);
+                    Destroy(hitCollider.gameObject);
+                }
+            }
         }
 
         #endregion
