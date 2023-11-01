@@ -6,11 +6,13 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
     {
         #region Statements
         
-        private Vector3 _initialPos;
-        private Vector3 _finalPos;
+        private readonly Vector3 _initialPos;
+        private readonly Vector3 _finalPos;
 
         public TurretBuildState(TurretStateMachine turretStateMachine) : base(turretStateMachine)
         {
+            _initialPos = TurretStateMachine.InitialPos.position;
+            _finalPos = TurretStateMachine.transform.position;
         }
 
         #endregion
@@ -19,9 +21,6 @@ namespace Game.Scripts.Turrets.TurretStateMachine.TurretStates
 
         public override void Enter()
         {
-            _initialPos = TurretStateMachine.InitialPos.position;
-            _finalPos = _initialPos - _initialPos;
-            
             TurretStateMachine.transform.position = _initialPos;
         }
 
