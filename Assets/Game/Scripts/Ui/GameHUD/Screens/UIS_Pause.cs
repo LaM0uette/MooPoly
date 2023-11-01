@@ -1,5 +1,5 @@
 using Game.Scripts._Data.SceneData;
-using Game.Scripts.Scenes;
+using Game.Scripts.Generic.Managers;
 using UnityEngine;
 using UnityEngine.UIElements;
 

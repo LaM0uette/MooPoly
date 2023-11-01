@@ -9,7 +9,6 @@ using Game.Scripts.Enemies.EnemyFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.Levels.GameMode;
-using Game.Scripts.Scenes;
 using Game.Scripts.StaticUtilities;
 using Sirenix.OdinInspector;
 using UnityEngine;

@@ -2,7 +2,8 @@
     "name": "Managers",
     "rootNamespace": "",
     "references": [
-        "GUID:c6fb4a75d5209cb47926f91923c9c03a"
+        "GUID:c6fb4a75d5209cb47926f91923c9c03a",
+        "GUID:aba94fb9a8b459146994edf08089d7cb"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

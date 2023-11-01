@@ -2,9 +2,8 @@ using Game.Scripts._Data.SceneData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Game.Scripts.Scenes
+namespace Game.Scripts.Generic.Managers
 {
-    // TODO: à déplacer dans generic > managers
     public class ScenesManager : MonoBehaviour
     {
         #region Statements

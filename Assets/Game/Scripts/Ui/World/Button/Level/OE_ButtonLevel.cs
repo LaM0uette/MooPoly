@@ -1,8 +1,8 @@
 using Game.Scripts._Data.Observer;
 using Game.Scripts._Data.SceneData;
+using Game.Scripts.Generic.Managers;
 using Game.Scripts.Generic.PlayerPref;
 using Game.Scripts.Player.Controller;
-using Game.Scripts.Scenes;
 using UnityEngine;
 
 namespace Game.Scripts.Ui.World.Button.Level
