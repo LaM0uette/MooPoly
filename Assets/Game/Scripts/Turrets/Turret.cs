@@ -28,7 +28,7 @@ namespace Game.Scripts.Turrets
         public float RotationSpeed { get; private set; }
         
         // Bullet
-        public Bullet Bullet;
+        private Bullet Bullet;
 
         private void Awake()
         {
