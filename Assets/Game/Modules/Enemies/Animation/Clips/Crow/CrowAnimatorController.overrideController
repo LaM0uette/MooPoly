@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CrowAnimatorController
+  m_Controller: {fileID: 9100000, guid: d503dfa252d35554e8c3aa6f41bd2e50, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: fae2746bf37e22748a35a9406877f703, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c2aef12caa20924479e73e73378eec94, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 668c83dd668807a4899562a84111f124, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 468849e2ccf301b4e8eaf66584dca88f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 71dfbde4e5bd27c4cb97f78b4da51a91, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b6ed60e8ee8246049946514531ec2df7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 199714682446b644eaf9798d84628801, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6e9dd7da14b5fad459e11f43402836ef, type: 2}

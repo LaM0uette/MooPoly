@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MiniGunBullet
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6891892890483210705, guid: a9e5d2c57c9e23d4595eadc8f4981630, type: 3}
-  Damage: 2
+  Damage: 5
   Speed: 60

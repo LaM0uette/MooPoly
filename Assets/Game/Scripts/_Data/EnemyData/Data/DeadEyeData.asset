@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af3c32ec13e8dc49b95ed00300bbbf1, type: 3}
   m_Name: DeadEyeData
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
   Prefab: {fileID: 4532122411337588229, guid: be0d394ca4a41a240b24d3afd774a6d1, type: 3}
-  BaseLife: 40
+  BaseLife: 60
   MoveSpeed: 16
   HeightOffset: 0
   SpawnRate: 1.4
@@ -22,7 +22,7 @@ MonoBehaviour:
   - MooCoinData: {fileID: 11400000, guid: 6526e37abbcb4f445b8c1805ed8ad103, type: 2}
     Probability: 1
   - MooCoinData: {fileID: 11400000, guid: 3b9ada0364f8ed348b00ed9778c65efc, type: 2}
-    Probability: 0.8
+    Probability: 0.6
   - MooCoinData: {fileID: 11400000, guid: f39f29da631e3154db60dd1e59b0b7d3, type: 2}
     Probability: 0.5
   - MooCoinData: {fileID: 11400000, guid: c6c79ae6dfa57e6489c1f0029055775a, type: 2}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NailGunBullet
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6891892890483210705, guid: 30a06387b4d1d5d4394027ac78d2cda8, type: 3}
-  Damage: 2
+  Damage: 5
   Speed: 50

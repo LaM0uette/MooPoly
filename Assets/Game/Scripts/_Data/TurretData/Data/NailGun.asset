@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: NailGun
   Type: 1
-  Cost: 180
+  Cost: 200
   BuildTime: 1
-  Damage: 8
+  Damage: 15
   Range: 16
-  FireRate: 160
+  FireRate: 180
   RotationSpeed: 20
   BulletData: {fileID: 11400000, guid: b0b598827d87e5647bf05e53869aef0b, type: 2}

@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Game.Scripts._Data.LevelData
 {
-    [Serializable]
+    [Serializable, InlineProperty(LabelWidth = 120)]
     public struct Wave
     {
         public _Data.EnemyData.EnemyData EnemyData;
-        public int EnemyCount;
-        [Range(0, 5)] public int PathIndex;
+        [HorizontalGroup] public int EnemyCount;
+        [HorizontalGroup, Range(0, 5)] public int PathIndex;
     }
     
     [CreateAssetMenu(menuName = "MooPloy_Data/LevelData")]

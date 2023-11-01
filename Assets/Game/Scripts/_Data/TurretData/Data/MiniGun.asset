@@ -16,7 +16,7 @@ MonoBehaviour:
   Type: 0
   Cost: 180
   BuildTime: 1
-  Damage: 5
+  Damage: 10
   Range: 20
   FireRate: 200
   RotationSpeed: 20

@@ -18,6 +18,6 @@ MonoBehaviour:
   BuildTime: 0.6
   Damage: 15
   Range: 30
-  FireRate: 40
+  FireRate: 65
   RotationSpeed: 20
   BulletData: {fileID: 11400000, guid: c4b3c551d85c32c49a440ea54e2714b9, type: 2}
