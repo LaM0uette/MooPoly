@@ -135,12 +135,15 @@ namespace Game.Scripts.Player.Controller
             if (GameManager.Instance.CurrentLevelMooCoins < turretCost) return;
             
             var trs = CurrentInteract.GetTransform();
-            var turret = Instantiate(_turretsToBuild[index].TurretPrefab, trs.position, Quaternion.identity, _turretsParent.transform);
+            Instantiate(_turretsToBuild[index].TurretPrefab, trs.position, Quaternion.identity, _turretsParent.transform);
             
             _observerCoins.Notify(-turretCost);
+            
             Interacts.Remove(CurrentInteract);
+            
             CurrentInteract.Destroy();
             CurrentInteract = null;
+            
             OnTriggerInteract?.Invoke(false);
         }
 
