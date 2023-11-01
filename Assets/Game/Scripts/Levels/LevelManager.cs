@@ -26,11 +26,11 @@ namespace Game.Scripts.Levels
         
         public bool CanStartNextWave { get; set; }
         public int CurrentWaveIndex { get; set; }
-        public int EnemiesAlive { get; set; }
-        public List<SplineContainer> EnemyPaths { get; set; } = new();
+        public int EnemiesAlive { get; private set; }
+        public List<SplineContainer> EnemyPaths { get; } = new();
         
         [Space, Title("Observers"), SerializeField] private ObserverEvent _observerCoins;
-        [Space, Title("LevelData")] public LevelData LevelData;
+        [Space, Title("LevelData"), SerializeField] private LevelData _levelData;
         [Space, Title("SceneData"), SerializeField] private SceneData _sceneData;
         
         private GameObject _enemiesParent;
@@ -47,7 +47,7 @@ namespace Game.Scripts.Levels
             _currentGameMode.StartMode();
             
             OnLevelStart?.Invoke();
-            _observerCoins.Notify(LevelData.MooCoinsStart);
+            _observerCoins.Notify(_levelData.MooCoinsStart);
             
             InvokeRepeat(5f, 1f);
         }
@@ -71,8 +71,8 @@ namespace Game.Scripts.Levels
         }
         
         private void InvokeRepeat(float startTime, float repeatRate) => InvokeRepeating(nameof(Repeat), startTime, repeatRate);
-        
-        public void StopRepeat() => CancelInvoke(nameof(Repeat));
+
+        private void StopRepeat() => CancelInvoke(nameof(Repeat));
 
         #endregion
 
@@ -118,8 +118,8 @@ namespace Game.Scripts.Levels
 
         #region Waves
 
-        public Wave GetCurrentWave(bool increment = false) => increment ? LevelData.Waves[++CurrentWaveIndex] : LevelData.Waves[CurrentWaveIndex];
-        public bool IsLastWave() => CurrentWaveIndex + 1 >= LevelData.Waves.Length;
+        public Wave GetCurrentWave(bool increment = false) => increment ? _levelData.Waves[++CurrentWaveIndex] : _levelData.Waves[CurrentWaveIndex];
+        public bool IsLastWave() => CurrentWaveIndex + 1 >= _levelData.Waves.Length;
 
         #endregion
 

@@ -1,0 +1,17 @@
+{
+    "name": "EnemyObserver",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
+        "GUID:878895639a8587743b1bb64843d1f38a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

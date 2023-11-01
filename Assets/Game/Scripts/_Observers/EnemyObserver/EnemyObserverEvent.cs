@@ -1,9 +1,10 @@
 using Game.Scripts._Data.Observer;
+using Game.Scripts.Levels;
 using UnityEngine;
 
-namespace Game.Scripts.Levels.Observers
+namespace Game.Scripts._Observers.EnemyObserver
 {
-    public class OE_LevelEnemies : Observer
+    public class EnemyObserverEvent : Observer
     {
         #region Statements
 
