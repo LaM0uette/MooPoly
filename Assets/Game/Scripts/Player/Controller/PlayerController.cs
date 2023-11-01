@@ -5,6 +5,7 @@ using Game.Scripts._Data.TurretData;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.Interactables;
 using Game.Scripts.StaticUtilities;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Scripts.Player.Controller
@@ -12,7 +13,6 @@ namespace Game.Scripts.Player.Controller
     [Serializable]
     public struct TurretsToBuild
     {
-        public int TurretIndex;
         public GameObject TurretPrefab;
         public TurretData TurretData;
     }
@@ -23,19 +23,24 @@ namespace Game.Scripts.Player.Controller
         
         public static Action<bool> OnTriggerInteract;
         
-        public static Interactable CurrentInteract { get; private set; }
-
-        private static readonly List<Interactable> Interacts = new();
-        
+        [Space, Title("Observer")]
         [SerializeField] private ObserverEvent _observerCoins;
         
+        [Space, Title("Turrets")]
         [SerializeField] private List<TurretsToBuild> _turretsToBuild = new();
         public List<TurretsToBuild> TurretsToBuild => _turretsToBuild;
+        
+        private static readonly List<Interactable> Interacts = new();
+        private static Interactable CurrentInteract { get; set; } // TODO: detruire les IInteract autour
+        
         private GameObject _turretsParent;
 
-        private void Awake()
+        private void Start()
         {
             _turretsParent = GameObject.FindGameObjectWithTag(TagRef.TurretsParent);
+            
+            Interacts.Clear();
+            CurrentInteract = null;
         }
 
         #endregion
@@ -45,12 +50,17 @@ namespace Game.Scripts.Player.Controller
         private void OnTriggerEnter(Collider other)
         {
             if (!other.TryGetComponent<Interactable>(out var interactable)) return;
+            
+            interactable.Enter();
             Interacts.Add(interactable);
+            
+            SetCurrentInteract();
         }
         
         private void OnTriggerExit(Collider other)
         {
             if (!other.TryGetComponent<Interactable>(out var interactable)) return;
+            
             interactable.Exit();
             Interacts.Remove(interactable);
             
@@ -59,21 +69,19 @@ namespace Game.Scripts.Player.Controller
 
         private void OnTriggerStay(Collider other)
         {
-            if (!other.TryGetComponent<Interactable>(out var interactable)) return;
-            if (CurrentInteract == interactable) return;
+            if (Interacts.Count <= 1) return;
             
             SetCurrentInteract();
-            SetOutline(interactable);
+            SetCurrentInteractOutline();
         }
 
         #endregion
 
         #region Functions
         
-        public static void RemoveCurrentInteract()
+        public static void Interact()
         {
-            Interacts.Remove(CurrentInteract);
-            CurrentInteract = null;
+            CurrentInteract.Interact();
         }
 
         private void SetCurrentInteract()
@@ -89,12 +97,14 @@ namespace Game.Scripts.Player.Controller
             CurrentInteract = GetClosestInteract();
         }
 
-        private static void SetOutline(Interactable interactable)
+        private static void SetCurrentInteractOutline()
         {
-            CurrentInteract.Enter();
+            foreach (var interact in Interacts)
+            {
+                interact.Exit();
+            }
             
-            if (interactable != CurrentInteract)
-                interactable.Exit();
+            CurrentInteract.Enter();
         }
 
         private Interactable GetClosestInteract()

@@ -1,7 +1,7 @@
 using Game.Scripts.Generic.PlayerPref;
 using Game.Scripts.Interactables;
 
-namespace Game.Scripts.Ui.World.Button.Reset
+namespace Game.Scripts.Ui.World.FountainReset
 {
     public class FountainReset : Interactable
     {

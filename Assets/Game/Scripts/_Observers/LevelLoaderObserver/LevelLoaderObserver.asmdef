@@ -1,10 +1,12 @@
 {
-    "name": "FountainReset",
+    "name": "LevelLoaderObserver",
     "rootNamespace": "",
     "references": [
-        "GUID:eaed3e60b499d0d419eb4870fb5a534a",
+        "GUID:4a2792f6e6f5e2a47a94bfad01faf292",
         "GUID:c6fb4a75d5209cb47926f91923c9c03a",
-        "GUID:a76b0eefca9ee9a45bceb9200497250d"
+        "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
+        "GUID:eaed3e60b499d0d419eb4870fb5a534a",
+        "GUID:aba94fb9a8b459146994edf08089d7cb"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

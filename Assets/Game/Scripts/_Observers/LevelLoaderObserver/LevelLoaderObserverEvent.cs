@@ -2,12 +2,11 @@ using Game.Scripts._Data.Observer;
 using Game.Scripts._Data.SceneData;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.Generic.PlayerPref;
-using Game.Scripts.Player.Controller;
 using UnityEngine;
 
-namespace Game.Scripts.Ui.World.Button.Level
+namespace Game.Scripts._Observers.LevelLoaderObserver
 {
-    public class OE_ButtonLevel : Observer
+    public class LevelLoaderObserverEvent : Observer
     {
         #region Statements
 
@@ -32,9 +31,10 @@ namespace Game.Scripts.Ui.World.Button.Level
             if (data is not SceneData sceneData) return;
 
             if (sceneData.name != "Menu")
+            {
                 PlayerPrefsSave.SetPlayerPositionMenu(transform.position + Vector3.up);
+            }
             
-            PlayerController.RemoveCurrentInteract();
             ScenesManager.LoadScene(sceneData);
         }
 

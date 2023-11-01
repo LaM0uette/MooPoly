@@ -1,15 +1,10 @@
 {
-    "name": "ButtonLevel",
+    "name": "FountainReset",
     "rootNamespace": "",
     "references": [
-        "GUID:eaed3e60b499d0d419eb4870fb5a534a",
-        "GUID:7e6ebce566e7ca14cb0ca351f26d09cd",
-        "GUID:47ecb1d5b2a6ab44abc53cf4233e0094",
-        "GUID:f14bc151b592a0d49ac746048ccaf3f5",
-        "GUID:4a2792f6e6f5e2a47a94bfad01faf292",
         "GUID:c6fb4a75d5209cb47926f91923c9c03a",
-        "GUID:a76b0eefca9ee9a45bceb9200497250d",
-        "GUID:aba94fb9a8b459146994edf08089d7cb"
+        "GUID:eaed3e60b499d0d419eb4870fb5a534a",
+        "GUID:a76b0eefca9ee9a45bceb9200497250d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

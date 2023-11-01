@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2579912263096857549}
   - component: {fileID: 9166983026276573110}
   m_Layer: 0
-  m_Name: BtnLevel
+  m_Name: LevelLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

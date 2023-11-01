@@ -127,7 +127,7 @@ namespace Game.Scripts.Player.PlayerStateMachine
         #region States
 
         protected void Jump() => PlayerStateMachine.SwitchState(new PlayerJumpState(PlayerStateMachine));
-        protected static void Interact() => PlayerController.CurrentInteract?.Interact();
+        protected static void Interact() => PlayerController.Interact();
         protected void LevelMap() => PlayerStateMachine.SwitchState(new PlayerMapState(PlayerStateMachine));
 
         #endregion

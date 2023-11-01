@@ -4,13 +4,13 @@ using Game.Scripts.Interactables;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Game.Scripts.Ui.World.Button.Level
+namespace Game.Scripts._Observers.LevelLoaderObserver
 {
-    public class ButtonLevel : Interactable
+    public class LevelLoaderObserver : Interactable
     {
         #region Statements
 
-        [Title("Settings")]
+        [Space, Title("Settings")]
         public bool IsUnlocked;
         
         [Space, Title("Observer"), SerializeField] private ObserverEvent _observer;
@@ -40,12 +40,14 @@ namespace Game.Scripts.Ui.World.Button.Level
         public override void Enter()
         {
             if (!IsUnlocked) return;
+            
             base.Enter();
         }
         
         public override void Exit()
         {
             if (!IsUnlocked) return;
+            
             base.Exit();
         }
 
