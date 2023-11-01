@@ -1,3 +1,4 @@
+using Game.Scripts.Bullets.BulletFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -8,11 +9,17 @@ namespace Game.Scripts.Bullets
     {
         #region Statements
 
-        public Bullet Bullet { get; set; } = new();
-        
         [CanBeNull] private EnemyStateMachine _enemy { get; set; }
+        private Bullet Bullet { get; } = new();
+        
         private float _turretDamage { get; set; }
 
+        public void Init(EnemyStateMachine enemy, float turretDamage)
+        {
+            _enemy = enemy;
+            _turretDamage = turretDamage;
+        }
+        
         #endregion
 
         #region Events
@@ -31,13 +38,7 @@ namespace Game.Scripts.Bullets
         #endregion
 
         #region Functions
-
-        public void Init(EnemyStateMachine enemy, float turretDamage)
-        {
-            _enemy = enemy;
-            _turretDamage = turretDamage;
-        }
-
+        
         private void FollowEnemy()
         {
             if (_enemy is null || _enemy.Enemy.IsDead) return;

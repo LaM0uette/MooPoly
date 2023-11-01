@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Bullets
+namespace Game.Scripts.Bullets.BulletFactory
 {
     public class Bullet
     {

@@ -1,5 +1,6 @@
 using Game.Scripts._Data.TurretData;
 using Game.Scripts.Bullets;
+using Game.Scripts.Bullets.BulletFactory;
 using Game.Scripts.Enemies.EnemyStateMachine;
 using Game.Scripts.StaticUtilities;
 using UnityEngine;

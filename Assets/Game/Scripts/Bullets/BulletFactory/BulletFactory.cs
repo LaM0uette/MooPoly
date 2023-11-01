@@ -1,6 +1,6 @@
 using Game.Scripts._Data.BulletData;
 
-namespace Game.Scripts.Bullets
+namespace Game.Scripts.Bullets.BulletFactory
 {
     public static class BulletFactory
     {
