@@ -21,6 +21,7 @@ namespace Game.Scripts.Player.PlayerStateMachine
         public static readonly int IdleStateHash = Animator.StringToHash("IdleSubState.Idle");
         public static readonly int MoveStateHash = Animator.StringToHash("MoveBlendTree");
         public static readonly int JumpHash = Animator.StringToHash("Jump");
+        public static readonly int KnockbackHash = Animator.StringToHash("Knockback");
             
         // Variables
         public static readonly int SpeedHash = Animator.StringToHash("Speed");
@@ -40,6 +41,7 @@ namespace Game.Scripts.Player.PlayerStateMachine
         
         // Properties
         public bool IsTransitioning { get; private set; }
+        public bool IsInvincible { get; private set; }
         public Vector3 Velocity { get; set; }
         
         [Space, Title("Move")]
@@ -81,6 +83,20 @@ namespace Game.Scripts.Player.PlayerStateMachine
 
         #endregion
 
+        #region Events
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (!other.CompareTag(TagRef.Enemy) || IsInvincible) return;
+            
+            var knockbackDirection = transform.position - other.transform.position;
+            knockbackDirection.Normalize();
+            
+            OnEnemyTrigger(knockbackDirection);
+        }
+
+        #endregion
+        
         #region Animations
 
         public void TransitionToAnimation(int animationId, float transitionDuration = .1f)
@@ -116,6 +132,19 @@ namespace Game.Scripts.Player.PlayerStateMachine
         public void Teleport(Vector3 position)
         {
             SwitchState(new PlayerTeleportState(this, position));
+        }
+
+        private void OnEnemyTrigger(Vector3 knockbackDirection)
+        {
+            IsInvincible = true;
+            StartCoroutine(EndInvincibilityAfterDelay(4f));
+            SwitchState(new PlayerKnockbackState(this, knockbackDirection));
+        }
+        
+        private IEnumerator EndInvincibilityAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            IsInvincible = false;
         }
         
         #endregion

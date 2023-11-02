@@ -4,6 +4,7 @@ namespace Game.Scripts.StaticUtilities
     {
         // Player
         public const string Player = "Player";
+        public const string Enemy = "Enemy";
         
         // Camera
         public const string TopDownCamera = "TopDownCamera";

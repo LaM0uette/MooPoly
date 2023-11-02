@@ -11,6 +11,7 @@ TagManager:
   - EnemiesParent
   - BulletsParent
   - MooCoinsParent
+  - Enemy
   layers:
   - Default
   - TransparentFX
