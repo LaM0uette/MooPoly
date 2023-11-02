@@ -990,7 +990,12 @@ PrefabInstance:
     - target: {fileID: 3933744722429108834, guid: 5dca76f74bb826a42a8cd45345354c09,
         type: 3}
       propertyPath: m_Name
-      value: Crow Variant
+      value: Crow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3989731949715703827, guid: 5dca76f74bb826a42a8cd45345354c09,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 7226338391535392227, guid: 5dca76f74bb826a42a8cd45345354c09,
         type: 3}

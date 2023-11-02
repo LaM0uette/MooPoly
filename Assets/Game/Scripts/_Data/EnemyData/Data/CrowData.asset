@@ -16,7 +16,7 @@ MonoBehaviour:
   Prefab: {fileID: 8671441658194056830, guid: e10c32fdc76fe784aaa4f2da28a18cbd, type: 3}
   BaseLife: 80
   MoveSpeed: 20
-  HeightOffset: 0
+  HeightOffset: 1
   SpawnRate: 2
   _mooCoins:
   - MooCoinData: {fileID: 11400000, guid: 6526e37abbcb4f445b8c1805ed8ad103, type: 2}

@@ -7,8 +7,10 @@ using Game.Scripts.MooCoins;
 using Game.Scripts.MooCoins.MooCoinFactory;
 using Game.Scripts.StaticUtilities;
 using JetBrains.Annotations;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Splines;
+using UnityEngine.UI;
 
 namespace Game.Scripts.Enemies.EnemyStateMachine
 {
@@ -41,6 +43,10 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         public float PercentageOfCurve { get; set; }
         public float TotalSplineLength { get; private set; }
 
+        [Space, Title("Life")]
+        [SerializeField] private Image _healthBar;
+        private float _baseHealth;
+        
         public GameObject Target;
 
         [SerializeField] private ObserverEvent _observer;
@@ -56,6 +62,9 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         private void Start()
         {
             PercentageOfCurve = 0;
+            
+            _healthBar.enabled = false;
+            _baseHealth = Enemy.Health;
             
             if (EnemyPath is not null) 
                 TotalSplineLength = EnemyPath.CalculateLength();
@@ -98,6 +107,9 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         public void TakeDamage(float damage)
         {
             Enemy.Health -= damage;
+            
+            _healthBar.enabled = true;
+            _healthBar.fillAmount = Mathf.Clamp(Enemy.Health, 0, _baseHealth) / _baseHealth;
         }
         
         public void CheckHealth()
@@ -129,7 +141,12 @@ namespace Game.Scripts.Enemies.EnemyStateMachine
         
         public bool IsDead() => Enemy.IsDead;
         public void Steal() => SwitchState(new EnemyStealState(this));
-        public void Die() => SwitchState(new EnemyDieState(this));
+
+        private void Die() 
+        {
+            _healthBar.enabled = false;
+            SwitchState(new EnemyDieState(this));
+        }
 
         public void StealDead()
         {
