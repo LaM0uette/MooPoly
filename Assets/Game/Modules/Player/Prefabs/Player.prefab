@@ -1211,11 +1211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 6
-  RotationMoveSpeed: 10
+  RotationMoveSpeed: 14
   JumpForce: 6
   MinZoom: 12
   MaxZoom: 35
-  ZoomForce: 20
+  ZoomForce: 40
   Gravity: -16
 --- !u!114 &8274819867985450967
 MonoBehaviour:

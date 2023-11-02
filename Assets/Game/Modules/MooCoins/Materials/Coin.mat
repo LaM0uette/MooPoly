@@ -14,6 +14,8 @@ Material:
   m_ValidKeywords:
   - _CELPRIMARYMODE_SINGLE
   - _DETAILMAPBLENDINGMODE_MULTIPLY
+  - _GRADIENTSPACE_WORLD
+  - _OUTLINESPACE_SCREEN
   - _TEXTUREBLENDINGMODE_MULTIPLY
   - _UNITYSHADOWMODE_MULTIPLY
   m_InvalidKeywords: []
@@ -135,6 +137,7 @@ Material:
     - _GradientCenterY: 0
     - _GradientEnabled: 0
     - _GradientSize: 10
+    - _GradientSpace: 0
     - _LightContribution: 0.566
     - _LightFalloffSize: 0.266
     - _LightmapDirectionPitch: 0
@@ -145,6 +148,7 @@ Material:
     - _OutlineDepthOffset: 0
     - _OutlineEnabled: 0
     - _OutlineScale: 1
+    - _OutlineSpace: 0
     - _OutlineWidth: 1
     - _OverrideLightmapDir: 0
     - _Parallax: 0.02
@@ -170,6 +174,7 @@ Material:
     - _UnityShadowPower: 0.8
     - _UnityShadowSharpness: 1
     - _VertexColorsEnabled: 0
+    - _VertexExtrusionSmoothNormals: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
