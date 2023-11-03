@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Scripts.Player.Controller;
+using UnityEngine;
 
 namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
 {
@@ -21,6 +22,8 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
             PlayerStateMachine.Inputs.JumpEvent += Jump;
             PlayerStateMachine.Inputs.InteractEvent += Interact;
             PlayerStateMachine.Inputs.LevelMapEvent += LevelMap;
+            
+            PlayerController.OnSendTurretUpgrader += SendTurretUpgrader;
         }
         
         private void UnsubscribeEvents()
@@ -28,6 +31,8 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
             PlayerStateMachine.Inputs.JumpEvent -= Jump;
             PlayerStateMachine.Inputs.InteractEvent -= Interact;
             PlayerStateMachine.Inputs.LevelMapEvent -= LevelMap;
+            
+            PlayerController.OnSendTurretUpgrader += SendTurretUpgrader;
         }
 
         #endregion
@@ -88,6 +93,11 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
             {
                 AnimatorSetInt(PlayerStateMachine.IdleBlendHash, 0);
             }
+        }
+
+        private void SendTurretUpgrader()
+        {
+            PlayerStateMachine.SwitchState(new PlayerUpgradeState(PlayerStateMachine));
         }
 
         #endregion

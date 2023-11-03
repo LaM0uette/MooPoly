@@ -12,18 +12,6 @@ namespace Game.Scripts.TurretsToBuild
             GameHUDManager.OnUiManager?.Invoke();
         }
 
-        public override void Enter()
-        {
-            if (Outline.isActiveAndEnabled) return;
-            base.Enter();
-        }
-        
-        public override void Exit()
-        {
-            if (!Outline.isActiveAndEnabled) return;
-            base.Exit();
-        }
-
         public override void Destroy()
         {
             Destroy(gameObject, 0);

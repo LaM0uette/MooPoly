@@ -167,7 +167,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551765741859307769}
+  - component: {fileID: 7568411842604931110}
   - component: {fileID: 9075077723677424144}
+  - component: {fileID: 2265926186004519282}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -192,6 +194,29 @@ Transform:
   - {fileID: 6327729960292067236}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7568411842604931110
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093196679266955309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 247
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1
+  m_Height: 6.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.25, z: 0}
 --- !u!114 &9075077723677424144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +236,20 @@ MonoBehaviour:
   TurretHeadTransform: {fileID: 4282752322809227287}
   InitialPos: {fileID: 3609764878453080827}
   FirePoint: {fileID: 74931804415341426}
-  turretData: {fileID: 0}
+  _turretData: {fileID: 0}
+--- !u!114 &2265926186004519282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093196679266955309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a23c69364daae4abd8d03efaff80e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Outline: {fileID: 0}
 --- !u!1 &6455775837429661928
 GameObject:
   m_ObjectHideFlags: 0

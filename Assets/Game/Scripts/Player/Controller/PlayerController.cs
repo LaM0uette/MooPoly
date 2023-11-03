@@ -5,6 +5,7 @@ using Game.Scripts._Data.TurretData;
 using Game.Scripts.Generic.Managers;
 using Game.Scripts.Interactables;
 using Game.Scripts.StaticUtilities;
+using Game.Scripts.Turrets.TurretUpgrader;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -22,6 +23,7 @@ namespace Game.Scripts.Player.Controller
         #region Statements
         
         public static Action<bool> OnTriggerInteract;
+        public static Action OnSendTurretUpgrader;
         
         [Space, Title("Observer")]
         [SerializeField] private ObserverEvent _observerCoins;
@@ -31,7 +33,7 @@ namespace Game.Scripts.Player.Controller
         public List<TurretsToBuild> TurretsToBuild => _turretsToBuild;
         
         private static readonly List<Interactable> Interacts = new();
-        private static Interactable CurrentInteract { get; set; } // TODO: detruire les IInteract autour
+        private static Interactable CurrentInteract { get; set; }
         
         private GameObject _turretsParent;
 
@@ -73,6 +75,7 @@ namespace Game.Scripts.Player.Controller
             
             SetCurrentInteract();
             SetCurrentInteractOutline();
+            SendCurretTurretUpgrader(other);
         }
 
         #endregion
@@ -81,6 +84,7 @@ namespace Game.Scripts.Player.Controller
         
         public static void Interact()
         {
+            if (CurrentInteract == null) return;
             CurrentInteract.Interact();
         }
 
@@ -105,6 +109,13 @@ namespace Game.Scripts.Player.Controller
             }
             
             CurrentInteract.Enter();
+        }
+        
+        private static void SendCurretTurretUpgrader(Collider other)
+        {
+            if (!other.TryGetComponent<TurretUpgrader>(out var turretUpgrader)) return;
+            
+            OnSendTurretUpgrader?.Invoke();
         }
 
         private Interactable GetClosestInteract()

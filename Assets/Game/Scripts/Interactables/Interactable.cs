@@ -19,11 +19,13 @@ namespace Game.Scripts.Interactables
 
         public virtual void Enter()
         {
+            if (Outline is null || Outline.isActiveAndEnabled) return;
             SetOutline(true);
         }
         
         public virtual void Exit()
         {
+            if (Outline is null || !Outline.isActiveAndEnabled) return;
             SetOutline(false);
         }
 
