@@ -1,11 +1,17 @@
-﻿namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
+﻿using Game.Scripts.Turrets.TurretUpgrader;
+using UnityEngine;
+
+namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
 {
     public class PlayerUpgradeState : PlayerBaseState
     {
         #region Statements
 
-        public PlayerUpgradeState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
+        private TurretUpgrader _turretUpgrader;
+        
+        public PlayerUpgradeState(PlayerStateMachine playerStateMachine, TurretUpgrader turretUpgrader) : base(playerStateMachine)
         {
+            _turretUpgrader = turretUpgrader;
         }
 
         #endregion
@@ -31,7 +37,7 @@
         public override void Enter()
         {
             SubscribeEvents();
-            
+            Debug.Log("Enter PlayerUpgradeState");
             PlayerStateMachine.TransitionToAnimation(PlayerStateMachine.IdleStateHash, .2f);
         }
 
@@ -45,6 +51,8 @@
         {
             ApplyGravity();
             Move();
+
+            Debug.Log(_turretUpgrader.TurretStateMachine.Turret.Damage);
         }
 
         public override void TickLate(float deltaTime)
@@ -55,6 +63,7 @@
         public override void Exit()
         {
             UnsubscribeEvents();
+            Debug.Log("Exit PlayerUpgradeState");
         }
 
         #endregion

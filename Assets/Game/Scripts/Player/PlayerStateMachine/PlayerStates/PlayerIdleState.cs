@@ -1,4 +1,5 @@
 ﻿using Game.Scripts.Player.Controller;
+using Game.Scripts.Turrets.TurretUpgrader;
 using UnityEngine;
 
 namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
@@ -8,6 +9,7 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
         #region Statements
         
         private float _inactivityTime;
+        private TurretUpgrader _currentTurretUpgrader;
 
         public PlayerIdleState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
         {
@@ -50,6 +52,9 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
         {
             if (PlayerStateMachine.IsMoving())
                 PlayerStateMachine.SwitchState(new PlayerMoveState(PlayerStateMachine));
+            
+            if (_currentTurretUpgrader is not null)
+                PlayerStateMachine.SwitchState(new PlayerUpgradeState(PlayerStateMachine, _currentTurretUpgrader));
         }
 
         public override void Tick(float deltaTime)
@@ -95,9 +100,9 @@ namespace Game.Scripts.Player.PlayerStateMachine.PlayerStates
             }
         }
 
-        private void SendTurretUpgrader()
+        private void SendTurretUpgrader(TurretUpgrader turretUpgrader)
         {
-            PlayerStateMachine.SwitchState(new PlayerUpgradeState(PlayerStateMachine));
+            _currentTurretUpgrader = turretUpgrader;
         }
 
         #endregion

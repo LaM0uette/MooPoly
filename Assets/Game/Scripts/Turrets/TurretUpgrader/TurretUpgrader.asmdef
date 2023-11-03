@@ -1,4 +1,4 @@
 {
 	"name": "TurretUpgrader",
-	"references":[ "GUID:eaed3e60b499d0d419eb4870fb5a534a" ]
+	"references":[ "GUID:eaed3e60b499d0d419eb4870fb5a534a", "GUID:97e6ee057f8247a4699fc9b4b42dd775" ]
 }

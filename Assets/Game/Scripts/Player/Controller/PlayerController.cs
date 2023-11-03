@@ -23,7 +23,7 @@ namespace Game.Scripts.Player.Controller
         #region Statements
         
         public static Action<bool> OnTriggerInteract;
-        public static Action OnSendTurretUpgrader;
+        public static Action<TurretUpgrader> OnSendTurretUpgrader;
         
         [Space, Title("Observer")]
         [SerializeField] private ObserverEvent _observerCoins;
@@ -57,6 +57,7 @@ namespace Game.Scripts.Player.Controller
             Interacts.Add(interactable);
             
             SetCurrentInteract();
+            SendCurretTurretUpgrader(other);
         }
         
         private void OnTriggerExit(Collider other)
@@ -67,6 +68,7 @@ namespace Game.Scripts.Player.Controller
             Interacts.Remove(interactable);
             
             SetCurrentInteract();
+            OnSendTurretUpgrader?.Invoke(null);
         }
 
         private void OnTriggerStay(Collider other)
@@ -75,7 +77,6 @@ namespace Game.Scripts.Player.Controller
             
             SetCurrentInteract();
             SetCurrentInteractOutline();
-            SendCurretTurretUpgrader(other);
         }
 
         #endregion
@@ -115,7 +116,7 @@ namespace Game.Scripts.Player.Controller
         {
             if (!other.TryGetComponent<TurretUpgrader>(out var turretUpgrader)) return;
             
-            OnSendTurretUpgrader?.Invoke();
+            OnSendTurretUpgrader?.Invoke(turretUpgrader);
         }
 
         private Interactable GetClosestInteract()
